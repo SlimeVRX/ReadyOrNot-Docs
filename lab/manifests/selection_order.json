@@ -1,0 +1,512 @@
+[
+  {
+    "index": 1,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_870mcs.Primary_870mcs_C",
+    "name": "870mcs"
+  },
+  {
+    "index": 2,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_AK102.Primary_AK102_C",
+    "name": "AK102"
+  },
+  {
+    "index": 3,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_AK103.Primary_AK103_C",
+    "name": "AK103"
+  },
+  {
+    "index": 4,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_AR18.Primary_AR18_C",
+    "name": "AR18"
+  },
+  {
+    "index": 5,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_B1301.Primary_B1301_C",
+    "name": "B1301"
+  },
+  {
+    "index": 6,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_B1301_Entryman.Primary_B1301_Entryman_C",
+    "name": "B1301 Entryman"
+  },
+  {
+    "index": 7,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_BCM_MK1.Primary_BCM_MK1_C",
+    "name": "BCM"
+  },
+  {
+    "index": 8,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_BRN180.Primary_BRN180_C",
+    "name": "ARN-180"
+  },
+  {
+    "index": 9,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_Benelli_M4.Primary_Benelli_M4_C",
+    "name": "M1014"
+  },
+  {
+    "index": 10,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_F90.Primary_F90_C",
+    "name": "F90"
+  },
+  {
+    "index": 11,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_FAL.Primary_FAL_C",
+    "name": "FAL"
+  },
+  {
+    "index": 12,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_FAL_OSW.Primary_FAL_OSW_C",
+    "name": "SA-58 OSW"
+  },
+  {
+    "index": 13,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_G36C.Primary_G36C_C",
+    "name": "G36C"
+  },
+  {
+    "index": 14,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_G3A3.Primary_G3A3_C",
+    "name": "G36C"
+  },
+  {
+    "index": 15,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_HK416.Primary_HK416_C",
+    "name": "GA416"
+  },
+  {
+    "index": 16,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_LVAW.Primary_LVAW_C",
+    "name": "LVAR"
+  },
+  {
+    "index": 17,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_M14.Primary_M14_C",
+    "name": "M14"
+  },
+  {
+    "index": 18,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_M16A4.Primary_M16A4_C",
+    "name": "M16A4"
+  },
+  {
+    "index": 19,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_M4A1.Primary_M4A1_C",
+    "name": "M4A1"
+  },
+  {
+    "index": 20,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_M4A1_D_Temp.Primary_M4A1_D_Temp_C",
+    "name": "M4A1"
+  },
+  {
+    "index": 21,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_M76.Primary_M76_C",
+    "name": "M76"
+  },
+  {
+    "index": 22,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_MCX.Primary_MCX_C",
+    "name": "MCX"
+  },
+  {
+    "index": 23,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_MK18.Primary_MK18_C",
+    "name": "MK18"
+  },
+  {
+    "index": 24,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_MK18_Blue.Primary_MK18_Blue_C",
+    "name": "MK18 Simmunition"
+  },
+  {
+    "index": 25,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP510.Primary_MP510_C",
+    "name": "MP5/10MM"
+  },
+  {
+    "index": 26,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP5A2.Primary_MP5A2_C",
+    "name": "MP5A2"
+  },
+  {
+    "index": 27,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP5A3.Primary_MP5A3_C",
+    "name": "MP5A3"
+  },
+  {
+    "index": 28,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP7.Primary_MP7_C",
+    "name": "MP7"
+  },
+  {
+    "index": 29,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP9.Primary_MP9_C",
+    "name": "MP9"
+  },
+  {
+    "index": 30,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_MPL.Primary_MPL_C",
+    "name": "MPL"
+  },
+  {
+    "index": 31,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_MPX.Primary_MPX_C",
+    "name": "MPX"
+  },
+  {
+    "index": 32,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_P90.Primary_P90_C",
+    "name": "P90"
+  },
+  {
+    "index": 33,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_Pepperball_MLO.Primary_Pepperball_MLO_C",
+    "name": "Pepperball Gun"
+  },
+  {
+    "index": 34,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_S590_Assault_v2.Primary_S590_Assault_v2_C",
+    "name": "590S"
+  },
+  {
+    "index": 35,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_S590_Beanbag_V2.Primary_S590_Beanbag_V2_C",
+    "name": "590A Less Lethal"
+  },
+  {
+    "index": 36,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_SBR.Primary_SBR_C",
+    "name": "ARWC"
+  },
+  {
+    "index": 37,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_SCARL_v2.Primary_SCARL_v2_C",
+    "name": "MK16"
+  },
+  {
+    "index": 38,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_SLR47.Primary_SLR47_C",
+    "name": "SLR47"
+  },
+  {
+    "index": 39,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_SPC9.Primary_SPC9_C",
+    "name": "SPC9"
+  },
+  {
+    "index": 40,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+    "name": "SR-16"
+  },
+  {
+    "index": 41,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_Saiga12.Primary_Saiga12_C",
+    "name": "Saiga"
+  },
+  {
+    "index": 42,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_Superbnova.Primary_Superbnova_C",
+    "name": "Supernova"
+  },
+  {
+    "index": 43,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_TAC700.Primary_TAC700_C",
+    "name": "TAC700"
+  },
+  {
+    "index": 44,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_UMP45_v2.Primary_UMP45_v2_C",
+    "name": "UMP-45"
+  },
+  {
+    "index": 45,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_UMP9.Primary_UMP9_C",
+    "name": "UMP-9"
+  },
+  {
+    "index": 46,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_VKS.Primary_VKS_C",
+    "name": "Pepperball Gun"
+  },
+  {
+    "index": 47,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_VKS_V2.Primary_VKS_V2_C",
+    "name": "VKS"
+  },
+  {
+    "index": 48,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_W870LL.Primary_W870LL_C",
+    "name": "Beanbag Shotgun"
+  },
+  {
+    "index": 49,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_WCQB.Primary_WCQB_C",
+    "name": "870CQB"
+  },
+  {
+    "index": 50,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_FiveSeven_V2.Secondary_FiveSeven_V2_C",
+    "name": "FiveSeven"
+  },
+  {
+    "index": 51,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_G18.Secondary_G18_C",
+    "name": "G18"
+  },
+  {
+    "index": 52,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_G19_Blue.Secondary_G19_Blue_C",
+    "name": "G19"
+  },
+  {
+    "index": 53,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_G19_D_Temp.Secondary_G19_D_Temp_C",
+    "name": "G19"
+  },
+  {
+    "index": 54,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_G19_V2.Secondary_G19_V2_C",
+    "name": "G19"
+  },
+  {
+    "index": 55,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_Kimber1911.Secondary_Kimber1911_C",
+    "name": "TLE 1911"
+  },
+  {
+    "index": 56,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_M1911_V2.Secondary_M1911_V2_C",
+    "name": "M1911"
+  },
+  {
+    "index": 57,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_M2011.Secondary_M2011_C",
+    "name": "M2011"
+  },
+  {
+    "index": 58,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_M45A1.Secondary_M45A1_C",
+    "name": "M45A1"
+  },
+  {
+    "index": 59,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_M92A3.Secondary_M92A3_C",
+    "name": "B92X"
+  },
+  {
+    "index": 60,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_M92FS_V2.Secondary_M92FS_V2_C",
+    "name": "M9A1"
+  },
+  {
+    "index": 61,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_P229.Secondary_P229_C",
+    "name": "M11 Compact"
+  },
+  {
+    "index": 62,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_P250.Secondary_P250_C",
+    "name": "P250"
+  },
+  {
+    "index": 63,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_P99.Secondary_P99_C",
+    "name": "G19"
+  },
+  {
+    "index": 64,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_PFC9.Secondary_PFC9_C",
+    "name": "PC19"
+  },
+  {
+    "index": 65,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_Python_V2.Secondary_Python_V2_C",
+    "name": ".357 Magnum"
+  },
+  {
+    "index": 66,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_TCR.Secondary_TCR_C",
+    "name": "TPL"
+  },
+  {
+    "index": 67,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_Taser_V2.Secondary_Taser_V2_C",
+    "name": "Taser"
+  },
+  {
+    "index": 68,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Secondary_USP.Secondary_USP_C",
+    "name": "USP45"
+  },
+  {
+    "index": 69,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Deployable_M32A1.Deployable_M32A1_C",
+    "name": "M32A1"
+  },
+  {
+    "index": 70,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Device_870MCS_Breach.Device_870MCS_Breach_C",
+    "name": "Breach Shotgun"
+  },
+  {
+    "index": 71,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Device_S590_Breach_v2.Device_S590_Breach_v2_C",
+    "name": "Breach Shotgun"
+  },
+  {
+    "index": 72,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Device_SuperShorty.Device_SuperShorty_C",
+    "name": "S590 Breach"
+  },
+  {
+    "index": 73,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Device_Taser7.Device_Taser7_C",
+    "name": "Taser"
+  },
+  {
+    "index": 74,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Launcher_M320.Launcher_M320_C",
+    "name": "M320"
+  },
+  {
+    "index": 75,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Launcher_M320_Bang.Launcher_M320_Bang_C",
+    "name": "M320 Flash"
+  },
+  {
+    "index": 76,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Launcher_M320_Gas.Launcher_M320_Gas_C",
+    "name": "M320 Gas"
+  },
+  {
+    "index": 77,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Launcher_M320_Stinger.Launcher_M320_Stinger_C",
+    "name": "M320 Stinger"
+  },
+  {
+    "index": 78,
+    "class_path": "/Game/Blueprints/Items/WeaponsRevised/Sniper_M24.Sniper_M24_C",
+    "name": "M24"
+  },
+  {
+    "index": 79,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_AK104.Primary_AK104_C",
+    "name": "AK-104"
+  },
+  {
+    "index": 80,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_AKM.Primary_AKM_C",
+    "name": "AKM"
+  },
+  {
+    "index": 81,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_AKS74U.Primary_AKS74U_C",
+    "name": "AKS-74U"
+  },
+  {
+    "index": 82,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_CAR.Primary_CAR_C",
+    "name": "Custom AR"
+  },
+  {
+    "index": 83,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_Calico.Primary_Calico_C",
+    "name": "M960"
+  },
+  {
+    "index": 84,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_M249.Primary_M249_C",
+    "name": "M249"
+  },
+  {
+    "index": 85,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_M37.Primary_M37_C",
+    "name": "M37"
+  },
+  {
+    "index": 86,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_QBZ.Primary_QBZ_C",
+    "name": "AKS74U"
+  },
+  {
+    "index": 87,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_RPD.Primary_RPD_C",
+    "name": "RPD"
+  },
+  {
+    "index": 88,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_S_870mcs.Primary_S_870mcs_C",
+    "name": "870mcs"
+  },
+  {
+    "index": 89,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_S_AK103.Primary_S_AK103_C",
+    "name": "AK-103"
+  },
+  {
+    "index": 90,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_S_G3A3.Primary_S_G3A3_C",
+    "name": "G3A3"
+  },
+  {
+    "index": 91,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_SawnOff.Primary_SawnOff_C",
+    "name": "Sawed-Off"
+  },
+  {
+    "index": 92,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_Trenchgun.Primary_Trenchgun_C",
+    "name": "M37"
+  },
+  {
+    "index": 93,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Primary_Uzi.Primary_UZI_C",
+    "name": "UZI"
+  },
+  {
+    "index": 94,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Secondary_Flaregun.Secondary_Flaregun_C",
+    "name": "Flaregun"
+  },
+  {
+    "index": 95,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Secondary_Makarov.Secondary_Makarov_C",
+    "name": "Makarov"
+  },
+  {
+    "index": 96,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Secondary_Makarov_2Handed.Secondary_Makarov_2Handed_C",
+    "name": "Makarov"
+  },
+  {
+    "index": 97,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Secondary_S_G18.Secondary_S_G18_C",
+    "name": "G18"
+  },
+  {
+    "index": 98,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Secondary_S_G19.Secondary_S_G19_C",
+    "name": "G19"
+  },
+  {
+    "index": 99,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Secondary_S_M1911.Secondary_S_M1911_C",
+    "name": "M1911"
+  },
+  {
+    "index": 100,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Secondary_S_Python.Secondary_S_Python_C",
+    "name": "Colt Python"
+  },
+  {
+    "index": 101,
+    "class_path": "/Game/Blueprints/Items/WeaponsSuspect/Secondary_Tec9.Secondary_Tec9_C",
+    "name": "TEC-9"
+  },
+  {
+    "index": 102,
+    "class_path": "/Game/Blueprints/Actors/Console/Optimization/BP_AutoShotgunForPerfTest.BP_AutoShotgunForPerfTest_C",
+    "name": "870mcs"
+  }
+]

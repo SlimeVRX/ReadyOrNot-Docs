@@ -1,0 +1,377 @@
+{
+  "ReadyOrNot.Target.cs": {
+    "files": 1,
+    "lines": 15,
+    "bytes": 379
+  },
+  "ReadyOrNot/Actors": {
+    "files": 374,
+    "lines": 83023,
+    "bytes": 2767476
+  },
+  "ReadyOrNot/AI": {
+    "files": 13,
+    "lines": 2517,
+    "bytes": 76822
+  },
+  "ReadyOrNot/Animation": {
+    "files": 158,
+    "lines": 14539,
+    "bytes": 484654
+  },
+  "ReadyOrNot/AnimInputs": {
+    "files": 2,
+    "lines": 218,
+    "bytes": 8006
+  },
+  "ReadyOrNot/Audio": {
+    "files": 4,
+    "lines": 314,
+    "bytes": 8897
+  },
+  "ReadyOrNot/Characters": {
+    "files": 30,
+    "lines": 38948,
+    "bytes": 1233458
+  },
+  "ReadyOrNot/Commander": {
+    "files": 26,
+    "lines": 3675,
+    "bytes": 103952
+  },
+  "ReadyOrNot/Components": {
+    "files": 66,
+    "lines": 19206,
+    "bytes": 636368
+  },
+  "ReadyOrNot/DamageTypes": {
+    "files": 22,
+    "lines": 571,
+    "bytes": 16967
+  },
+  "ReadyOrNot/Data": {
+    "files": 42,
+    "lines": 7214,
+    "bytes": 229323
+  },
+  "ReadyOrNot/Debug": {
+    "files": 4,
+    "lines": 310,
+    "bytes": 8790
+  },
+  "ReadyOrNot/Enums.h": {
+    "files": 1,
+    "lines": 1016,
+    "bytes": 26451
+  },
+  "ReadyOrNot/GameModes": {
+    "files": 74,
+    "lines": 12456,
+    "bytes": 360467
+  },
+  "ReadyOrNot/Gamepad": {
+    "files": 8,
+    "lines": 667,
+    "bytes": 22828
+  },
+  "ReadyOrNot/GameplayConfig.cpp": {
+    "files": 1,
+    "lines": 103,
+    "bytes": 3609
+  },
+  "ReadyOrNot/GameplayConfig.h": {
+    "files": 1,
+    "lines": 72,
+    "bytes": 2820
+  },
+  "ReadyOrNot/GameplayEffects": {
+    "files": 6,
+    "lines": 602,
+    "bytes": 22606
+  },
+  "ReadyOrNot/HUD": {
+    "files": 255,
+    "lines": 30574,
+    "bytes": 989858
+  },
+  "ReadyOrNot/Info": {
+    "files": 173,
+    "lines": 55127,
+    "bytes": 1721107
+  },
+  "ReadyOrNot/Interfaces": {
+    "files": 40,
+    "lines": 893,
+    "bytes": 25252
+  },
+  "ReadyOrNot/ItemSlotTactical_V2.cpp": {
+    "files": 1,
+    "lines": 160,
+    "bytes": 5369
+  },
+  "ReadyOrNot/ItemSlotTactical_V2.h": {
+    "files": 1,
+    "lines": 75,
+    "bytes": 1711
+  },
+  "ReadyOrNot/lib": {
+    "files": 39,
+    "lines": 20352,
+    "bytes": 698711
+  },
+  "ReadyOrNot/Localization": {
+    "files": 1,
+    "lines": 567,
+    "bytes": 40367
+  },
+  "ReadyOrNot/Material": {
+    "files": 2,
+    "lines": 34,
+    "bytes": 666
+  },
+  "ReadyOrNot/Metagame": {
+    "files": 8,
+    "lines": 475,
+    "bytes": 12458
+  },
+  "ReadyOrNot/Navigation": {
+    "files": 20,
+    "lines": 2133,
+    "bytes": 68620
+  },
+  "ReadyOrNot/Objectives": {
+    "files": 22,
+    "lines": 1358,
+    "bytes": 34464
+  },
+  "ReadyOrNot/Octree": {
+    "files": 3,
+    "lines": 247,
+    "bytes": 8236
+  },
+  "ReadyOrNot/RadialMenuScripts": {
+    "files": 4,
+    "lines": 132,
+    "bytes": 3664
+  },
+  "ReadyOrNot/ReadyOrNot.Build.cs": {
+    "files": 1,
+    "lines": 312,
+    "bytes": 9266
+  },
+  "ReadyOrNot/ReadyOrNot.cpp": {
+    "files": 1,
+    "lines": 100,
+    "bytes": 4566
+  },
+  "ReadyOrNot/ReadyOrNot.h": {
+    "files": 1,
+    "lines": 306,
+    "bytes": 10973
+  },
+  "ReadyOrNot/ReadyOrNotAIConfig.cpp": {
+    "files": 1,
+    "lines": 34,
+    "bytes": 844
+  },
+  "ReadyOrNot/ReadyOrNotAIConfig.h": {
+    "files": 1,
+    "lines": 37,
+    "bytes": 2105
+  },
+  "ReadyOrNot/ReadyOrNotAISystem.cpp": {
+    "files": 1,
+    "lines": 164,
+    "bytes": 5570
+  },
+  "ReadyOrNot/ReadyOrNotAISystem.h": {
+    "files": 1,
+    "lines": 25,
+    "bytes": 680
+  },
+  "ReadyOrNot/ReadyOrNotCharacter.cpp": {
+    "files": 1,
+    "lines": 9109,
+    "bytes": 279864
+  },
+  "ReadyOrNot/ReadyOrNotCharacter.h": {
+    "files": 1,
+    "lines": 2480,
+    "bytes": 94135
+  },
+  "ReadyOrNot/ReadyOrNotCoreDelegates.cpp": {
+    "files": 1,
+    "lines": 16,
+    "bytes": 489
+  },
+  "ReadyOrNot/ReadyOrNotCoreDelegates.h": {
+    "files": 1,
+    "lines": 28,
+    "bytes": 877
+  },
+  "ReadyOrNot/ReadyOrNotDebugSubsystem.cpp": {
+    "files": 1,
+    "lines": 497,
+    "bytes": 14154
+  },
+  "ReadyOrNot/ReadyOrNotDebugSubsystem.h": {
+    "files": 1,
+    "lines": 332,
+    "bytes": 12542
+  },
+  "ReadyOrNot/ReadyOrNotGameInstance.cpp": {
+    "files": 1,
+    "lines": 3434,
+    "bytes": 118672
+  },
+  "ReadyOrNot/ReadyOrNotGameInstance.h": {
+    "files": 1,
+    "lines": 955,
+    "bytes": 27018
+  },
+  "ReadyOrNot/ReadyOrNotGameMode_PVP.cpp": {
+    "files": 1,
+    "lines": 497,
+    "bytes": 13781
+  },
+  "ReadyOrNot/ReadyOrNotGameMode_PVP.h": {
+    "files": 1,
+    "lines": 113,
+    "bytes": 3909
+  },
+  "ReadyOrNot/ReadyOrNotGameMode.cpp": {
+    "files": 1,
+    "lines": 3078,
+    "bytes": 92834
+  },
+  "ReadyOrNot/ReadyOrNotGameMode.h": {
+    "files": 1,
+    "lines": 382,
+    "bytes": 13854
+  },
+  "ReadyOrNot/ReadyOrNotGameSession.cpp": {
+    "files": 1,
+    "lines": 701,
+    "bytes": 23725
+  },
+  "ReadyOrNot/ReadyOrNotGameSession.h": {
+    "files": 1,
+    "lines": 227,
+    "bytes": 7095
+  },
+  "ReadyOrNot/ReadyOrNotGameState.cpp": {
+    "files": 1,
+    "lines": 1741,
+    "bytes": 53284
+  },
+  "ReadyOrNot/ReadyOrNotGameState.h": {
+    "files": 1,
+    "lines": 818,
+    "bytes": 27098
+  },
+  "ReadyOrNot/ReadyOrNotLevelScript.cpp": {
+    "files": 1,
+    "lines": 454,
+    "bytes": 15819
+  },
+  "ReadyOrNot/ReadyOrNotLevelScript.h": {
+    "files": 1,
+    "lines": 239,
+    "bytes": 7232
+  },
+  "ReadyOrNot/ReadyOrNotNavigationSystem.cpp": {
+    "files": 1,
+    "lines": 11,
+    "bytes": 257
+  },
+  "ReadyOrNot/ReadyOrNotNavigationSystem.h": {
+    "files": 1,
+    "lines": 20,
+    "bytes": 466
+  },
+  "ReadyOrNot/ReadyOrNotPlayerCameraManager.cpp": {
+    "files": 1,
+    "lines": 91,
+    "bytes": 3218
+  },
+  "ReadyOrNot/ReadyOrNotPlayerCameraManager.h": {
+    "files": 1,
+    "lines": 23,
+    "bytes": 798
+  },
+  "ReadyOrNot/ReadyOrNotRecastNavMesh.cpp": {
+    "files": 1,
+    "lines": 148,
+    "bytes": 3867
+  },
+  "ReadyOrNot/ReadyOrNotRecastNavMesh.h": {
+    "files": 1,
+    "lines": 33,
+    "bytes": 753
+  },
+  "ReadyOrNot/ReadyOrNotTemplateLibrary.h": {
+    "files": 1,
+    "lines": 30,
+    "bytes": 510
+  },
+  "ReadyOrNot/ReadyOrNotVoiceConfig.cpp": {
+    "files": 1,
+    "lines": 586,
+    "bytes": 33149
+  },
+  "ReadyOrNot/ReadyOrNotVoiceConfig.h": {
+    "files": 1,
+    "lines": 482,
+    "bytes": 18012
+  },
+  "ReadyOrNot/Senses": {
+    "files": 4,
+    "lines": 1062,
+    "bytes": 38672
+  },
+  "ReadyOrNot/Structs.h": {
+    "files": 1,
+    "lines": 868,
+    "bytes": 22694
+  },
+  "ReadyOrNot/Subsystems": {
+    "files": 12,
+    "lines": 4407,
+    "bytes": 150638
+  },
+  "ReadyOrNot/Testing": {
+    "files": 8,
+    "lines": 852,
+    "bytes": 29690
+  },
+  "ReadyOrNot/ThirdParty": {
+    "files": 38,
+    "lines": 16537,
+    "bytes": 660718
+  },
+  "ReadyOrNotEditor.Target.cs": {
+    "files": 1,
+    "lines": 19,
+    "bytes": 490
+  },
+  "ReadyOrNotEditorModule/Private": {
+    "files": 5,
+    "lines": 419,
+    "bytes": 11877
+  },
+  "ReadyOrNotEditorModule/Public": {
+    "files": 5,
+    "lines": 165,
+    "bytes": 3440
+  },
+  "ReadyOrNotEditorModule/ReadyOrNotEditorModule.Build.cs": {
+    "files": 1,
+    "lines": 47,
+    "bytes": 1502
+  },
+  "ReadyOrNotServer.Target.cs": {
+    "files": 1,
+    "lines": 16,
+    "bytes": 417
+  }
+}

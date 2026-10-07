@@ -1,0 +1,333 @@
+[
+  {
+    "name": "AdvancedSessions",
+    "descriptor": "Ready Or Not/Plugins/AdvancedSessions/AdvancedSessions.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": false,
+    "modules": [
+      {
+        "name": "AdvancedSessions",
+        "type": "Runtime",
+        "loadingPhase": "PreDefault"
+      }
+    ]
+  },
+  {
+    "name": "AdvancedSteamSessions",
+    "descriptor": "Ready Or Not/Plugins/AdvancedSteamSessions/AdvancedSteamSessions.uplugin",
+    "projectEnabled": false,
+    "enabledByDefault": null,
+    "canContainContent": false,
+    "modules": [
+      {
+        "name": "AdvancedSteamSessions",
+        "type": "Runtime",
+        "loadingPhase": "PreDefault"
+      }
+    ]
+  },
+  {
+    "name": "AMRagdoll",
+    "descriptor": "Ready Or Not/Plugins/AMRagdoll/AMRagdoll.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": true,
+    "modules": [
+      {
+        "name": "AMRagdoll",
+        "type": "Runtime",
+        "loadingPhase": "PreDefault"
+      }
+    ]
+  },
+  {
+    "name": "Choreo",
+    "descriptor": "Ready Or Not/Plugins/Choreo/Choreo.uplugin",
+    "projectEnabled": false,
+    "enabledByDefault": null,
+    "canContainContent": true,
+    "modules": [
+      {
+        "name": "ChoreoEditor",
+        "type": "Editor",
+        "loadingPhase": "PreDefault"
+      }
+    ]
+  },
+  {
+    "name": "CustomAnimNode",
+    "descriptor": "Ready Or Not/Plugins/CustomAnimNode/CustomAnimNode.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": true,
+    "modules": [
+      {
+        "name": "CustomAnimNode",
+        "type": "Runtime",
+        "loadingPhase": "PreDefault"
+      },
+      {
+        "name": "CustomAnimNodeEditor",
+        "type": "UncookedOnly",
+        "loadingPhase": "PreDefault"
+      }
+    ]
+  },
+  {
+    "name": "CustomInterfaceModule",
+    "descriptor": "Ready Or Not/Plugins/CustomInterfaceModule/CustomInterfaceModule.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": true,
+    "modules": [
+      {
+        "name": "CustomInterfaceModuleEditor",
+        "type": "Editor",
+        "loadingPhase": "PreDefault"
+      }
+    ]
+  },
+  {
+    "name": "Debug",
+    "descriptor": "Ready Or Not/Plugins/Debug/Debug.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": false,
+    "modules": [
+      {
+        "name": "Debug",
+        "type": "Runtime",
+        "loadingPhase": "Default"
+      }
+    ]
+  },
+  {
+    "name": "DevMenu",
+    "descriptor": "Ready Or Not/Plugins/DevMenu/DevMenu.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": true,
+    "modules": [
+      {
+        "name": "DevMenu",
+        "type": "DeveloperTool",
+        "loadingPhase": "Default"
+      }
+    ]
+  },
+  {
+    "name": "DynamicCoverSystem",
+    "descriptor": "Ready Or Not/Plugins/DynamicCoverSystem/DynamicCoverSystem.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": false,
+    "modules": [
+      {
+        "name": "DynamicCoverSystem",
+        "type": "Runtime",
+        "loadingPhase": "Default"
+      }
+    ]
+  },
+  {
+    "name": "FMODStudio",
+    "descriptor": "Ready Or Not/Plugins/FMODStudio/FMODStudio.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": true,
+    "canContainContent": true,
+    "modules": [
+      {
+        "name": "FMODStudio",
+        "type": "Runtime",
+        "loadingPhase": "PreDefault"
+      },
+      {
+        "name": "FMODStudioEditor",
+        "type": "Editor",
+        "loadingPhase": "Default"
+      }
+    ]
+  },
+  {
+    "name": "IconStudio",
+    "descriptor": "Ready Or Not/Plugins/IconStudio/IconStudio.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": true,
+    "modules": []
+  },
+  {
+    "name": "InputRemapping",
+    "descriptor": "Ready Or Not/Plugins/InputRemapping/InputRemapping.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": false,
+    "modules": [
+      {
+        "name": "InputRemapping",
+        "type": "Runtime",
+        "loadingPhase": "PreDefault"
+      }
+    ]
+  },
+  {
+    "name": "Motivity",
+    "descriptor": "Ready Or Not/Plugins/Motivity/Motivity.uplugin",
+    "projectEnabled": false,
+    "enabledByDefault": null,
+    "canContainContent": false,
+    "modules": [
+      {
+        "name": "MotivityRuntime",
+        "type": "Runtime",
+        "loadingPhase": "PreDefault"
+      },
+      {
+        "name": "MotivityEditor",
+        "type": "Editor",
+        "loadingPhase": "PreDefault"
+      }
+    ]
+  },
+  {
+    "name": "ObjectPooler",
+    "descriptor": "Ready Or Not/Plugins/ObjectPooler/ObjectPooler.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": true,
+    "modules": [
+      {
+        "name": "ObjectPooler",
+        "type": "Runtime",
+        "loadingPhase": "Default"
+      }
+    ]
+  },
+  {
+    "name": "AimAssistSystem",
+    "descriptor": "Ready Or Not/Plugins/ProAimAssistPlugin/AimAssistSystem.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": true,
+    "modules": [
+      {
+        "name": "AimAssistSystem",
+        "type": "Runtime",
+        "loadingPhase": "Default"
+      }
+    ]
+  },
+  {
+    "name": "ReadyOrNotGunLab",
+    "descriptor": "Ready Or Not/Plugins/ReadyOrNotGunLab/ReadyOrNotGunLab.uplugin",
+    "projectEnabled": null,
+    "enabledByDefault": true,
+    "canContainContent": false,
+    "modules": [
+      {
+        "name": "ReadyOrNotGunLab",
+        "type": "Runtime",
+        "loadingPhase": "PostDefault"
+      }
+    ]
+  },
+  {
+    "name": "ReadyOrNotTests",
+    "descriptor": "Ready Or Not/Plugins/ReadyOrNotTests/ReadyOrNotTests.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": false,
+    "canContainContent": true,
+    "modules": [
+      {
+        "name": "ReadyOrNotTests",
+        "type": "Editor",
+        "loadingPhase": "Default"
+      }
+    ]
+  },
+  {
+    "name": "RootMotionExtractor",
+    "descriptor": "Ready Or Not/Plugins/RootMotionExtractor/RootMotionExtractor.uplugin",
+    "projectEnabled": false,
+    "enabledByDefault": null,
+    "canContainContent": false,
+    "modules": [
+      {
+        "name": "RootMotionExtractor",
+        "type": "Editor",
+        "loadingPhase": "Default"
+      }
+    ]
+  },
+  {
+    "name": "SkinnedDecalComponent",
+    "descriptor": "Ready Or Not/Plugins/SkinnedDecalComponent/SkinnedDecalComponent.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": true,
+    "modules": [
+      {
+        "name": "SkinnedDecalComponent",
+        "type": "Runtime",
+        "loadingPhase": "Default"
+      }
+    ]
+  },
+  {
+    "name": "SoundVisualizations",
+    "descriptor": "Ready Or Not/Plugins/SoundVisualizations/SoundVisualizations.uplugin",
+    "projectEnabled": false,
+    "enabledByDefault": false,
+    "canContainContent": false,
+    "modules": [
+      {
+        "name": "SoundVisualizations",
+        "type": "Runtime",
+        "loadingPhase": "Default"
+      }
+    ]
+  },
+  {
+    "name": "Text2LipSync",
+    "descriptor": "Ready Or Not/Plugins/Text2LipSync/Text2LipSync.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": false,
+    "modules": [
+      {
+        "name": "Text2LipSync",
+        "type": "Runtime",
+        "loadingPhase": "Default"
+      }
+    ]
+  },
+  {
+    "name": "VictoryBPLibrary",
+    "descriptor": "Ready Or Not/Plugins/VictoryPlugin/VictoryBPLibrary.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": true,
+    "modules": [
+      {
+        "name": "VictoryBPLibrary",
+        "type": "Runtime",
+        "loadingPhase": "PreLoadingScreen"
+      }
+    ]
+  },
+  {
+    "name": "VivoxCore",
+    "descriptor": "Ready Or Not/Plugins/VivoxCore/VivoxCore.uplugin",
+    "projectEnabled": true,
+    "enabledByDefault": null,
+    "canContainContent": false,
+    "modules": [
+      {
+        "name": "VivoxCore",
+        "type": "Runtime",
+        "loadingPhase": "Default"
+      }
+    ]
+  }
+]

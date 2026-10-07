@@ -1,0 +1,362 @@
+#include "RonGunLab.h"
+#include "ReadyOrNot.h"
+#include "Characters/PlayerCharacter.h"
+#include "Actors/BaseMagazineWeapon.h"
+#include "Components/InventoryComponent.h"
+#include "Dom/JsonObject.h"
+#include "Serialization/JsonSerializer.h"
+#include "Misc/FileHelper.h"
+#include "Misc/Paths.h"
+#include "Misc/CommandLine.h"
+#include "Misc/Parse.h"
+#include "Engine/Engine.h"
+#include "GameFramework/PlayerController.h"
+#include "InputCoreTypes.h"
+#include "UnrealClient.h"
+
+DEFINE_LOG_CATEGORY_STATIC(LogRonGunLab, Log, All);
+
+ARonGunLab::ARonGunLab()
+{
+    PrimaryActorTick.bCanEverTick = true;
+    // Edge-triggered input lives for one input frame; never poll it at a slower rate.
+    PrimaryActorTick.TickInterval = 0.0f;
+}
+
+void ARonGunLab::BeginPlay()
+{
+    Super::BeginPlay();
+    bSmoke = FParse::Param(FCommandLine::Get(), TEXT("GunLabSmoke"));
+    bExitAfterSmoke = bSmoke && FParse::Param(FCommandLine::Get(), TEXT("GunLabExit"));
+    bProbeOnEquip = !bSmoke && FParse::Param(FCommandLine::Get(), TEXT("GunLabProbe"));
+    bExitAfterProbe = bProbeOnEquip && FParse::Param(FCommandLine::Get(), TEXT("GunLabExit"));
+    ReceiptMode = bSmoke ? TEXT("equip_audit") : bProbeOnEquip ? TEXT("action_probe") : TEXT("session");
+    RunId = FDateTime::UtcNow().ToString(TEXT("%Y%m%d-%H%M%S"));
+    StatusText = TEXT("Waiting for native player pawn...");
+    UE_LOG(LogRonGunLab, Display, TEXT("GUNLAB_BEGIN candidates=%d map=%s"), WeaponClasses.Num(), *GetWorld()->GetMapName());
+    if (WeaponClasses.IsEmpty())
+    {
+        WriteReceipt(TEXT("empty_catalog"), TEXT("No weapon classes configured on the lab actor"));
+        bSmoke = false;
+        bProbeOnEquip = false;
+        if (FParse::Param(FCommandLine::Get(), TEXT("GunLabExit"))) FPlatformMisc::RequestExit(false);
+    }
+}
+
+APlayerCharacter* ARonGunLab::GetNativePlayer() const
+{
+    APlayerController* PC = GetWorld() ? GetWorld()->GetFirstPlayerController() : nullptr;
+    return PC ? Cast<APlayerCharacter>(PC->GetPawn()) : nullptr;
+}
+
+bool ARonGunLab::SelectWeapon(int32 Index)
+{
+    APlayerCharacter* Player = GetNativePlayer();
+    if (!Player || !Player->HasAuthority() || !WeaponClasses.IsValidIndex(Index) || bPendingEquip || ProbeStage)
+        return false;
+    Player->EndPrimaryUse();
+    UClass* Class = WeaponClasses[Index].LoadSynchronous();
+    CurrentIndex = Index;
+    if (!Class || Class->HasAnyClassFlags(CLASS_Abstract | CLASS_Deprecated))
+    {
+        WriteReceipt(TEXT("class_rejected"), TEXT("Missing, abstract or deprecated class"));
+        return false;
+    }
+    const ABaseMagazineWeapon* Defaults = Class->GetDefaultObject<ABaseMagazineWeapon>();
+    if (!Defaults || !Defaults->AnimationData || !Defaults->GetItemMesh() || !Defaults->GetItemMesh()->GetSkeletalMeshAsset())
+    {
+        WriteReceipt(TEXT("incomplete_asset"), TEXT("Native animation data or skeletal mesh missing; selection retained in catalog"));
+        return false;
+    }
+    FActorSpawnParameters Params;
+    Params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
+    ABaseMagazineWeapon* Weapon = GetWorld()->SpawnActor<ABaseMagazineWeapon>(Class, FTransform::Identity, Params);
+    if (!Weapon)
+    {
+        WriteReceipt(TEXT("spawn_failed"), TEXT("Native SpawnActor returned null"));
+        return false;
+    }
+    // Exact ownership/equip pathway used by the project's development Equip command.
+    UInventoryComponent* Inventory = Player->GetInventoryComponent();
+    Inventory->AddInventoryItem(Weapon);
+    // Empty per-mag overrides select the weapon's first authored ammunition type.
+    Weapon->SetMagazineCount(FMath::Max(1, SuppliedMagazines), TArray<FName>());
+    const ABaseItem* Outgoing = Player->GetEquippedItem();
+    // Some suspect-only assets omit FP holster data. The native non-instant
+    // path never completes that outgoing transition. Use its existing instant
+    // branch, preserving all native ownership/draw/fire logic and report it.
+    bLastInstantFallback = Outgoing && Outgoing->AnimationData && !Outgoing->AnimationData->Holster.Body_FP;
+    if (!Inventory->PutItemInHands(Weapon, bLastInstantFallback))
+    {
+        Inventory->DestroyInventoryItem(Weapon);
+        WriteReceipt(TEXT("equip_rejected"), TEXT("Native inventory declined the request"));
+        return false;
+    }
+    PreviousWeapon = CurrentWeapon;
+    CurrentWeapon = Weapon;
+    bPendingEquip = true;
+    PendingSeconds = 0;
+    StatusText = FString::Printf(TEXT("Drawing %d/%d: %s"), Index + 1, WeaponClasses.Num(), *Weapon->ItemName.ToString());
+    return true;
+}
+
+void ARonGunLab::CycleWeapon(int32 Direction)
+{
+    if (WeaponClasses.IsEmpty()) return;
+    const int32 Index = (CurrentIndex + Direction + WeaponClasses.Num()) % WeaponClasses.Num();
+    SelectWeapon(Index);
+}
+
+void ARonGunLab::Refill()
+{
+    if (APlayerCharacter* Player = GetNativePlayer())
+    {
+        if (ProbeStage || bSmoke) return;
+        if (CurrentWeapon && Player->GetEquippedItem() != CurrentWeapon) { StatusText = TEXT("The native inventory changed weapons. Select a lab gun before supplying ammunition."); return; }
+        if (Player->IsAnimationBlocking()) { StatusText = TEXT("Wait for the native action to finish before supplying ammunition"); return; }
+        if (CurrentWeapon)
+            CurrentWeapon->SetMagazineCount(FMath::Max(1, SuppliedMagazines), TArray<FName>());
+        else
+            Player->ReplenishAllMagazineAmmo();
+        StatusText = TEXT("Native ammunition supply requested (manual; subclass magazine/hopper semantics)");
+    }
+}
+
+void ARonGunLab::ResetPosition()
+{
+    if (ProbeStage || bSmoke) return;
+    if (APlayerCharacter* Player = GetNativePlayer())
+    {
+        Player->EndPrimaryUse();
+        Player->SetActorLocation(FiringLine, false, nullptr, ETeleportType::TeleportPhysics);
+        if (AController* PC = Player->GetController()) PC->SetControlRotation(FRotator::ZeroRotator);
+    }
+}
+
+void ARonGunLab::StartSmokeTest()
+{
+    if (bPendingEquip || ProbeStage || bSmoke) return;
+    bSmoke = true;
+    SmokeNextIndex = 0;
+    Receipts.Reset();
+    ReceiptMode = TEXT("equip_audit");
+    RunId = FDateTime::UtcNow().ToString(TEXT("%Y%m%d-%H%M%S"));
+    NextSmokeTime = AliveSeconds;
+}
+
+void ARonGunLab::StartActionProbe()
+{
+    if (!GetNativePlayer() || !CurrentWeapon || bPendingEquip || bSmoke || ProbeStage) return;
+    if (CurrentIndex != ActiveWeaponIndex) { StatusText = TEXT("Probe rejected: the requested lab selection did not complete"); return; }
+    if (GetNativePlayer()->GetEquippedItem() != CurrentWeapon) { StatusText = TEXT("Probe rejected: native equipped item differs from selected lab gun"); return; }
+    ResetPosition();
+    ReceiptMode = TEXT("action_probe");
+    RunId = FDateTime::UtcNow().ToString(TEXT("%Y%m%d-%H%M%S"));
+    Receipts.Reset();
+    ProbeAmmoBefore = CurrentWeapon->GetAmmo();
+    ProbeAmmoAfterFire = ProbeAmmoBefore;
+    ProbeStage = 1;
+    ProbeSeconds = 0;
+}
+
+void ARonGunLab::WriteReceipt(const FString& Status, const FString& Detail)
+{
+    if (Status != TEXT("equipped") && Status != TEXT("action_probe"))
+        StatusText = FString::Printf(TEXT("%d/%d %s: %s"), CurrentIndex + 1, WeaponClasses.Num(), *Status, *Detail);
+    TSharedPtr<FJsonObject> Row = MakeShared<FJsonObject>();
+    Row->SetNumberField(TEXT("index"), CurrentIndex);
+    Row->SetStringField(TEXT("class_path"), WeaponClasses.IsValidIndex(CurrentIndex) ? WeaponClasses[CurrentIndex].ToString() : TEXT(""));
+    Row->SetStringField(TEXT("status"), Status);
+    Row->SetStringField(TEXT("detail"), Detail);
+    Row->SetNumberField(TEXT("world_time"), GetWorld()->GetTimeSeconds());
+    Row->SetBoolField(TEXT("native_instant_transition"), bLastInstantFallback);
+    if (Status == TEXT("action_probe"))
+    {
+        Row->SetNumberField(TEXT("ammo_before"), ProbeAmmoBefore);
+        Row->SetNumberField(TEXT("ammo_after_native_fire"), ProbeAmmoAfterFire);
+        Row->SetBoolField(TEXT("ammo_consumed"), ProbeAmmoAfterFire < ProbeAmmoBefore);
+        Row->SetBoolField(TEXT("native_aiming_state_before_fire"), bProbeAiming);
+        Row->SetBoolField(TEXT("native_reload_replenished"), CurrentWeapon && CurrentWeapon->GetAmmo() > ProbeAmmoAfterFire);
+    }
+    if (CurrentWeapon && CurrentWeapon->GetClass()->GetPathName() == Row->GetStringField(TEXT("class_path")))
+    {
+        Row->SetNumberField(TEXT("ammo"), CurrentWeapon->GetAmmo());
+        Row->SetNumberField(TEXT("magazines"), CurrentWeapon->GetMagazineCount());
+        Row->SetBoolField(TEXT("native_owner"), CurrentWeapon->GetOwner() == GetNativePlayer());
+    }
+    Receipts.Add(MakeShared<FJsonValueObject>(Row));
+    UE_LOG(LogRonGunLab, Display, TEXT("GUNLAB_RESULT index=%d status=%s class=%s detail=%s"), CurrentIndex, *Status, *Row->GetStringField(TEXT("class_path")), *Detail);
+    SaveReceipts();
+}
+
+void ARonGunLab::SaveReceipts()
+{
+    TSharedPtr<FJsonObject> Root = MakeShared<FJsonObject>();
+    Root->SetStringField(TEXT("scope"), TEXT("Native gun lab instrumentation. Equip rows certify ownership/holding; action rows report aiming/ammo state after native calls. No audiovisual, impact or subjective-feel certification."));
+    Root->SetStringField(TEXT("mode"), ReceiptMode);
+    Root->SetStringField(TEXT("run_id_utc"), RunId);
+    Root->SetStringField(TEXT("map"), GetWorld()->GetMapName());
+    Root->SetNumberField(TEXT("candidate_count"), WeaponClasses.Num());
+    Root->SetArrayField(TEXT("results"), Receipts);
+    FString Json;
+    FJsonSerializer::Serialize(Root.ToSharedRef(), TJsonWriterFactory<>::Create(&Json));
+    const FString Dir = FPaths::Combine(FPaths::ProjectSavedDir(), TEXT("GunLab"));
+    IFileManager::Get().MakeDirectory(*Dir, true);
+    FFileHelper::SaveStringToFile(Json, *FPaths::Combine(Dir, TEXT("runtime_receipt.json")));
+    FFileHelper::SaveStringToFile(Json, *FPaths::Combine(Dir, ReceiptMode + TEXT("_receipt.json")));
+    FFileHelper::SaveStringToFile(Json, *FPaths::Combine(Dir, ReceiptMode + TEXT("_") + RunId + TEXT(".json")));
+}
+
+void ARonGunLab::FinishSmoke()
+{
+    bSmoke = false;
+    SaveReceipts();
+    UE_LOG(LogRonGunLab, Display, TEXT("GUNLAB_SMOKE_DONE results=%d candidates=%d"), Receipts.Num(), WeaponClasses.Num());
+    if (bExitAfterSmoke) FPlatformMisc::RequestExit(false);
+}
+
+void ARonGunLab::Tick(float DeltaSeconds)
+{
+    Super::Tick(DeltaSeconds);
+    AliveSeconds += DeltaSeconds;
+    APlayerCharacter* Player = GetNativePlayer();
+    APlayerController* PC = GetWorld()->GetFirstPlayerController();
+    if (Player && !bInitialized && AliveSeconds > 3)
+    {
+        bInitialized = true;
+        UE_LOG(LogRonGunLab, Display, TEXT("GUNLAB_NATIVE_PAWN %s"), *Player->GetClass()->GetPathName());
+        int32 InitialIndex = 1;
+        FParse::Value(FCommandLine::Get(), TEXT("GunLabIndex="), InitialIndex);
+        if (!bSmoke && !WeaponClasses.IsEmpty())
+        {
+            const bool bSelected = SelectWeapon(FMath::Clamp(InitialIndex - 1, 0, WeaponClasses.Num() - 1));
+            if (!bSelected && bExitAfterProbe) FPlatformMisc::RequestExit(false);
+        }
+    }
+    if (Player && bPendingEquip)
+    {
+        PendingSeconds += DeltaSeconds;
+        if (Player->GetEquippedItem() == CurrentWeapon && !Player->IsAnimationBlocking())
+        {
+            bPendingEquip = false;
+            ActiveWeaponIndex = CurrentIndex;
+            if (PreviousWeapon && PreviousWeapon != CurrentWeapon)
+                Player->GetInventoryComponent()->DestroyInventoryItem(PreviousWeapon);
+            PreviousWeapon = nullptr;
+            StatusText = FString::Printf(TEXT("%d/%d  %s"), CurrentIndex + 1, WeaponClasses.Num(), *CurrentWeapon->ItemName.ToString());
+            WriteReceipt(bLastInstantFallback ? TEXT("equipped_instant_fallback") : TEXT("equipped"), bLastInstantFallback
+                ? TEXT("Native pawn owns/holds class; built-in instant transition used because outgoing asset lacks FP holster. Normal outgoing holster was not validated.")
+                : TEXT("Native pawn owns and holds requested class; draw animation no longer blocks"));
+            NextSmokeTime = AliveSeconds + 0.5f;
+            if (bProbeOnEquip) { bProbeOnEquip = false; StartActionProbe(); }
+        }
+        else if (PendingSeconds > 20)
+        {
+            bPendingEquip = false;
+            WriteReceipt(TEXT("equip_timeout"), TEXT("No completed native draw within 20 seconds"));
+            // Preserve whichever tracked gun the native inventory still holds;
+            // clean rejected pending guns without replacing native equip state.
+            ABaseMagazineWeapon* Held = Cast<ABaseMagazineWeapon>(Player->GetEquippedItem());
+            const bool bHoldingNew = Held == CurrentWeapon;
+            const bool bHoldingPrevious = Held == PreviousWeapon;
+            if (CurrentWeapon && !bHoldingNew) Player->GetInventoryComponent()->DestroyInventoryItem(CurrentWeapon);
+            if (PreviousWeapon && !bHoldingPrevious) Player->GetInventoryComponent()->DestroyInventoryItem(PreviousWeapon);
+            CurrentWeapon = (bHoldingNew || bHoldingPrevious) ? Held : nullptr;
+            PreviousWeapon = nullptr;
+            ActiveWeaponIndex = bHoldingNew ? CurrentIndex : bHoldingPrevious ? ActiveWeaponIndex : INDEX_NONE;
+            NextSmokeTime = AliveSeconds + 0.5f;
+            if (bExitAfterProbe) FPlatformMisc::RequestExit(false);
+        }
+    }
+    if (Player && CurrentWeapon && ProbeStage)
+    {
+        if (Player->GetEquippedItem() != CurrentWeapon)
+        {
+            Player->EndPrimaryUse();
+            WriteReceipt(TEXT("probe_interrupted"), TEXT("Native equipped item changed during the probe; no action result claimed"));
+            ProbeStage = 0;
+            if (bExitAfterProbe) FPlatformMisc::RequestExit(false);
+        }
+        ProbeSeconds += DeltaSeconds;
+        if (ProbeStage == 1 && ProbeSeconds > 0.5f) { Player->DoAimDownSights(); ProbeStage = 2; }
+        if (ProbeStage == 2 && ProbeSeconds > 1.2f) { bProbeAiming = Player->bAiming; Player->PrimaryUse(); ProbeStage = 3; }
+        if (ProbeStage == 3 && ProbeSeconds > 1.4f) { Player->EndPrimaryUse(); ProbeAmmoAfterFire = CurrentWeapon->GetAmmo(); ProbeStage = 4; }
+        if (ProbeStage == 4 && ProbeSeconds > 3.0f) { Player->Reload(); ProbeStage = 5; }
+        if (ProbeStage == 5 && ProbeSeconds > 12.0f)
+        {
+            WriteReceipt(TEXT("action_probe"), TEXT("Requested native ADS, PrimaryUse/EndPrimaryUse, Reload; ammo deltas certify only ammunition state, not visual/audio feel"));
+            ProbeStage = 0;
+            if (bExitAfterProbe && !FParse::Param(FCommandLine::Get(), TEXT("GunLabCapture"))) FPlatformMisc::RequestExit(false);
+        }
+    }
+    if (bSmoke && bInitialized && !bPendingEquip && AliveSeconds >= NextSmokeTime)
+    {
+        if (SmokeNextIndex >= WeaponClasses.Num()) FinishSmoke();
+        else { SelectWeapon(SmokeNextIndex++); NextSmokeTime = AliveSeconds + 0.5f; }
+    }
+    if ((bSmoke || bProbeOnEquip || FParse::Param(FCommandLine::Get(), TEXT("GunLabCapture"))) && !Player && AliveSeconds > 120)
+    {
+        WriteReceipt(TEXT("no_native_pawn"), TEXT("Game mode did not create a native PlayerCharacter within 120 seconds"));
+        FinishSmoke();
+        if (FParse::Param(FCommandLine::Get(), TEXT("GunLabExit"))) FPlatformMisc::RequestExit(false);
+    }
+    if (PC && !bSmoke && !ProbeStage)
+    {
+        if (PC->WasInputKeyJustPressed(EKeys::F5)) CycleWeapon(-1);
+        if (PC->WasInputKeyJustPressed(EKeys::F6)) CycleWeapon(1);
+        if (PC->WasInputKeyJustPressed(EKeys::F7)) Refill();
+        if (PC->WasInputKeyJustPressed(EKeys::F8)) ResetPosition();
+        if (PC->WasInputKeyJustPressed(EKeys::F9)) StartSmokeTest();
+        if (PC->WasInputKeyJustPressed(EKeys::F10)) bShowOverlay = !bShowOverlay;
+    }
+    if (Player && bInitialized && !bPendingEquip && AliveSeconds > 15 && FParse::Param(FCommandLine::Get(), TEXT("GunLabCapture")))
+    {
+        const FString ScreenshotPath = FPaths::ConvertRelativePathToFull(FPaths::Combine(FPaths::ProjectSavedDir(), TEXT("GunLab/Range.png")));
+        if (!bCaptureRequested)
+        {
+            FScreenshotRequest::RequestScreenshot(ScreenshotPath, true, false);
+            bCaptureRequested = true;
+            CaptureTime = AliveSeconds;
+            UE_LOG(LogRonGunLab, Display, TEXT("GUNLAB_SCREENSHOT_REQUEST %s"), *ScreenshotPath);
+        }
+        else if (AliveSeconds - CaptureTime > 3 && IFileManager::Get().FileExists(*ScreenshotPath))
+        {
+            UE_LOG(LogRonGunLab, Display, TEXT("GUNLAB_SCREENSHOT_SAVED %s"), *ScreenshotPath);
+            CaptureTime = MAX_flt;
+            if (FParse::Param(FCommandLine::Get(), TEXT("GunLabExit"))) FPlatformMisc::RequestExit(false);
+        }
+        else if (AliveSeconds - CaptureTime > 45)
+        {
+            WriteReceipt(TEXT("screenshot_timeout"), TEXT("Renderer did not save a screenshot within 45 seconds of request"));
+            CaptureTime = MAX_flt;
+            if (FParse::Param(FCommandLine::Get(), TEXT("GunLabExit"))) FPlatformMisc::RequestExit(false);
+        }
+    }
+    if (GEngine && bShowOverlay)
+    {
+        FString Text = TEXT("NATIVE GUN LAB | F5/F6 weapon | F7 refill | F8 firing line | F9 equip audit | F10 overlay\n") + StatusText;
+        if (Player)
+        {
+            if (ABaseMagazineWeapon* Held = Cast<ABaseMagazineWeapon>(Player->GetEquippedItem()))
+            {
+                if (Held != CurrentWeapon) Text += TEXT(" | Native inventory selected: ") + Held->ItemName.ToString();
+                Text += FString::Printf(TEXT(" | Ammo %.0f | Magazines %d"), Held->GetAmmo(), Held->GetMagazineCount());
+            }
+        }
+        GEngine->AddOnScreenDebugMessage(uint64(GetUniqueID()), 0.1f, FColor::Cyan, Text);
+    }
+}
+
+void ARonGunLab::Command(const TArray<FString>& Args)
+{
+    if (Args.IsEmpty()) return;
+    if (bSmoke) { UE_LOG(LogRonGunLab, Warning, TEXT("Wait for the current equip audit to finish")); return; }
+    if (ProbeStage) { UE_LOG(LogRonGunLab, Warning, TEXT("Wait for the current action probe to finish")); return; }
+    if (Args[0] == TEXT("next")) CycleWeapon(1);
+    else if (Args[0] == TEXT("prev")) CycleWeapon(-1);
+    else if (Args[0] == TEXT("refill")) Refill();
+    else if (Args[0] == TEXT("reset")) ResetPosition();
+    else if (Args[0] == TEXT("audit")) StartSmokeTest();
+    else if (Args[0] == TEXT("probe")) StartActionProbe();
+    else if (Args[0] == TEXT("select") && Args.Num() > 1) SelectWeapon(FCString::Atoi(*Args[1]) - 1);
+}

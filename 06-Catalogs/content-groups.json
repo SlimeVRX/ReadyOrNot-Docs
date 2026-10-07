@@ -1,0 +1,2192 @@
+{
+  "(root)": {
+    "files": 35,
+    "uasset": 33,
+    "umap": 2
+  },
+  "Assets/Artsource": {
+    "files": 92,
+    "uasset": 92,
+    "umap": 0
+  },
+  "Assets/Blueprints": {
+    "files": 3,
+    "uasset": 3,
+    "umap": 0
+  },
+  "Assets/Materials": {
+    "files": 9,
+    "uasset": 9,
+    "umap": 0
+  },
+  "Assets/Meshes": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "Assets/Textures": {
+    "files": 9,
+    "uasset": 9,
+    "umap": 0
+  },
+  "Blueprints/3rdParty": {
+    "files": 97,
+    "uasset": 96,
+    "umap": 1
+  },
+  "Blueprints/Activities": {
+    "files": 49,
+    "uasset": 49,
+    "umap": 0
+  },
+  "Blueprints/Actors": {
+    "files": 116,
+    "uasset": 116,
+    "umap": 0
+  },
+  "Blueprints/AI": {
+    "files": 344,
+    "uasset": 344,
+    "umap": 0
+  },
+  "Blueprints/AimAssist": {
+    "files": 32,
+    "uasset": 32,
+    "umap": 0
+  },
+  "Blueprints/Animation": {
+    "files": 342,
+    "uasset": 342,
+    "umap": 0
+  },
+  "Blueprints/Camera": {
+    "files": 160,
+    "uasset": 160,
+    "umap": 0
+  },
+  "Blueprints/Challenges": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Blueprints/Characters": {
+    "files": 25,
+    "uasset": 25,
+    "umap": 0
+  },
+  "Blueprints/Collectables": {
+    "files": 65,
+    "uasset": 64,
+    "umap": 1
+  },
+  "Blueprints/Commander": {
+    "files": 29,
+    "uasset": 29,
+    "umap": 0
+  },
+  "Blueprints/Components": {
+    "files": 3,
+    "uasset": 3,
+    "umap": 0
+  },
+  "Blueprints": {
+    "files": 38,
+    "uasset": 38,
+    "umap": 0
+  },
+  "Blueprints/Controllers": {
+    "files": 4,
+    "uasset": 4,
+    "umap": 0
+  },
+  "Blueprints/Conversations": {
+    "files": 20,
+    "uasset": 20,
+    "umap": 0
+  },
+  "Blueprints/CoverLandmarks": {
+    "files": 4,
+    "uasset": 4,
+    "umap": 0
+  },
+  "Blueprints/Customization": {
+    "files": 300,
+    "uasset": 300,
+    "umap": 0
+  },
+  "Blueprints/DataTables": {
+    "files": 47,
+    "uasset": 47,
+    "umap": 0
+  },
+  "Blueprints/Debug": {
+    "files": 4,
+    "uasset": 4,
+    "umap": 0
+  },
+  "Blueprints/Environment": {
+    "files": 438,
+    "uasset": 438,
+    "umap": 0
+  },
+  "Blueprints/Explosives": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "Blueprints/FunctionalTesting": {
+    "files": 21,
+    "uasset": 21,
+    "umap": 0
+  },
+  "Blueprints/Gameplay": {
+    "files": 15,
+    "uasset": 15,
+    "umap": 0
+  },
+  "Blueprints/Games": {
+    "files": 55,
+    "uasset": 55,
+    "umap": 0
+  },
+  "Blueprints/HLOD": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Blueprints/HoleTraversal": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "Blueprints/IncriminationBuildings": {
+    "files": 6,
+    "uasset": 6,
+    "umap": 0
+  },
+  "Blueprints/Info": {
+    "files": 11,
+    "uasset": 11,
+    "umap": 0
+  },
+  "Blueprints/Items": {
+    "files": 430,
+    "uasset": 430,
+    "umap": 0
+  },
+  "Blueprints/LevDes": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Blueprints/Levels": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Blueprints/Libraries": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "Blueprints/Logic": {
+    "files": 125,
+    "uasset": 125,
+    "umap": 0
+  },
+  "Blueprints/ModLevelData": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Blueprints/Navigation": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Blueprints/Objectives": {
+    "files": 142,
+    "uasset": 142,
+    "umap": 0
+  },
+  "Blueprints/Pawns": {
+    "files": 6,
+    "uasset": 6,
+    "umap": 0
+  },
+  "Blueprints/Proxies": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Blueprints/Quests": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "Blueprints/REQUIRED_ON_LEVEL": {
+    "files": 9,
+    "uasset": 9,
+    "umap": 0
+  },
+  "Blueprints/RichTextDecorators": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Blueprints/Sound": {
+    "files": 53,
+    "uasset": 53,
+    "umap": 0
+  },
+  "Blueprints/StreetView": {
+    "files": 4,
+    "uasset": 4,
+    "umap": 0
+  },
+  "Blueprints/Test": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "Blueprints/Traps": {
+    "files": 7,
+    "uasset": 7,
+    "umap": 0
+  },
+  "Blueprints/Triggers": {
+    "files": 14,
+    "uasset": 14,
+    "umap": 0
+  },
+  "Blueprints/UI": {
+    "files": 30,
+    "uasset": 30,
+    "umap": 0
+  },
+  "Blueprints/Voting": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Blueprints/Widgets": {
+    "files": 1349,
+    "uasset": 1348,
+    "umap": 1
+  },
+  "Cinematics": {
+    "files": 2,
+    "uasset": 1,
+    "umap": 1
+  },
+  "Cinematics/ConsoleTeaser": {
+    "files": 15,
+    "uasset": 14,
+    "umap": 1
+  },
+  "Cinematics/MoviePipeline": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Cinematics/Promotional": {
+    "files": 2,
+    "uasset": 1,
+    "umap": 1
+  },
+  "Cinematics/RURDY_Trailer": {
+    "files": 62,
+    "uasset": 54,
+    "umap": 8
+  },
+  "Cinematics/Sequences": {
+    "files": 15,
+    "uasset": 15,
+    "umap": 0
+  },
+  "Cinematics/Takes": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "Collections": {
+    "files": 40,
+    "uasset": 0,
+    "umap": 0
+  },
+  "Console": {
+    "files": 2,
+    "uasset": 1,
+    "umap": 1
+  },
+  "Curves/Container_Door": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "Curves": {
+    "files": 13,
+    "uasset": 13,
+    "umap": 0
+  },
+  "DestructionSystem/Maps": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Developers/Mark": {
+    "files": 9,
+    "uasset": 8,
+    "umap": 1
+  },
+  "Developers/sean": {
+    "files": 5,
+    "uasset": 5,
+    "umap": 0
+  },
+  "Developers/tom": {
+    "files": 6,
+    "uasset": 3,
+    "umap": 3
+  },
+  "Editor": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Factory/Maps": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "FMOD/Banks": {
+    "files": 40,
+    "uasset": 40,
+    "umap": 0
+  },
+  "FMOD/Buses": {
+    "files": 111,
+    "uasset": 111,
+    "umap": 0
+  },
+  "FMOD/Desktop": {
+    "files": 51,
+    "uasset": 0,
+    "umap": 0
+  },
+  "FMOD/Events": {
+    "files": 3265,
+    "uasset": 3265,
+    "umap": 0
+  },
+  "FMOD": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "FMOD/PrivateIntegrationData": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "FMOD/PS4": {
+    "files": 50,
+    "uasset": 0,
+    "umap": 0
+  },
+  "FMOD/PS5": {
+    "files": 52,
+    "uasset": 0,
+    "umap": 0
+  },
+  "FMOD/Reverbs": {
+    "files": 17,
+    "uasset": 17,
+    "umap": 0
+  },
+  "FMOD/Scarlett": {
+    "files": 52,
+    "uasset": 0,
+    "umap": 0
+  },
+  "FMOD/Snapshots": {
+    "files": 17,
+    "uasset": 17,
+    "umap": 0
+  },
+  "FMOD/VCAs": {
+    "files": 4,
+    "uasset": 4,
+    "umap": 0
+  },
+  "FMOD/XboxOne": {
+    "files": 50,
+    "uasset": 0,
+    "umap": 0
+  },
+  "Geometry/Meshes": {
+    "files": 4,
+    "uasset": 4,
+    "umap": 0
+  },
+  "Geometry": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "Geometry/models": {
+    "files": 33,
+    "uasset": 33,
+    "umap": 0
+  },
+  "Icons": {
+    "files": 1,
+    "uasset": 0,
+    "umap": 0
+  },
+  "IconTextures": {
+    "files": 107,
+    "uasset": 107,
+    "umap": 0
+  },
+  "IconTextures/Customization": {
+    "files": 252,
+    "uasset": 252,
+    "umap": 0
+  },
+  "IconTextures/Heads": {
+    "files": 26,
+    "uasset": 26,
+    "umap": 0
+  },
+  "IconTextures/RoN_HUD_Components": {
+    "files": 14,
+    "uasset": 14,
+    "umap": 0
+  },
+  "L10N/ja": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Layouts": {
+    "files": 1,
+    "uasset": 0,
+    "umap": 0
+  },
+  "lipsynctest": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "Localization/Game": {
+    "files": 64,
+    "uasset": 20,
+    "umap": 0
+  },
+  "Materials": {
+    "files": 10,
+    "uasset": 10,
+    "umap": 0
+  },
+  "Meshes": {
+    "files": 145,
+    "uasset": 145,
+    "umap": 0
+  },
+  "MetaHumans/Common": {
+    "files": 1887,
+    "uasset": 1886,
+    "umap": 0
+  },
+  "MetaHumans/Judge": {
+    "files": 71,
+    "uasset": 71,
+    "umap": 0
+  },
+  "MotivityContent/SampleData": {
+    "files": 132,
+    "uasset": 125,
+    "umap": 7
+  },
+  "Movies": {
+    "files": 6,
+    "uasset": 4,
+    "umap": 0
+  },
+  "MSPresets/Decal_MasterMaterial": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "MSPresets/MS_DefaultMaterial": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "MSPresets/MS_DefaultMaterial_CP": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Prototype/DanielTestStuff": {
+    "files": 11,
+    "uasset": 10,
+    "umap": 1
+  },
+  "Prototype/DressPhysicsTest": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Prototype/FridgePuddleMaker": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "Prototype/ShaneTaggingSystem": {
+    "files": 9,
+    "uasset": 9,
+    "umap": 0
+  },
+  "Prototype": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "Python": {
+    "files": 9,
+    "uasset": 0,
+    "umap": 0
+  },
+  "ReadyOrNot/Animations": {
+    "files": 16691,
+    "uasset": 16691,
+    "umap": 0
+  },
+  "ReadyOrNot/Assets": {
+    "files": 7524,
+    "uasset": 7470,
+    "umap": 3
+  },
+  "ReadyOrNot/Audio": {
+    "files": 5321,
+    "uasset": 5316,
+    "umap": 0
+  },
+  "ReadyOrNot": {
+    "files": 5,
+    "uasset": 3,
+    "umap": 2
+  },
+  "ReadyOrNot/Character": {
+    "files": 9387,
+    "uasset": 9386,
+    "umap": 1
+  },
+  "ReadyOrNot/Chunks": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "ReadyOrNot/Data": {
+    "files": 222,
+    "uasset": 222,
+    "umap": 0
+  },
+  "ReadyOrNot/Fonts": {
+    "files": 12,
+    "uasset": 12,
+    "umap": 0
+  },
+  "ReadyOrNot/ForceFeedback": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "ReadyOrNot/ImpactVFX": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "ReadyOrNot/Level": {
+    "files": 38846,
+    "uasset": 37850,
+    "umap": 936
+  },
+  "ReadyOrNot/Shoothouse": {
+    "files": 9,
+    "uasset": 9,
+    "umap": 0
+  },
+  "ReadyOrNot/Testing": {
+    "files": 25,
+    "uasset": 20,
+    "umap": 5
+  },
+  "ReadyOrNot/UI": {
+    "files": 1487,
+    "uasset": 1482,
+    "umap": 0
+  },
+  "ReadyOrNot/VFX": {
+    "files": 315,
+    "uasset": 315,
+    "umap": 0
+  },
+  "ReadyOrNot/Widgets": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "SmoothLOD_Plugin/SP_Dumpster_01": {
+    "files": 7,
+    "uasset": 7,
+    "umap": 0
+  },
+  "Splash": {
+    "files": 4,
+    "uasset": 2,
+    "umap": 0
+  },
+  "StarterContent/Architecture": {
+    "files": 11,
+    "uasset": 11,
+    "umap": 0
+  },
+  "StarterContent/Blueprints": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "StarterContent/Materials": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "StarterContent/Props": {
+    "files": 20,
+    "uasset": 20,
+    "umap": 0
+  },
+  "StarterContent/Shapes": {
+    "files": 19,
+    "uasset": 19,
+    "umap": 0
+  },
+  "StarterContent/Textures": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "SteamAudio": {
+    "files": 4,
+    "uasset": 4,
+    "umap": 0
+  },
+  "SteamAudio/EditorOnly": {
+    "files": 2,
+    "uasset": 0,
+    "umap": 0
+  },
+  "SteamAudio/Runtime": {
+    "files": 1,
+    "uasset": 0,
+    "umap": 0
+  },
+  "TankCleaningCenter/Maps": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "Temp": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "temp_stuff": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "ThirdParty/AbandonedFactoryBuildings": {
+    "files": 533,
+    "uasset": 526,
+    "umap": 7
+  },
+  "ThirdParty/AdvancedGlassPack": {
+    "files": 167,
+    "uasset": 166,
+    "umap": 1
+  },
+  "ThirdParty/AdvancedLocomotionV3": {
+    "files": 17,
+    "uasset": 17,
+    "umap": 0
+  },
+  "ThirdParty/AirConditioningPack": {
+    "files": 48,
+    "uasset": 47,
+    "umap": 1
+  },
+  "ThirdParty/Animal_pack_ultra": {
+    "files": 462,
+    "uasset": 461,
+    "umap": 1
+  },
+  "ThirdParty/ArchVis": {
+    "files": 47,
+    "uasset": 47,
+    "umap": 0
+  },
+  "ThirdParty/ArrayPlacementTool": {
+    "files": 2,
+    "uasset": 1,
+    "umap": 1
+  },
+  "ThirdParty/AtmosphericCandlesPack": {
+    "files": 91,
+    "uasset": 87,
+    "umap": 4
+  },
+  "ThirdParty/Attic": {
+    "files": 102,
+    "uasset": 102,
+    "umap": 0
+  },
+  "ThirdParty/AutomotiveMaterials": {
+    "files": 354,
+    "uasset": 353,
+    "umap": 1
+  },
+  "ThirdParty/BallisticsVFX": {
+    "files": 771,
+    "uasset": 771,
+    "umap": 0
+  },
+  "ThirdParty/BasicLFPack": {
+    "files": 438,
+    "uasset": 437,
+    "umap": 1
+  },
+  "ThirdParty/Beef_Carcasses": {
+    "files": 70,
+    "uasset": 69,
+    "umap": 1
+  },
+  "ThirdParty/BoneModifier": {
+    "files": 3,
+    "uasset": 3,
+    "umap": 0
+  },
+  "ThirdParty/BreakableGlass": {
+    "files": 148,
+    "uasset": 146,
+    "umap": 2
+  },
+  "ThirdParty/Brushify": {
+    "files": 287,
+    "uasset": 285,
+    "umap": 2
+  },
+  "ThirdParty/CheapWindows": {
+    "files": 38,
+    "uasset": 36,
+    "umap": 2
+  },
+  "ThirdParty/CoatingVertexMaterialShader": {
+    "files": 42,
+    "uasset": 41,
+    "umap": 1
+  },
+  "ThirdParty/CobwebPack": {
+    "files": 90,
+    "uasset": 89,
+    "umap": 1
+  },
+  "ThirdParty/CommercialPlane": {
+    "files": 122,
+    "uasset": 121,
+    "umap": 1
+  },
+  "ThirdParty/Construction_VOL2": {
+    "files": 183,
+    "uasset": 181,
+    "umap": 2
+  },
+  "ThirdParty/CustomizableGrid": {
+    "files": 490,
+    "uasset": 489,
+    "umap": 1
+  },
+  "ThirdParty/CustomizablePuddles": {
+    "files": 66,
+    "uasset": 65,
+    "umap": 1
+  },
+  "ThirdParty/Custom_Lens_Flare_VFX": {
+    "files": 230,
+    "uasset": 229,
+    "umap": 1
+  },
+  "ThirdParty/DefectPropsVol1": {
+    "files": 379,
+    "uasset": 367,
+    "umap": 12
+  },
+  "ThirdParty/DekoClass": {
+    "files": 1072,
+    "uasset": 1067,
+    "umap": 5
+  },
+  "ThirdParty/DekoGon_Gallery_Showcase": {
+    "files": 719,
+    "uasset": 715,
+    "umap": 4
+  },
+  "ThirdParty/Dekogon_Industrial": {
+    "files": 114,
+    "uasset": 114,
+    "umap": 0
+  },
+  "ThirdParty/DEKO_HorrorAndDecay2": {
+    "files": 62,
+    "uasset": 62,
+    "umap": 0
+  },
+  "ThirdParty/DestructionSystem": {
+    "files": 129,
+    "uasset": 127,
+    "umap": 2
+  },
+  "ThirdParty/Diner": {
+    "files": 414,
+    "uasset": 411,
+    "umap": 3
+  },
+  "ThirdParty/Downtown": {
+    "files": 109,
+    "uasset": 109,
+    "umap": 0
+  },
+  "ThirdParty/DowntownCityPack": {
+    "files": 1136,
+    "uasset": 1131,
+    "umap": 5
+  },
+  "ThirdParty/EasyInputRemapping": {
+    "files": 2,
+    "uasset": 2,
+    "umap": 0
+  },
+  "ThirdParty/EF_MollyGreg": {
+    "files": 1268,
+    "uasset": 1266,
+    "umap": 2
+  },
+  "ThirdParty/Factory": {
+    "files": 457,
+    "uasset": 455,
+    "umap": 2
+  },
+  "ThirdParty/FarmProps": {
+    "files": 150,
+    "uasset": 148,
+    "umap": 2
+  },
+  "ThirdParty/Fast_Food_Restaurant": {
+    "files": 914,
+    "uasset": 911,
+    "umap": 3
+  },
+  "ThirdParty/FirstPersonCPP": {
+    "files": 1,
+    "uasset": 0,
+    "umap": 1
+  },
+  "ThirdParty/Flowers_and_Plants_Nature_Pack": {
+    "files": 3664,
+    "uasset": 3662,
+    "umap": 2
+  },
+  "ThirdParty/ForestCollection": {
+    "files": 347,
+    "uasset": 345,
+    "umap": 2
+  },
+  "ThirdParty/Freebie_01": {
+    "files": 139,
+    "uasset": 137,
+    "umap": 2
+  },
+  "ThirdParty/FreeFurniturePack": {
+    "files": 198,
+    "uasset": 197,
+    "umap": 1
+  },
+  "ThirdParty/FTS_StalactitesCave_001": {
+    "files": 213,
+    "uasset": 209,
+    "umap": 4
+  },
+  "ThirdParty/Geometry": {
+    "files": 4,
+    "uasset": 4,
+    "umap": 0
+  },
+  "ThirdParty/GraffitiPack_3": {
+    "files": 188,
+    "uasset": 187,
+    "umap": 1
+  },
+  "ThirdParty/GraffitiPack_4": {
+    "files": 195,
+    "uasset": 194,
+    "umap": 1
+  },
+  "ThirdParty/GrenadePack": {
+    "files": 76,
+    "uasset": 76,
+    "umap": 0
+  },
+  "ThirdParty/HeistVOL2_Cops_N_Robbers": {
+    "files": 210,
+    "uasset": 208,
+    "umap": 2
+  },
+  "ThirdParty/Hollywood_Vol2": {
+    "files": 127,
+    "uasset": 125,
+    "umap": 2
+  },
+  "ThirdParty/Hollywood_Vol3": {
+    "files": 85,
+    "uasset": 83,
+    "umap": 2
+  },
+  "ThirdParty/HomeStudyInstruments": {
+    "files": 345,
+    "uasset": 344,
+    "umap": 1
+  },
+  "ThirdParty/HospitalCombo": {
+    "files": 767,
+    "uasset": 755,
+    "umap": 12
+  },
+  "ThirdParty/HostileAssets": {
+    "files": 1,
+    "uasset": 0,
+    "umap": 1
+  },
+  "ThirdParty/HQModernFurniturePack": {
+    "files": 93,
+    "uasset": 92,
+    "umap": 1
+  },
+  "ThirdParty/HQ_ResidentialHouse": {
+    "files": 976,
+    "uasset": 973,
+    "umap": 3
+  },
+  "ThirdParty/Industrial_Lamp_Pack": {
+    "files": 100,
+    "uasset": 99,
+    "umap": 1
+  },
+  "ThirdParty/Industrial_Structures_Vol2": {
+    "files": 62,
+    "uasset": 61,
+    "umap": 1
+  },
+  "ThirdParty/IndustryPropsPack": {
+    "files": 2,
+    "uasset": 0,
+    "umap": 2
+  },
+  "ThirdParty/KingWashLaundromat": {
+    "files": 1018,
+    "uasset": 1014,
+    "umap": 3
+  },
+  "ThirdParty/Kitchen_VOL1": {
+    "files": 108,
+    "uasset": 106,
+    "umap": 2
+  },
+  "ThirdParty/Kitchen_VOL3": {
+    "files": 90,
+    "uasset": 88,
+    "umap": 2
+  },
+  "ThirdParty/Kitchen_VOL4": {
+    "files": 199,
+    "uasset": 197,
+    "umap": 2
+  },
+  "ThirdParty/Kitchen_VOL5": {
+    "files": 148,
+    "uasset": 146,
+    "umap": 2
+  },
+  "ThirdParty/Kitchen_VOL6": {
+    "files": 79,
+    "uasset": 77,
+    "umap": 2
+  },
+  "ThirdParty/KiteDemo": {
+    "files": 281,
+    "uasset": 281,
+    "umap": 0
+  },
+  "ThirdParty/LaserShowSystem": {
+    "files": 131,
+    "uasset": 127,
+    "umap": 4
+  },
+  "ThirdParty/LensFlareTool": {
+    "files": 81,
+    "uasset": 79,
+    "umap": 2
+  },
+  "ThirdParty/LogCabin": {
+    "files": 526,
+    "uasset": 524,
+    "umap": 2
+  },
+  "ThirdParty/M5VFXVOL2": {
+    "files": 310,
+    "uasset": 306,
+    "umap": 4
+  },
+  "ThirdParty/Megascans": {
+    "files": 1254,
+    "uasset": 1254,
+    "umap": 0
+  },
+  "ThirdParty/MilitaryBoat01": {
+    "files": 22,
+    "uasset": 22,
+    "umap": 0
+  },
+  "ThirdParty/Military_VOL6_Crates": {
+    "files": 77,
+    "uasset": 75,
+    "umap": 2
+  },
+  "ThirdParty/ModularBarnKit": {
+    "files": 491,
+    "uasset": 480,
+    "umap": 11
+  },
+  "ThirdParty/ModularConcertStage": {
+    "files": 304,
+    "uasset": 298,
+    "umap": 6
+  },
+  "ThirdParty/MossyPiles": {
+    "files": 78,
+    "uasset": 77,
+    "umap": 1
+  },
+  "ThirdParty/MP_Manholes": {
+    "files": 23,
+    "uasset": 21,
+    "umap": 2
+  },
+  "ThirdParty/MWRedwoodForest": {
+    "files": 565,
+    "uasset": 562,
+    "umap": 3
+  },
+  "ThirdParty/MWSkeleton": {
+    "files": 163,
+    "uasset": 162,
+    "umap": 1
+  },
+  "ThirdParty/OfficeMedley": {
+    "files": 1983,
+    "uasset": 1975,
+    "umap": 8
+  },
+  "ThirdParty/OldBrickHouse": {
+    "files": 984,
+    "uasset": 981,
+    "umap": 3
+  },
+  "ThirdParty/OldWest": {
+    "files": 531,
+    "uasset": 523,
+    "umap": 8
+  },
+  "ThirdParty/Painting_Art_Tools": {
+    "files": 164,
+    "uasset": 163,
+    "umap": 1
+  },
+  "ThirdParty/Park_Photoscanned": {
+    "files": 295,
+    "uasset": 287,
+    "umap": 2
+  },
+  "ThirdParty/Photorealistic_Decal_Collection": {
+    "files": 1794,
+    "uasset": 1773,
+    "umap": 21
+  },
+  "ThirdParty/Photoreal_Landscape_Backgrounds": {
+    "files": 626,
+    "uasset": 621,
+    "umap": 5
+  },
+  "ThirdParty/PhotoR_Backgrounds": {
+    "files": 418,
+    "uasset": 405,
+    "umap": 13
+  },
+  "ThirdParty/PierSet": {
+    "files": 158,
+    "uasset": 157,
+    "umap": 1
+  },
+  "ThirdParty/PipesVents": {
+    "files": 272,
+    "uasset": 270,
+    "umap": 2
+  },
+  "ThirdParty/PivotGrass": {
+    "files": 14,
+    "uasset": 14,
+    "umap": 0
+  },
+  "ThirdParty/PoliceDepartment": {
+    "files": 499,
+    "uasset": 497,
+    "umap": 2
+  },
+  "ThirdParty/PostDistrict": {
+    "files": 791,
+    "uasset": 788,
+    "umap": 3
+  },
+  "ThirdParty/PPDesert": {
+    "files": 522,
+    "uasset": 518,
+    "umap": 4
+  },
+  "ThirdParty/ProcBuildingLot": {
+    "files": 151,
+    "uasset": 150,
+    "umap": 1
+  },
+  "ThirdParty/ProceduralGlass": {
+    "files": 86,
+    "uasset": 85,
+    "umap": 1
+  },
+  "ThirdParty/RailRoadTrackPack": {
+    "files": 83,
+    "uasset": 81,
+    "umap": 2
+  },
+  "ThirdParty/RainDrops": {
+    "files": 37,
+    "uasset": 35,
+    "umap": 2
+  },
+  "ThirdParty/RainOcclusion": {
+    "files": 6,
+    "uasset": 6,
+    "umap": 0
+  },
+  "ThirdParty/Rain_material": {
+    "files": 12,
+    "uasset": 12,
+    "umap": 0
+  },
+  "ThirdParty/RealBiomes": {
+    "files": 764,
+    "uasset": 738,
+    "umap": 26
+  },
+  "ThirdParty/Retro_Office": {
+    "files": 597,
+    "uasset": 596,
+    "umap": 1
+  },
+  "ThirdParty/RiverShader": {
+    "files": 11,
+    "uasset": 11,
+    "umap": 0
+  },
+  "ThirdParty/Rooftop_props_collection": {
+    "files": 184,
+    "uasset": 183,
+    "umap": 1
+  },
+  "ThirdParty/SandbagSingles": {
+    "files": 40,
+    "uasset": 39,
+    "umap": 1
+  },
+  "ThirdParty/SciFiGlitchPostPro": {
+    "files": 103,
+    "uasset": 102,
+    "umap": 1
+  },
+  "ThirdParty/SedanVehicle01": {
+    "files": 60,
+    "uasset": 59,
+    "umap": 1
+  },
+  "ThirdParty/ServerRoomKit": {
+    "files": 39,
+    "uasset": 38,
+    "umap": 1
+  },
+  "ThirdParty/Server_pack": {
+    "files": 44,
+    "uasset": 43,
+    "umap": 1
+  },
+  "ThirdParty/ServiceGarage": {
+    "files": 318,
+    "uasset": 314,
+    "umap": 4
+  },
+  "ThirdParty/SMART-ArchVizPack01": {
+    "files": 761,
+    "uasset": 759,
+    "umap": 2
+  },
+  "ThirdParty/SmartSplineGen": {
+    "files": 161,
+    "uasset": 157,
+    "umap": 4
+  },
+  "ThirdParty/Spline_Based_Wall_Kit": {
+    "files": 89,
+    "uasset": 87,
+    "umap": 2
+  },
+  "ThirdParty/Sports_VOL1": {
+    "files": 199,
+    "uasset": 197,
+    "umap": 2
+  },
+  "ThirdParty/StarterContent": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "ThirdParty/StorageHouse": {
+    "files": 905,
+    "uasset": 903,
+    "umap": 2
+  },
+  "ThirdParty/SUV01": {
+    "files": 100,
+    "uasset": 99,
+    "umap": 1
+  },
+  "ThirdParty/TankCleaningCenter": {
+    "files": 523,
+    "uasset": 521,
+    "umap": 2
+  },
+  "ThirdParty/TexturePacker": {
+    "files": 18,
+    "uasset": 17,
+    "umap": 1
+  },
+  "ThirdParty/Thick_Blood": {
+    "files": 92,
+    "uasset": 92,
+    "umap": 0
+  },
+  "ThirdParty/TMMusicalPack1": {
+    "files": 472,
+    "uasset": 471,
+    "umap": 1
+  },
+  "ThirdParty/ToolShedVOL3": {
+    "files": 120,
+    "uasset": 118,
+    "umap": 2
+  },
+  "ThirdParty/Traffic_barriers": {
+    "files": 272,
+    "uasset": 271,
+    "umap": 1
+  },
+  "ThirdParty/TrashSet": {
+    "files": 279,
+    "uasset": 277,
+    "umap": 2
+  },
+  "ThirdParty/Underground_Bunker": {
+    "files": 779,
+    "uasset": 777,
+    "umap": 2
+  },
+  "ThirdParty/VehicleVarietyPack": {
+    "files": 191,
+    "uasset": 189,
+    "umap": 2
+  },
+  "ThirdParty/VehicleVarietyVol2": {
+    "files": 151,
+    "uasset": 150,
+    "umap": 1
+  },
+  "ThirdParty/VertexAnimatedFlags": {
+    "files": 120,
+    "uasset": 118,
+    "umap": 2
+  },
+  "ThirdParty/VHDecor": {
+    "files": 1022,
+    "uasset": 1020,
+    "umap": 2
+  },
+  "ThirdParty/VHFurniture": {
+    "files": 411,
+    "uasset": 409,
+    "umap": 2
+  },
+  "ThirdParty/WaterMaterials": {
+    "files": 113,
+    "uasset": 112,
+    "umap": 1
+  },
+  "ThirdParty/WeaponFOV": {
+    "files": 76,
+    "uasset": 76,
+    "umap": 0
+  },
+  "ThirdParty/weathereffects": {
+    "files": 100,
+    "uasset": 100,
+    "umap": 0
+  },
+  "ThirdParty/WesterTown": {
+    "files": 87,
+    "uasset": 87,
+    "umap": 0
+  },
+  "ThirdParty/WoodAbandonedPack": {
+    "files": 320,
+    "uasset": 318,
+    "umap": 2
+  },
+  "ThirdParty/YI_BloodDecals": {
+    "files": 96,
+    "uasset": 95,
+    "umap": 1
+  },
+  "ThirdParty/YI_ModularVehicles": {
+    "files": 1182,
+    "uasset": 1132,
+    "umap": 50
+  },
+  "VO/AgencyCivilian_01": {
+    "files": 152,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/AgencyCivilian_02": {
+    "files": 185,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/AgencyCivilian_03": {
+    "files": 114,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/AgencyCivilian_04": {
+    "files": 99,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/AgencyGeorgeBrixley": {
+    "files": 168,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/AgencySuspect_01": {
+    "files": 177,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/AgencySuspect_02": {
+    "files": 181,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/BeachfrontAnh": {
+    "files": 171,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/BeachfrontDiego": {
+    "files": 145,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/BeachfrontPeter": {
+    "files": 134,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/BeachfrontThao": {
+    "files": 145,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/BeachfrontVinh": {
+    "files": 151,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CampusAlbert": {
+    "files": 174,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CampusApril": {
+    "files": 127,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CampusArchie": {
+    "files": 187,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CampusChase": {
+    "files": 189,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CampusJacob": {
+    "files": 128,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CampusJung": {
+    "files": 131,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CampusStudentF_01": {
+    "files": 140,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CampusStudentF_02": {
+    "files": 137,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CampusStudentM_01": {
+    "files": 147,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CampusStudentM_02": {
+    "files": 123,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CampusTeacherFemale": {
+    "files": 138,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CampusTeacherMale": {
+    "files": 135,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ClubCivilianFemale_1": {
+    "files": 249,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ClubCivilianMale_1": {
+    "files": 238,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ClubCivilianSecurity_01": {
+    "files": 234,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ClubCivilianSecurity_02": {
+    "files": 144,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ClubCivilianWaitress_01": {
+    "files": 161,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ClubSuspectMale_1": {
+    "files": 182,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ClubSuspectMale_2": {
+    "files": 191,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ClubSuspectMale_3": {
+    "files": 187,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CoyoteCivilianM_01": {
+    "files": 115,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CoyoteCivilian_02": {
+    "files": 115,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CoyoteSuspect_01": {
+    "files": 156,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/CoyoteSuspect_02": {
+    "files": 181,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/DatacenterCivilian_01": {
+    "files": 197,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/DatacenterCivilian_02": {
+    "files": 177,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/DatacenterSuspectMale_01": {
+    "files": 261,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/DatacenterSuspectMale_02": {
+    "files": 172,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/DealerGangsterMale": {
+    "files": 91,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/DealerGangsterMale_Young": {
+    "files": 111,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/DealerLuis": {
+    "files": 147,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/DealerMiguel": {
+    "files": 174,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/DealerMike": {
+    "files": 117,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/DealerRoberto": {
+    "files": 182,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/FarmCivilian_01": {
+    "files": 182,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/FarmElaine": {
+    "files": 272,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/FarmEve": {
+    "files": 163,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/FarmSuspect_01": {
+    "files": 244,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/FarmSuspect_02": {
+    "files": 200,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/FISA": {
+    "files": 5,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GasCivilian_01": {
+    "files": 153,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GasCivilian_02": {
+    "files": 141,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GasEmployee_01": {
+    "files": 142,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GasSuspect_01": {
+    "files": 163,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GasSuspect_02": {
+    "files": 163,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericCivilianFemale": {
+    "files": 260,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericCivilianFemale_2": {
+    "files": 241,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericCivilianFemale_3": {
+    "files": 172,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericCivilianFemale_Young_01": {
+    "files": 95,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericCivilianMale": {
+    "files": 158,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericCivilianMale_2": {
+    "files": 188,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericCivilianMale_3": {
+    "files": 187,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericCivilianMale_4": {
+    "files": 189,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericCivilianMale_5": {
+    "files": 189,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericSuspectFemale": {
+    "files": 217,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericSuspectFemale_2": {
+    "files": 265,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericSuspectMale": {
+    "files": 199,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericSuspectMale_2": {
+    "files": 169,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericSuspectMale_3": {
+    "files": 197,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/GenericSuspectMale_4": {
+    "files": 202,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/HospitalCivilian_01": {
+    "files": 149,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/HospitalCivilian_02": {
+    "files": 168,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/HospitalCivilian_03": {
+    "files": 136,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/HospitalSuspectF_01": {
+    "files": 185,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/HospitalSuspectM_01": {
+    "files": 198,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/HospitalSuspectM_02": {
+    "files": 223,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/HotelAxelRamone": {
+    "files": 86,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/HotelBelleBrady": {
+    "files": 113,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/HotelBellhopMale": {
+    "files": 98,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/HotelGuestMale1": {
+    "files": 65,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ImporterEugeneGomez": {
+    "files": 147,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ImporterFriend": {
+    "files": 159,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ImporterInspector": {
+    "files": 195,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ImporterJackAdams": {
+    "files": 180,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ImporterMariaLopez": {
+    "files": 136,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ImporterTheGuard": {
+    "files": 162,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/MethBiker": {
+    "files": 146,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/MethCivilianMale_B": {
+    "files": 151,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/MethCivilianMale_YoungW": {
+    "files": 155,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/MethCook": {
+    "files": 130,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/MethSuspectMale_B": {
+    "files": 167,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/MethSuspectMale_YoungW": {
+    "files": 200,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO": {
+    "files": 1,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PenthouseCivilianMale_1": {
+    "files": 167,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PenthouseHusband": {
+    "files": 97,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PenthouseLaurie": {
+    "files": 84,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PenthouseSailor": {
+    "files": 117,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PenthouseSuspectMale_1": {
+    "files": 187,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PenthouseWife": {
+    "files": 111,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PortAlfonso": {
+    "files": 154,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PortAndrei": {
+    "files": 177,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PortGangsterMale": {
+    "files": 139,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PortSuspect_01": {
+    "files": 169,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PortSuspect_02": {
+    "files": 158,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PortSuspect_03": {
+    "files": 171,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/PortVitali": {
+    "files": 157,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/RidgelineAccomplice": {
+    "files": 241,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/RidgelineGerard": {
+    "files": 190,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SinsAlex": {
+    "files": 119,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SinsBelle": {
+    "files": 134,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SinsIra": {
+    "files": 122,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SinsJock": {
+    "files": 106,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SinsLucille": {
+    "files": 119,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SinsMichael": {
+    "files": 122,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SinsSuspect_01": {
+    "files": 171,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SinsSuspect_02": {
+    "files": 169,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/Station Trainer": {
+    "files": 1,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/StationAlvarez": {
+    "files": 26,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/StationDoc": {
+    "files": 22,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/StationMichaels": {
+    "files": 22,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/StationPA": {
+    "files": 1,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/StationReed": {
+    "files": 22,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/StationVuley": {
+    "files": 22,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/StreamerCassandra": {
+    "files": 133,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/StreamerDemarcus": {
+    "files": 153,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/StreamerMichael": {
+    "files": 192,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATA_01": {
+    "files": 1377,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATA_02": {
+    "files": 1381,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATA_03": {
+    "files": 1371,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATB_01": {
+    "files": 1387,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATB_02": {
+    "files": 1383,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATB_03": {
+    "files": 1376,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATEli": {
+    "files": 437,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATH_01": {
+    "files": 1359,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATH_02": {
+    "files": 1373,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATH_03": {
+    "files": 1374,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATJudge": {
+    "files": 2105,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATJudgeLegacy": {
+    "files": 274,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATKing": {
+    "files": 564,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATPrescott": {
+    "files": 280,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATSwan": {
+    "files": 270,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATTemplate": {
+    "files": 172,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATW_01": {
+    "files": 1376,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATW_02": {
+    "files": 1375,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/SWATW_03": {
+    "files": 1375,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/TOC": {
+    "files": 233,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/TOC_Legacy": {
+    "files": 440,
+    "uasset": 125,
+    "umap": 0
+  },
+  "VO/TrainingVO": {
+    "files": 1,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ValleyAmosVoll": {
+    "files": 167,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ValleyCivilian_01": {
+    "files": 152,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ValleyCivilian_02": {
+    "files": 138,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ValleyCivilian_03": {
+    "files": 160,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ValleyDaniela": {
+    "files": 144,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ValleyJane": {
+    "files": 145,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ValleySuspect_01": {
+    "files": 163,
+    "uasset": 0,
+    "umap": 0
+  },
+  "VO/ValleySuspect_02": {
+    "files": 176,
+    "uasset": 0,
+    "umap": 0
+  },
+  "WeaponFOV/Demo": {
+    "files": 1,
+    "uasset": 1,
+    "umap": 0
+  },
+  "_GENERATED": {
+    "files": 18,
+    "uasset": 18,
+    "umap": 0
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "FileVersion": 3,
+  "Version": 1,
+  "VersionName": "1.0",
+  "FriendlyName": "ReadyOrNot Native Gun Lab",
+  "Description": "Local study harness using the host project's native pawn, inventory, and weapons.",
+  "Category": "Learning",
+  "EnabledByDefault": true,
+  "CanContainContent": false,
+  "Modules": [{"Name": "ReadyOrNotGunLab", "Type": "Runtime", "LoadingPhase": "PostDefault"}]
+}

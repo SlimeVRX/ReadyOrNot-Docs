@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 1,
+  "analysisDate": "2026-10-07",
+  "timezone": "Asia/Bangkok",
+  "scope": "Static source analysis and original Vietnamese learning material. Does not certify runtime weapon parity or asset completeness.",
+  "sourceRootHint": "D:/Zone9Dev_RON",
+  "sourceCodeRedistributed": false,
+  "anchors": [
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseWeapon.h",
+      "symbol": "class READYORNOT_API ABaseWeapon : public ABaseItem",
+      "line": 164,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.h",
+      "symbol": "class READYORNOT_API ABaseMagazineWeapon",
+      "line": 115,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/PlayerCharacter.cpp",
+      "symbol": "void APlayerCharacter::PrimaryUse()",
+      "line": 5354,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/PlayerCharacter.cpp",
+      "symbol": "void APlayerCharacter::EndPrimaryUse()",
+      "line": 5566,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/PlayerCharacter.cpp",
+      "symbol": "void APlayerCharacter::OnEquippedWeaponFire",
+      "line": 3355,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/PlayerCharacter.cpp",
+      "symbol": "void APlayerCharacter::RecalculatePendingRecoil",
+      "line": 3443,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/PlayerCharacter.cpp",
+      "symbol": "void APlayerCharacter::ApplyRecoil",
+      "line": 3666,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/PlayerCharacter.cpp",
+      "symbol": "void APlayerCharacter::ApplyFoV",
+      "line": 3721,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/PlayerCharacter.cpp",
+      "symbol": "void APlayerCharacter::Reload()",
+      "line": 6271,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/PlayerCharacter.cpp",
+      "symbol": "void APlayerCharacter::TacticalReload()",
+      "line": 6392,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/ReadyOrNotPlayerController.cpp",
+      "symbol": "void AReadyOrNotPlayerController::Server_Equip_Implementation",
+      "line": 4618,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Components/InventoryComponent.cpp",
+      "symbol": "bool UInventoryComponent::PutItemInHands",
+      "line": 853,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Components/InventoryComponent.cpp",
+      "symbol": "bool UInventoryComponent::AddInventoryItem",
+      "line": 1294,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Components/InventoryComponent.cpp",
+      "symbol": "bool UInventoryComponent::DestroyInventoryItem",
+      "line": 1373,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseWeapon.cpp",
+      "symbol": "void ABaseWeapon::OnFireAtBulletSpawn()",
+      "line": 290,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseWeapon.cpp",
+      "symbol": "FRotator ABaseWeapon::GetRecoil()",
+      "line": 573,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseWeapon.cpp",
+      "symbol": "void ABaseWeapon::SetAmmunitionType(FName",
+      "line": 618,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseWeapon.cpp",
+      "symbol": "void ABaseWeapon::ComputeProcRecoil",
+      "line": 1212,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "void ABaseMagazineWeapon::OnFire(",
+      "line": 639,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "void ABaseMagazineWeapon::LocallySimulateFire",
+      "line": 691,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "FRotator ABaseMagazineWeapon::CalculateRecoil()",
+      "line": 834,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "void ABaseMagazineWeapon::Server_OnFire_Implementation",
+      "line": 884,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "float ABaseMagazineWeapon::RemoveAmmo",
+      "line": 1222,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "void ABaseMagazineWeapon::Server_NextMagazine_Implementation()",
+      "line": 1318,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "void ABaseMagazineWeapon::OnWeaponReload",
+      "line": 1462,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "void ABaseMagazineWeapon::OnWeaponTacticalReload",
+      "line": 1569,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "void ABaseMagazineWeapon::Multicast_PerformHitscan_Implementation",
+      "line": 1763,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "void ABaseMagazineWeapon::Server_HitscanHit_Implementation",
+      "line": 2220,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "void ABaseMagazineWeapon::ApplyHitscanDamage",
+      "line": 2337,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "ABulletProjectile* ABaseMagazineWeapon::SpawnProjectile",
+      "line": 2621,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "symbol": "void ABaseMagazineWeapon::Multicast_SpawnParticleEffects_Implementation",
+      "line": 2974,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/Items/Shotgun.cpp",
+      "symbol": "float AShotgun::GetAmmo() const",
+      "line": 138,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/Items/Shotgun.cpp",
+      "symbol": "void AShotgun::PlayReloadLoop()",
+      "line": 421,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/Items/Taser.cpp",
+      "symbol": "void ATaser::Server_OnFire_Implementation",
+      "line": 311,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/Items/PepperballGun.cpp",
+      "symbol": "float APepperballGun::GetAmmo() const",
+      "line": 56,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/Items/GrenadeLauncher.cpp",
+      "symbol": "void AGrenadeLauncher::FullySimulateGrenadePath",
+      "line": 106,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/SWATArmour.cpp",
+      "symbol": "bool ASWATArmour::CheckPenetration",
+      "line": 151,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/Projectiles/DamageProjectiles/BulletProjectile.cpp",
+      "symbol": "void ABulletProjectile::ApplyDamage",
+      "line": 81,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/ReadyOrNotCharacter.cpp",
+      "symbol": "float AReadyOrNotCharacter::TakeDamage",
+      "line": 6195,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/ReadyOrNotCharacter.cpp",
+      "symbol": "void AReadyOrNotCharacter::ApplyDamageToBone",
+      "line": 6562,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Animation/Notifies/AnimNotify_NextMag.cpp",
+      "symbol": "void UAnimNotify_NextMag::Notify",
+      "line": 6,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Animation/RoNAnimInstance_PlayerFP.cpp",
+      "symbol": "void URoNAnimInstance_PlayerFP::OnReloadComplete()",
+      "line": 210,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Info/LoadoutManager.cpp",
+      "symbol": "void ULoadoutManager::LoadLoadoutItems()",
+      "line": 87,
+      "lineVerified": true
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/ReadyOrNot.h",
+      "line": 291,
+      "lineVerified": true,
+      "symbol": "#define RON_NO_SPRINT"
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/PlayerCharacter.cpp",
+      "line": 7272,
+      "lineVerified": true,
+      "symbol": "void APlayerCharacter::Sprint()"
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/PlayerCharacter.cpp",
+      "line": 7417,
+      "lineVerified": true,
+      "symbol": "bool APlayerCharacter::IsSprinting() const"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
+      "sha256": "7eec862ce070bc38e732a50e81fbe6b2a250e404399b0fa76a2714f559223ee6",
+      "lines": 3710
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.h",
+      "sha256": "fb102dd4392e300daa5c861374c19513639c52f6ff65f47ab47dc5af3f43ee92",
+      "lines": 787
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseWeapon.cpp",
+      "sha256": "33fa0c3ce5da3056850bb0763bd07e989aa6d0eeae785d2bb256e32424accbf1",
+      "lines": 1354
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseWeapon.h",
+      "sha256": "139e0400fa71b77a126e71321435cbeb5a842ae1a7d03c2c29a16e3705c0f42c",
+      "lines": 810
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/Items/GrenadeLauncher.cpp",
+      "sha256": "307f2606341d1701132729c19487e30d5c0c4e217f937f9157bc35b0e92b877b",
+      "lines": 138
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/Items/PepperballGun.cpp",
+      "sha256": "544e65d438cb078f05f334ce352281ed9d4a2fc25d05fbeb9a39d5690602f212",
+      "lines": 83
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/Items/Shotgun.cpp",
+      "sha256": "cca059772dd9155c8d5a2f5d10a786596208c32a27e1a6f92bcdca5b485fdce4",
+      "lines": 803
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/Items/Taser.cpp",
+      "sha256": "7a3d6d607ab1a5888291d8efee00fecd7223b9dcd9fdee5002462225d79b3e73",
+      "lines": 918
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/Projectiles/DamageProjectiles/BulletProjectile.cpp",
+      "sha256": "21e56c876487eedde9dcbe127ce396e37c3da0f70a9c082b2a242eaa3017607d",
+      "lines": 467
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Actors/SWATArmour.cpp",
+      "sha256": "8e444ac95642f4962bb247e001bf05a2ae645135f49e9294857a6d60d1aeb7c7",
+      "lines": 247
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Animation/Notifies/AnimNotify_NextMag.cpp",
+      "sha256": "a808d7202304991f1db946a46b7ac85563c49cb16f5aa7900a35034db9ec0727",
+      "lines": 17
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Animation/RoNAnimInstance_PlayerFP.cpp",
+      "sha256": "49801fb35132a6633f082dc887e776db70a688c90e140ae0dfffcf2631531792",
+      "lines": 244
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/PlayerCharacter.cpp",
+      "sha256": "4ae3c4068f20256c8017c5eb11493cae2718cc64a3d10431408e6564971bc3bd",
+      "lines": 11693
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Characters/ReadyOrNotPlayerController.cpp",
+      "sha256": "6f81c3a1ed339ed7b8409ffc380f69511c2b10e03cc8e863fabcc73dce05ab1b",
+      "lines": 6104
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Components/InventoryComponent.cpp",
+      "sha256": "f3dd88b83339596181b22a1825d9fd2139da63db218b349c096ecf7d4ff21758",
+      "lines": 1629
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/Info/LoadoutManager.cpp",
+      "sha256": "f1661f1b722de3c30454b57abcded17ee1b6d2bc1a26ecbefa410901ce932e20",
+      "lines": 277
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/ReadyOrNot.h",
+      "sha256": "6072d9f86689cfa9799eb64cace4d686aa7df31ce7515fc72526996cf6b7e6ce",
+      "lines": 305
+    },
+    {
+      "path": "Ready Or Not/Source/ReadyOrNot/ReadyOrNotCharacter.cpp",
+      "sha256": "e4e60982d99bd8fc1baa4a98a52b016817b1843c7906d2eedfe4fd5054346815",
+      "lines": 9108
+    }
+  ],
+  "verification": {
+    "anchorCount": 46,
+    "anchorEntriesVerified": true,
+    "localMarkdownLinksChecked": 40,
+    "markdownFencePairsVerified": true,
+    "runtimeTestingPerformedByThisChapterAuthor": false
+  }
+}

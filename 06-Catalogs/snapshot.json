@@ -1,0 +1,416 @@
+{
+  "schema": "ReadyOrNotDocs.SourceSnapshot.v1",
+  "observedDate": "2026-10-07",
+  "sourceRoot": "Ready Or Not/Source",
+  "engineVersion": "5.3.2",
+  "engineChangelist": 0,
+  "engineBranch": "Unknown",
+  "sourceGitCommit": null,
+  "retailVersion": null,
+  "sourceFiles": 1512,
+  "sourceLines": 349488,
+  "sourceLineCountMethod": "UTF-8 line split; includes comments, declarations and blank lines; not executable LOC",
+  "projectDescriptorSha256": "1c8704e195be4e2262a31913f390701faf2d7cd9c8f5fa845d9c5912b06a9663",
+  "sourceManifestSha256": "91e2c879a87055087213169d2c05a9a8e68222f02d430605cdcbd56551534380",
+  "contentFiles": 178858,
+  "contentExtensions": {
+    ".uasset": 135184,
+    ".umap": 1344,
+    ".collection": 40,
+    ".bank": 255,
+    ".ico": 1,
+    ".ini": 1,
+    ".archive": 13,
+    ".locres": 13,
+    ".po": 14,
+    ".csv": 1342,
+    ".locmeta": 1,
+    ".manifest": 1,
+    ".txt": 3,
+    ".mp4": 2,
+    ".py": 8,
+    ".pyproj": 1,
+    ".tga": 59,
+    ".png": 23,
+    ".psd": 10,
+    ".t3d": 10,
+    ".wav": 40505,
+    ".jpg": 8,
+    ".fbx": 12,
+    ".bmp": 2,
+    ".probebox": 1,
+    ".phononsceneinfo": 1,
+    ".phononscene": 1,
+    ".lnk": 1,
+    ".reapeaks": 2
+  },
+  "mapFiles": 1344,
+  "projectPluginDescriptors": 23,
+  "projectModules": [
+    {
+      "Name": "ReadyOrNot",
+      "Type": "Runtime",
+      "LoadingPhase": "Default",
+      "AdditionalDependencies": [
+        "Engine",
+        "AIModule",
+        "UMG",
+        "CoreUObject",
+        "FMODStudio",
+        "NavigationSystem",
+        "AnimGraphRuntime",
+        "Gauntlet",
+        "DynamicCoverSystem",
+        "AdvancedSessions",
+        "AdvancedSteamSessions"
+      ]
+    },
+    {
+      "Name": "ReadyOrNotEditorModule",
+      "Type": "Editor",
+      "LoadingPhase": "Default",
+      "PlatformAllowList": [
+        "Win64"
+      ],
+      "AdditionalDependencies": [
+        "CustomInterfaceModuleEditor"
+      ]
+    }
+  ],
+  "projectPluginToggles": [
+    {
+      "name": "InputRemapping",
+      "enabled": true
+    },
+    {
+      "name": "OnlineSubsystemSteam",
+      "enabled": true
+    },
+    {
+      "name": "AdvancedSessions",
+      "enabled": true
+    },
+    {
+      "name": "AdvancedSteamSessions",
+      "enabled": false
+    },
+    {
+      "name": "WebBrowserWidget",
+      "enabled": false
+    },
+    {
+      "name": "VictoryBPLibrary",
+      "enabled": true
+    },
+    {
+      "name": "CustomAnimNode",
+      "enabled": true
+    },
+    {
+      "name": "RootMotionExtractor",
+      "enabled": false
+    },
+    {
+      "name": "ReadyOrNotTests",
+      "enabled": true
+    },
+    {
+      "name": "WmfMedia",
+      "enabled": false
+    },
+    {
+      "name": "Substance",
+      "enabled": false
+    },
+    {
+      "name": "FMODStudio",
+      "enabled": true
+    },
+    {
+      "name": "StatsIntegration",
+      "enabled": true
+    },
+    {
+      "name": "ProductivityTools",
+      "enabled": false
+    },
+    {
+      "name": "Synthesis",
+      "enabled": true
+    },
+    {
+      "name": "SoundUtilities",
+      "enabled": true
+    },
+    {
+      "name": "SteamVR",
+      "enabled": true
+    },
+    {
+      "name": "OculusVR",
+      "enabled": false
+    },
+    {
+      "name": "CustomInterfaceModule",
+      "enabled": true
+    },
+    {
+      "name": "EditorScriptingUtilities",
+      "enabled": true
+    },
+    {
+      "name": "Debug",
+      "enabled": true
+    },
+    {
+      "name": "PythonScriptPlugin",
+      "enabled": true
+    },
+    {
+      "name": "DisasterRecoveryClient",
+      "enabled": false
+    },
+    {
+      "name": "ShallowWater",
+      "enabled": false
+    },
+    {
+      "name": "ModelingToolsEditorMode",
+      "enabled": true
+    },
+    {
+      "name": "GameViewportSync",
+      "enabled": false
+    },
+    {
+      "name": "Gauntlet",
+      "enabled": true
+    },
+    {
+      "name": "Choreo",
+      "enabled": false
+    },
+    {
+      "name": "MeshTool",
+      "enabled": false
+    },
+    {
+      "name": "DevMenu",
+      "enabled": true
+    },
+    {
+      "name": "DynamicCoverSystem",
+      "enabled": true
+    },
+    {
+      "name": "SteamSockets",
+      "enabled": true
+    },
+    {
+      "name": "OpenXRHandTracking",
+      "enabled": false
+    },
+    {
+      "name": "OpenXR",
+      "enabled": false
+    },
+    {
+      "name": "OpenXREyeTracker",
+      "enabled": false
+    },
+    {
+      "name": "VivoxCore",
+      "enabled": true
+    },
+    {
+      "name": "Reflex",
+      "enabled": true
+    },
+    {
+      "name": "IconStudio",
+      "enabled": true
+    },
+    {
+      "name": "Text2LipSync",
+      "enabled": true
+    },
+    {
+      "name": "SkinnedDecalComponent",
+      "enabled": true
+    },
+    {
+      "name": "OculusAudio",
+      "enabled": false
+    },
+    {
+      "name": "GooglePAD",
+      "enabled": false
+    },
+    {
+      "name": "OnlineSubsystemGooglePlay",
+      "enabled": false
+    },
+    {
+      "name": "AndroidPermission",
+      "enabled": false
+    },
+    {
+      "name": "MagicLeapMedia",
+      "enabled": false
+    },
+    {
+      "name": "MagicLeapPassableWorld",
+      "enabled": false
+    },
+    {
+      "name": "LocationServicesBPLibrary",
+      "enabled": false
+    },
+    {
+      "name": "LinuxDeviceProfileSelector",
+      "enabled": false
+    },
+    {
+      "name": "IOSDeviceProfileSelector",
+      "enabled": false
+    },
+    {
+      "name": "AndroidDeviceProfileSelector",
+      "enabled": false
+    },
+    {
+      "name": "UObjectPlugin",
+      "enabled": false
+    },
+    {
+      "name": "AppleImageUtils",
+      "enabled": false
+    },
+    {
+      "name": "ArchVisCharacter",
+      "enabled": false
+    },
+    {
+      "name": "LuminPlatformFeatures",
+      "enabled": false
+    },
+    {
+      "name": "MLSDK",
+      "enabled": false
+    },
+    {
+      "name": "AndroidMedia",
+      "enabled": false
+    },
+    {
+      "name": "AvfMedia",
+      "enabled": false
+    },
+    {
+      "name": "WebMMoviePlayer",
+      "enabled": false
+    },
+    {
+      "name": "MacGraphicsSwitching",
+      "enabled": false
+    },
+    {
+      "name": "MobileLauncherProfileWizard",
+      "enabled": false
+    },
+    {
+      "name": "MobilePatchingUtils",
+      "enabled": false
+    },
+    {
+      "name": "AndroidMoviePlayer",
+      "enabled": false
+    },
+    {
+      "name": "AppleMoviePlayer",
+      "enabled": false
+    },
+    {
+      "name": "WindowsMoviePlayer",
+      "enabled": false
+    },
+    {
+      "name": "GoogleCloudMessaging",
+      "enabled": false
+    },
+    {
+      "name": "OnlineSubsystemIOS",
+      "enabled": false
+    },
+    {
+      "name": "CodeLiteSourceCodeAccess",
+      "enabled": false
+    },
+    {
+      "name": "KDevelopSourceCodeAccess",
+      "enabled": false
+    },
+    {
+      "name": "XCodeSourceCodeAccess",
+      "enabled": false
+    },
+    {
+      "name": "GitSourceControl",
+      "enabled": false
+    },
+    {
+      "name": "PlasticSourceControl",
+      "enabled": false
+    },
+    {
+      "name": "SubversionSourceControl",
+      "enabled": false
+    },
+    {
+      "name": "SoundVisualizations",
+      "enabled": false
+    },
+    {
+      "name": "Motivity",
+      "enabled": false
+    },
+    {
+      "name": "CommonUI",
+      "enabled": true
+    },
+    {
+      "name": "ObjectPooler",
+      "enabled": true
+    },
+    {
+      "name": "LiveLinkMvnPlugin",
+      "enabled": false
+    },
+    {
+      "name": "MovieRenderPipeline",
+      "enabled": true
+    },
+    {
+      "name": "AMRagdoll",
+      "enabled": true
+    },
+    {
+      "name": "ElectraPlayer",
+      "enabled": true
+    },
+    {
+      "name": "AimAssistSystem",
+      "enabled": true
+    },
+    {
+      "name": "GameplayCameras",
+      "enabled": true
+    }
+  ],
+  "configFiles": 48,
+  "limits": [
+    "Filesystem counts do not prove asset class, runtime use, quality, loadability or retail parity.",
+    "No release tag/commit was supplied; this is the local custom UE 5.3.2 snapshot, not every Ready or Not release.",
+    "Source contents and binary assets are not copied into the documentation repository."
+  ]
+}

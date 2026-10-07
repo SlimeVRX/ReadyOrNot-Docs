@@ -1,0 +1,16 @@
+{
+  "scope": "/Game Blueprint NativeParentClass tags",
+  "magazine_candidates": 102,
+  "other_weapon_blueprints": [
+    {
+      "asset_path": "/Game/Blueprints/Items/WeaponsSuspect/Melee_Knife",
+      "native_parent": "/Script/CoreUObject.Class'/Script/ReadyOrNot.MeleeWeapon'",
+      "classification": "melee"
+    },
+    {
+      "asset_path": "/Game/Blueprints/Items/WeaponsSuspect/Melee_Sledgehammer",
+      "native_parent": "/Script/CoreUObject.Class'/Script/ReadyOrNot.MeleeWeapon'",
+      "classification": "melee"
+    }
+  ]
+}
