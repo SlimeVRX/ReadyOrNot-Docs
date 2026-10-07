@@ -7,7 +7,7 @@ public class ReadyOrNotGunLab : ModuleRules
     {
         PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
         PublicDependencyModuleNames.AddRange(new[] { "Core", "CoreUObject", "Engine" });
-        PrivateDependencyModuleNames.AddRange(new[] { "ReadyOrNot", "InputCore", "Json", "JsonUtilities" });
+        PrivateDependencyModuleNames.AddRange(new[] { "ReadyOrNot", "InputCore", "Json", "JsonUtilities", "RenderCore" });
         PrivateIncludePaths.Add(Path.Combine(Target.ProjectFile.Directory.FullName, "Source", "ReadyOrNot"));
     }
 }

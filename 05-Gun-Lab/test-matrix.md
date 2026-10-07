@@ -2,6 +2,8 @@
 
 Mỗi hàng là một phép thử có điều kiện đo. Giữ cùng độ phân giải, FOV, sensitivity, FPS, tư thế, khoảng cách, loại đạn và attachment trước khi so sánh. Ghi class path thay vì chỉ tên hiển thị, vì nhiều variant cùng tên.
 
+Baseline tự động hiện có: [102 hàng equip và sáu cấu hình ADS/fire/reload](./README.md). Sáu cấu hình đều có aiming state và tiêu đạn; năm cấu hình tăng ammo sau yêu cầu reload. Pepperball còn 199 viên và cần kiểm tra reload riêng. Các ca camera, sound, impact, attachment và cảm giác bên dưới chưa được chứng nhận bởi baseline đó.
+
 | Phép thử | Cách làm | Ghi lại | Điều không được suy diễn |
 |---|---|---|---|
 | Equip | Chọn lớp, chờ draw xong | owner, class, mesh, magazine, log | Equip thành công không bảo đảm bắn thành công |

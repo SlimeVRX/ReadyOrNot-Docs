@@ -7,6 +7,7 @@
   "compiler_reported_version": "14.36.32548",
   "windows_sdk": "10.0.22621.0",
   "build_exit_code": 0,
-  "plugin_dll_sha256": "D727C8065A8879F73CBA4B3C4BA406A2A197C65792EAC74A164F40E3791057E6",
-  "scope": "Compilation and linking only. Runtime and presentation require separate receipts."
+  "plugin_dll_sha256": "6D5CB38C2F38020BD1F55A2976243BBE23D9EC57474B04A08EB2FD013AF287CC",
+  "scope": "Compilation and linking only. Runtime and presentation require separate receipts.",
+  "build_verified_utc": "2026-10-07T01:22:39.9408723Z"
 }

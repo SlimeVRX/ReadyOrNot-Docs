@@ -14,6 +14,8 @@ npm.cmd run docs:preview
 
 Node.js 22 trở lên. File lock giữ phiên bản dependency; dùng npm ci cho lần tái lập. Thư mục .site là bản đọc công khai được chuẩn bị từ nội dung gốc; .vitepress/dist là artifact website. Không chỉnh tay hai thư mục generated.
 
+Nếu build lại khi preview đang chạy, dừng preview rồi chạy lại trước khi kiểm tra. Preview có thể giữ danh sách file của build trước; lúc đó trang HTML mở được nhưng JavaScript hoặc sơ đồ mới chưa tải đúng.
+
 ## Khi cập nhật nội dung
 
 Sửa chương có owner rõ. Nếu thêm feature, thêm source evidence, scope/unknowns và bài thực hành. Tìm kiếm trong sách phụ thuộc văn bản đã build; sơ đồ Mermaid cần render thử ở cả desktop và màn hình hẹp.
@@ -35,3 +37,5 @@ Chỉ commit Markdown, metadata JSON, theme/build scripts, workflow và original
 5. Người dùng kiểm cảm giác và visual/audio bằng test matrix.
 
 Một workflow xanh chỉ chứng minh các bước được cấu hình trong workflow. Nó không tự chạy Unreal hoặc xác nhận gunfeel.
+
+[Biên bản kiểm tra website](06-Catalogs/website-validation.json) ghi revision, deployment, kiểm link và các tương tác đã thử. Các ca Unreal được lưu riêng ở phần Gun Lab.

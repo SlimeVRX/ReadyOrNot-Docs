@@ -1,0 +1,27 @@
+{
+  "observed_date_local": "2026-10-07",
+  "timezone": "Asia/Bangkok",
+  "deployed_commit_checked": "6d7beb2eca6e26fa2bee11d91553fec8761b1d7b",
+  "url": "https://slimevrx.github.io/ReadyOrNot-Docs/",
+  "github_actions_run": "https://github.com/SlimeVRX/ReadyOrNot-Docs/actions/runs/37556309134",
+  "deployment_conclusion": "success",
+  "http_status": 200,
+  "local_static_checks": {
+    "html_pages": 49,
+    "internal_links_and_assets": 5390,
+    "anchors": 320,
+    "forbidden_game_binaries": 0,
+    "errors": []
+  },
+  "browser_checks": {
+    "mermaid_pages": 27,
+    "mermaid_diagrams_rendered": 29,
+    "mermaid_errors_after_render_completion": 0,
+    "knowledge_map_click": "passed",
+    "knowledge_map_arrow_key": "passed",
+    "accent_insensitive_search": "bat giu returns the arrest/evidence chapter",
+    "live_catalog": "102 records; SR16 filter returns one entry with lab index 40 and expandable CDO JSON",
+    "light_and_dark_theme": "inspected; diagram rerender completed"
+  },
+  "scope": "Observed website checks for the stated revision. CI repeats static checks on later pushes. These results do not certify Unreal runtime, audio, gunfeel, every viewport or every browser."
+}

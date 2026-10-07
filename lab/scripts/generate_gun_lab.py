@@ -45,12 +45,12 @@ def box(name, location, scale):
     return actor
 
 def text(label, location, size=42):
-    actor = actors.spawn_actor_from_class(unreal.TextRenderActor, unreal.Vector(*location), unreal.Rotator(0, 0 if location[0] < 0 else 180, 0))
+    actor = actors.spawn_actor_from_class(unreal.TextRenderActor, unreal.Vector(*location), unreal.Rotator(pitch=0, yaw=0 if location[0] < 0 else 180, roll=0))
     actor.set_actor_label(label)
     component = actor.get_component_by_class(unreal.TextRenderComponent)
     component.set_text(label)
     component.set_world_size(size)
-    component.set_text_render_color(unreal.Color(25, 180, 220, 255))
+    component.set_text_render_color(unreal.Color(r=25, g=180, b=220, a=255))
     return actor
 
 box("Range floor 130m", (5500, 0, -25), (130, 32, 0.5))
@@ -78,10 +78,10 @@ text("Baseline: native Blueprint defaults + 4 magazines.\nNo custom recoil, spre
 start = actors.spawn_actor_from_class(unreal.PlayerStart, unreal.Vector(0, 0, 120))
 start.set_actor_label("GunLab Native Player Start")
 start.set_editor_property("player_start_tag", "Blue")
-sun = actors.spawn_actor_from_class(unreal.DirectionalLight, unreal.Vector(0, 0, 700), unreal.Rotator(-45, -35, 0))
+sun = actors.spawn_actor_from_class(unreal.DirectionalLight, unreal.Vector(0, 0, 700), unreal.Rotator(pitch=-45, yaw=-35, roll=0))
 sun.light_component.set_editor_property("intensity", 6.0)
 sun.light_component.set_editor_property("mobility", unreal.ComponentMobility.MOVABLE)
-fill = actors.spawn_actor_from_class(unreal.DirectionalLight, unreal.Vector(0, 0, 600), unreal.Rotator(-65, 145, 0))
+fill = actors.spawn_actor_from_class(unreal.DirectionalLight, unreal.Vector(0, 0, 600), unreal.Rotator(pitch=-65, yaw=145, roll=0))
 fill.light_component.set_editor_property("intensity", 2.0)
 fill.light_component.set_editor_property("mobility", unreal.ComponentMobility.MOVABLE)
 sky = actors.spawn_actor_from_class(unreal.SkyAtmosphere, unreal.Vector(0, 0, 0))

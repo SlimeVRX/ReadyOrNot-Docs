@@ -13,6 +13,10 @@
 #include "GameFramework/PlayerController.h"
 #include "InputCoreTypes.h"
 #include "UnrealClient.h"
+#if WITH_EDITOR
+#include "ShaderCompiler.h"
+#include "AssetCompilingManager.h"
+#endif
 
 DEFINE_LOG_CATEGORY_STATIC(LogRonGunLab, Log, All);
 
@@ -30,6 +34,18 @@ void ARonGunLab::BeginPlay()
     bExitAfterSmoke = bSmoke && FParse::Param(FCommandLine::Get(), TEXT("GunLabExit"));
     bProbeOnEquip = !bSmoke && FParse::Param(FCommandLine::Get(), TEXT("GunLabProbe"));
     bExitAfterProbe = bProbeOnEquip && FParse::Param(FCommandLine::Get(), TEXT("GunLabExit"));
+    FString BatchText;
+    if (bProbeOnEquip && FParse::Value(FCommandLine::Get(), TEXT("GunLabProbeIndices="), BatchText))
+    {
+        TArray<FString> Entries;
+        BatchText.ParseIntoArray(Entries, TEXT(","), true);
+        for (const FString& Entry : Entries)
+        {
+            const int32 Index = FCString::Atoi(*Entry) - 1;
+            if (WeaponClasses.IsValidIndex(Index)) ProbeIndices.AddUnique(Index);
+            else UE_LOG(LogRonGunLab, Warning, TEXT("Ignoring invalid 1-based probe index: %s"), *Entry);
+        }
+    }
     ReceiptMode = bSmoke ? TEXT("equip_audit") : bProbeOnEquip ? TEXT("action_probe") : TEXT("session");
     RunId = FDateTime::UtcNow().ToString(TEXT("%Y%m%d-%H%M%S"));
     StatusText = TEXT("Waiting for native player pawn...");
@@ -59,7 +75,9 @@ bool ARonGunLab::SelectWeapon(int32 Index)
     CurrentIndex = Index;
     if (!Class || Class->HasAnyClassFlags(CLASS_Abstract | CLASS_Deprecated))
     {
-        WriteReceipt(TEXT("class_rejected"), TEXT("Missing, abstract or deprecated class"));
+        WriteReceipt(TEXT("class_rejected"), !Class ? TEXT("Class could not be loaded")
+            : Class->HasAnyClassFlags(CLASS_Abstract) ? TEXT("Abstract base class; use a concrete child Blueprint")
+            : TEXT("Deprecated class"));
         return false;
     }
     const ABaseMagazineWeapon* Defaults = Class->GetDefaultObject<ABaseMagazineWeapon>();
@@ -150,13 +168,32 @@ void ARonGunLab::StartActionProbe()
     if (CurrentIndex != ActiveWeaponIndex) { StatusText = TEXT("Probe rejected: the requested lab selection did not complete"); return; }
     if (GetNativePlayer()->GetEquippedItem() != CurrentWeapon) { StatusText = TEXT("Probe rejected: native equipped item differs from selected lab gun"); return; }
     ResetPosition();
+    GetNativePlayer()->EndSecondaryUse();
     ReceiptMode = TEXT("action_probe");
-    RunId = FDateTime::UtcNow().ToString(TEXT("%Y%m%d-%H%M%S"));
-    Receipts.Reset();
+    if (ProbeIndices.IsEmpty())
+    {
+        RunId = FDateTime::UtcNow().ToString(TEXT("%Y%m%d-%H%M%S"));
+        Receipts.Reset();
+    }
     ProbeAmmoBefore = CurrentWeapon->GetAmmo();
     ProbeAmmoAfterFire = ProbeAmmoBefore;
     ProbeStage = 1;
     ProbeSeconds = 0;
+    bProbeReloadRequested = false;
+    bProbeCanReload = false;
+}
+
+void ARonGunLab::ContinueProbeBatch()
+{
+    while (++ProbeCursor < ProbeIndices.Num())
+    {
+        bProbeOnEquip = true;
+        if (SelectWeapon(ProbeIndices[ProbeCursor])) return;
+        bProbeOnEquip = false;
+        // SelectWeapon wrote the concrete failure; continue to the next entry.
+    }
+    if (bExitAfterProbe && !FParse::Param(FCommandLine::Get(), TEXT("GunLabCapture")))
+        FPlatformMisc::RequestExit(false);
 }
 
 void ARonGunLab::WriteReceipt(const FString& Status, const FString& Detail)
@@ -176,7 +213,9 @@ void ARonGunLab::WriteReceipt(const FString& Status, const FString& Detail)
         Row->SetNumberField(TEXT("ammo_after_native_fire"), ProbeAmmoAfterFire);
         Row->SetBoolField(TEXT("ammo_consumed"), ProbeAmmoAfterFire < ProbeAmmoBefore);
         Row->SetBoolField(TEXT("native_aiming_state_before_fire"), bProbeAiming);
-        Row->SetBoolField(TEXT("native_reload_replenished"), CurrentWeapon && CurrentWeapon->GetAmmo() > ProbeAmmoAfterFire);
+        Row->SetBoolField(TEXT("native_reload_requested"), bProbeReloadRequested);
+        Row->SetBoolField(TEXT("native_can_reload_before_request"), bProbeCanReload);
+        Row->SetBoolField(TEXT("native_reload_replenished"), bProbeReloadRequested && CurrentWeapon && CurrentWeapon->GetAmmo() > ProbeAmmoAfterFire);
     }
     if (CurrentWeapon && CurrentWeapon->GetClass()->GetPathName() == Row->GetStringField(TEXT("class_path")))
     {
@@ -227,6 +266,7 @@ void ARonGunLab::Tick(float DeltaSeconds)
         UE_LOG(LogRonGunLab, Display, TEXT("GUNLAB_NATIVE_PAWN %s"), *Player->GetClass()->GetPathName());
         int32 InitialIndex = 1;
         FParse::Value(FCommandLine::Get(), TEXT("GunLabIndex="), InitialIndex);
+        if (!ProbeIndices.IsEmpty()) InitialIndex = ProbeIndices[0] + 1;
         if (!bSmoke && !WeaponClasses.IsEmpty())
         {
             const bool bSelected = SelectWeapon(FMath::Clamp(InitialIndex - 1, 0, WeaponClasses.Num() - 1));
@@ -281,12 +321,20 @@ void ARonGunLab::Tick(float DeltaSeconds)
         if (ProbeStage == 1 && ProbeSeconds > 0.5f) { Player->DoAimDownSights(); ProbeStage = 2; }
         if (ProbeStage == 2 && ProbeSeconds > 1.2f) { bProbeAiming = Player->bAiming; Player->PrimaryUse(); ProbeStage = 3; }
         if (ProbeStage == 3 && ProbeSeconds > 1.4f) { Player->EndPrimaryUse(); ProbeAmmoAfterFire = CurrentWeapon->GetAmmo(); ProbeStage = 4; }
-        if (ProbeStage == 4 && ProbeSeconds > 3.0f) { Player->Reload(); ProbeStage = 5; }
+        if (ProbeStage == 4 && ProbeSeconds > 3.0f)
+        {
+            // Let the native virtual CanReload/OnWeaponReload gates decide.
+            // A requested reload is not counted as observed replenishment.
+            bProbeCanReload = CurrentWeapon->CanReload();
+            bProbeReloadRequested = true;
+            Player->Reload();
+            ProbeStage = 5;
+        }
         if (ProbeStage == 5 && ProbeSeconds > 12.0f)
         {
-            WriteReceipt(TEXT("action_probe"), TEXT("Requested native ADS, PrimaryUse/EndPrimaryUse, Reload; ammo deltas certify only ammunition state, not visual/audio feel"));
+            WriteReceipt(TEXT("action_probe"), TEXT("Requested native ADS and PrimaryUse/EndPrimaryUse; reload request and observed ammo/aiming states are explicit fields, not visual/audio feel certification"));
             ProbeStage = 0;
-            if (bExitAfterProbe && !FParse::Param(FCommandLine::Get(), TEXT("GunLabCapture"))) FPlatformMisc::RequestExit(false);
+            ContinueProbeBatch();
         }
     }
     if (bSmoke && bInitialized && !bPendingEquip && AliveSeconds >= NextSmokeTime)
@@ -294,7 +342,7 @@ void ARonGunLab::Tick(float DeltaSeconds)
         if (SmokeNextIndex >= WeaponClasses.Num()) FinishSmoke();
         else { SelectWeapon(SmokeNextIndex++); NextSmokeTime = AliveSeconds + 0.5f; }
     }
-    if ((bSmoke || bProbeOnEquip || FParse::Param(FCommandLine::Get(), TEXT("GunLabCapture"))) && !Player && AliveSeconds > 120)
+    if ((bSmoke || bProbeOnEquip || ProbeStage || FParse::Param(FCommandLine::Get(), TEXT("GunLabCapture"))) && !Player && AliveSeconds > 120)
     {
         WriteReceipt(TEXT("no_native_pawn"), TEXT("Game mode did not create a native PlayerCharacter within 120 seconds"));
         FinishSmoke();
@@ -309,8 +357,22 @@ void ARonGunLab::Tick(float DeltaSeconds)
         if (PC->WasInputKeyJustPressed(EKeys::F9)) StartSmokeTest();
         if (PC->WasInputKeyJustPressed(EKeys::F10)) bShowOverlay = !bShowOverlay;
     }
-    if (Player && bInitialized && !bPendingEquip && AliveSeconds > 15 && FParse::Param(FCommandLine::Get(), TEXT("GunLabCapture")))
+    if (Player && bInitialized && !bPendingEquip && !ProbeStage && !bProbeOnEquip && AliveSeconds > 15 && FParse::Param(FCommandLine::Get(), TEXT("GunLabCapture")))
     {
+#if WITH_EDITOR
+        const int32 RemainingShaders = GShaderCompilingManager ? GShaderCompilingManager->GetNumRemainingJobs() : 0;
+        const int32 RemainingAssets = FAssetCompilingManager::Get().GetNumRemainingAssets();
+        if (!bCaptureRequested && (RemainingShaders > 0 || RemainingAssets > 0))
+        {
+            StatusText = FString::Printf(TEXT("Waiting for renderer assets: %d shader jobs, %d assets"), RemainingShaders, RemainingAssets);
+            if (AliveSeconds > 900)
+            {
+                WriteReceipt(TEXT("render_assets_timeout"), StatusText + TEXT("; no completed visual QA claimed"));
+                if (FParse::Param(FCommandLine::Get(), TEXT("GunLabExit"))) FPlatformMisc::RequestExit(false);
+            }
+            return;
+        }
+#endif
         const FString ScreenshotPath = FPaths::ConvertRelativePathToFull(FPaths::Combine(FPaths::ProjectSavedDir(), TEXT("GunLab/Range.png")));
         if (!bCaptureRequested)
         {

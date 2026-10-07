@@ -45,6 +45,7 @@ private:
     void WriteReceipt(const FString& Status, const FString& Detail);
     void SaveReceipts();
     void FinishSmoke();
+    void ContinueProbeBatch();
     UPROPERTY(Transient)
     ABaseMagazineWeapon* CurrentWeapon = nullptr;
     UPROPERTY(Transient)
@@ -65,6 +66,10 @@ private:
     float ProbeAmmoBefore = 0;
     float ProbeAmmoAfterFire = 0;
     bool bProbeAiming = false;
+    bool bProbeReloadRequested = false;
+    bool bProbeCanReload = false;
+    TArray<int32> ProbeIndices;
+    int32 ProbeCursor = 0;
     bool bProbeOnEquip = false;
     bool bExitAfterProbe = false;
     bool bCaptureRequested = false;

@@ -381,5 +381,17 @@
     "localMarkdownLinksChecked": 40,
     "markdownFencePairsVerified": true,
     "runtimeTestingPerformedByThisChapterAuthor": false
-  }
+  },
+  "dataEvidence": [
+    {
+      "path": "ReadyOrNot-Docs/06-Catalogs/weapons.json",
+      "selector": "weapons[?(@.class_name == 'Primary_SR16_C')]",
+      "class_path": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+      "lab_index": 40,
+      "fire_rate": 0.09000000357627869,
+      "rpm_text": "700",
+      "scope": "Exported Blueprint CDO fields, not measured firing cadence",
+      "sha256": "781212963f1f70f4f6eb44c47900f332c040fc7d8edd2458b149e17d87a620ab"
+    }
+  ]
 }

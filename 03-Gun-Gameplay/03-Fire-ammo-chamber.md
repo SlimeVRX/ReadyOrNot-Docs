@@ -12,6 +12,18 @@ Một phát bắn có ít nhất ba câu hỏi độc lập: hiện giờ có đ
 
 **Đơn vị quan trọng:** `FireRate` được truyền làm thời gian chờ trong các timer này, nên trên đường này nó là khoảng thời gian giữa các lần thử bắn, không phải trực tiếp số viên/phút. Công thức `RPM lý thuyết = 60 / khoảng thời gian` chỉ là phép đổi đơn vị. Nhịp thực tế còn chịu `RefireDelay`, frame scheduling, blocker và đường mode đang dùng; phải đo khoảng cách timestamp giữa các phát bắn được chấp nhận. [F01–F02]
 
+### Ví dụ thật: số trong CDO và nhãn UI của SR16
+
+Trong [catalog CDO đã xuất](../06-Catalogs/weapons.json), tìm entry có `class_name = "Primary_SR16_C"`, `lab_index = 40`. JSON path `weapons[?(@.class_name == 'Primary_SR16_C')].values.fire_rate` là `0.09000000357627869`, còn `.values.rpm_text` là chuỗi `"700"`. Đây là hai giá trị đọc từ cùng CDO, không phải kết quả đo bắn. [F10]
+
+| Giá trị | Cách hiểu cho người mới |
+|---|---|
+| `fire_rate ≈ 0.09` giây | Đầu vào thời gian của cơ chế đã đọc trong source |
+| `60 / 0.09000000357627869 ≈ 666.7 RPM` | Quy đổi lý tưởng chỉ từ interval này |
+| `rpm_text = "700"` | Nhãn văn bản do nội dung khai báo |
+
+Không kết luận ngay UI sai hoặc súng thực tế bắn đúng 666.7 RPM. Ví dụ chỉ chứng minh nhãn text không phải phép đo cadence. Bài thực hành là chọn đúng class, ghi ammo/attachment và các modifier thực sự có hiệu lực trên instance, rồi lấy timestamp native của nhiều phát được chấp nhận. So interval quan sát với interval CDO, đồng thời xét `RefireDelay`, mode, blocker và frame scheduling. Như vậy bạn học được ba tầng khác nhau: **dữ liệu cấu hình → luật thực thi → kết quả đo**. [F01–F02, F10]
+
 ```mermaid
 stateDiagram-v2
   [*] --> Ready
@@ -81,3 +93,4 @@ Tương tự, `TriggerFirstShot` có biểu thức đặt `bFirstShot` theo vi�
 | F07 | `Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp` — `RemoveAmmo` | 1222–1243 |
 | F08 | `Ready Or Not/Source/ReadyOrNot/Actors/BaseWeapon.cpp` — `NextFireMode`, `SafeModeToggle` | 395–445 |
 | F09 | `Ready Or Not/Source/ReadyOrNot/Actors/BaseWeapon.cpp` — `TriggerFirstShot`, `ResetFirstShot` | 1047–1052, 1021–1024 |
+| F10 | `ReadyOrNot-Docs/06-Catalogs/weapons.json` — entry `weapons[?(@.class_name == 'Primary_SR16_C')]`; `class_path = /Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C` | `lab_index = 40`; `values.fire_rate = 0.09000000357627869`; `values.rpm_text = "700"` — bằng chứng CDO, không phải runtime cadence |
