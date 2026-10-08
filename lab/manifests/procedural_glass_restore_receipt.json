@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "compiler_errors": 0,
+  "compiler_warnings": 0,
+  "wires": [
+    {
+      "from": "K2Node_CustomEvent_0.then",
+      "to": "K2Node_VariableSet_2.execute",
+      "output_pin_guid": "6BA0F219477C46F8C3E39290B315F4CC",
+      "input_pin_guid": "EEDDC0E5491FDF9E7C2B1ABA9BBAB1CF",
+      "before_output_links": 1,
+      "before_input_links": 1,
+      "after_output_links": 1,
+      "after_input_links": 1
+    },
+    {
+      "from": "K2Node_ComponentBoundEvent_0.then",
+      "to": "K2Node_CallFunction_7.execute",
+      "output_pin_guid": "C3792A4D4389B10EDEA9FA847E07D290",
+      "input_pin_guid": "7086B1DF4424AD3C9873C3810A68412D",
+      "before_output_links": 1,
+      "before_input_links": 1,
+      "after_output_links": 1,
+      "after_input_links": 1
+    },
+    {
+      "from": "K2Node_Event_1.then",
+      "to": "K2Node_CallFunction_5.execute",
+      "output_pin_guid": "A47E041E4FD43248A545A78EEB5E2396",
+      "input_pin_guid": "7086B1DF4424AD3C9873C3810A68412D",
+      "before_output_links": 1,
+      "before_input_links": 1,
+      "after_output_links": 1,
+      "after_input_links": 1
+    }
+  ],
+  "source_asset": "/Game/ThirdParty/ProceduralGlass/Blueprints/BP_ProceduralDestructibleGlass",
+  "local_copy": "/Game/ReadyOrNot/Level/Study/GlassRecovery/BP_GunLab_ProceduralGlass",
+  "source_sha256": "92DEE71348F50FBE75DB3138915C8F9F542CDE55671697FDF0B6B07EF8605156",
+  "scope": "Restore three disconnected original event entry wires only; original slicing, forces, timers and sound remain unchanged"
+}

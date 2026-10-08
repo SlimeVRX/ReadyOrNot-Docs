@@ -1,0 +1,476 @@
+{
+  "schema": 1,
+  "run_id_utc": "20261008-040132",
+  "map": "ReadyOrNot_GunLab",
+  "status": "passed",
+  "counts": {
+    "passed": 38,
+    "failed": 0,
+    "missing": 0
+  },
+  "checks": [
+    {
+      "id": "sequence_complete",
+      "status": "passed",
+      "expectation": "The input probe completed and used the expected receipt mode.",
+      "evidence": {
+        "complete": true,
+        "mode": "native_experience_input_probe"
+      }
+    },
+    {
+      "id": "unique_observations",
+      "status": "passed",
+      "expectation": "Every observation step appears exactly once.",
+      "evidence": {
+        "count": 44,
+        "duplicates": []
+      }
+    },
+    {
+      "id": "monotonic_observation_times",
+      "status": "passed",
+      "expectation": "Recorded observation times are finite and do not go backwards.",
+      "evidence": {}
+    },
+    {
+      "id": "no_probe_failure_steps",
+      "status": "passed",
+      "expectation": "No startup/equip/target/renderer timeout was recorded.",
+      "evidence": {
+        "fatal_steps": []
+      }
+    },
+    {
+      "id": "native_primary",
+      "status": "passed",
+      "expectation": "The initial SR16 is in the native primary slot with a live FP animation instance.",
+      "evidence": {
+        "baseline.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "baseline.native_primary_slot": true,
+        "baseline.fp_anim_instance": "/Game/Blueprints/Animation/Revised/Graphs_Body/ANIMBP_Player_FP_Master.ANIMBP_Player_FP_Master_C"
+      }
+    },
+    {
+      "id": "fire_selector",
+      "status": "passed",
+      "expectation": "A short native selector press changes the held SR16 mode without changing weapon or ammo.",
+      "evidence": {
+        "baseline.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "baseline.fire_mode": "FM_Single",
+        "baseline.ammo": 30,
+        "fire_selector_after_short_press.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "fire_selector_after_short_press.fire_mode": "FM_Auto",
+        "fire_selector_after_short_press.ammo": 30
+      }
+    },
+    {
+      "id": "ads_state_and_fov",
+      "status": "passed",
+      "expectation": "Native ADS becomes active and narrows FOV relative to the initial hipfire view.",
+      "evidence": {
+        "baseline.ads": false,
+        "baseline.camera_fov": 90,
+        "ads.ads": true,
+        "ads.camera_fov": 67.5484390258789
+      }
+    },
+    {
+      "id": "canted_state",
+      "status": "passed",
+      "expectation": "Canted aiming activates through the bound native action.",
+      "evidence": {
+        "canted.ads": true,
+        "canted.canted": true
+      }
+    },
+    {
+      "id": "fire_ammo_and_native_events",
+      "status": "passed",
+      "expectation": "The initial firing action consumes ammunition and emits matching local/server native fire events.",
+      "evidence": {
+        "canted.ammo": 30,
+        "canted.local_fire_events": 0,
+        "canted.server_fire_events": 0,
+        "fire_and_recoil.ammo": 24,
+        "fire_and_recoil.local_fire_events": 6,
+        "fire_and_recoil.server_fire_events": 6
+      }
+    },
+    {
+      "id": "native_recoil_state",
+      "status": "passed",
+      "expectation": "A positive native PendingRecoil response was sampled while firing.",
+      "evidence": {
+        "fire_and_recoil.max_pending_recoil_observed": 3.9988975524902344
+      }
+    },
+    {
+      "id": "tactical_reload",
+      "status": "passed",
+      "expectation": "The same SR16 replenishes ammunition through tactical reload while retaining its magazine count.",
+      "evidence": {
+        "fire_and_recoil.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "fire_and_recoil.ammo": 24,
+        "fire_and_recoil.magazines": 4,
+        "tactical_reload.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "tactical_reload.ammo": 31,
+        "tactical_reload.magazines": 4,
+        "tactical_reload.weapon_tactical_reload": true,
+        "tactical_reload.weapon_reloading": false
+      }
+    },
+    {
+      "id": "native_magcheck",
+      "status": "passed",
+      "expectation": "Held R plays the native magazine-check montage without consuming/replenishing ammunition.",
+      "evidence": {
+        "tactical_reload.ammo": 31,
+        "held_magcheck.ammo": 31,
+        "held_magcheck.magcheck_playing": true,
+        "held_magcheck.active_montage": "/Game/ReadyOrNot/Animations/FP/SR16/body/montages/fp_sr16_add_mag_check_Montage.fp_sr16_add_mag_check_Montage"
+      }
+    },
+    {
+      "id": "low_ready",
+      "status": "passed",
+      "expectation": "The native low-ready action activates.",
+      "evidence": {
+        "low_ready.low_ready": true
+      }
+    },
+    {
+      "id": "quick_lean",
+      "status": "passed",
+      "expectation": "The native lean axis produces nonzero lean.",
+      "evidence": {
+        "lean_right.lean": 15
+      }
+    },
+    {
+      "id": "crouch",
+      "status": "passed",
+      "expectation": "The player reaches native crouch state.",
+      "evidence": {
+        "crouch.crouched": true
+      }
+    },
+    {
+      "id": "free_look",
+      "status": "passed",
+      "expectation": "The native free-look action activates.",
+      "evidence": {
+        "free_look.freelook": true
+      }
+    },
+    {
+      "id": "native_secondary_slot",
+      "status": "passed",
+      "expectation": "The secondary key selects a different weapon in the real secondary slot.",
+      "evidence": {
+        "baseline.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "secondary_slot.weapon": "/Game/Blueprints/Items/WeaponsRevised/Secondary_M92A3.Secondary_M92A3_C",
+        "secondary_slot.native_secondary_slot": true,
+        "secondary_slot.native_primary_slot": false
+      }
+    },
+    {
+      "id": "primary_slot_preserves_state",
+      "status": "passed",
+      "expectation": "Returning to the primary preserves its ammo, reserve magazine count and ammunition row across the native 1/2 swap.",
+      "evidence": {
+        "free_look.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "free_look.ammo": 31,
+        "free_look.magazines": 4,
+        "free_look.ammo_type": "556x45FMJ",
+        "primary_slot_restored.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "primary_slot_restored.ammo": 31,
+        "primary_slot_restored.magazines": 4,
+        "primary_slot_restored.ammo_type": "556x45FMJ",
+        "primary_slot_restored.native_primary_slot": true
+      }
+    },
+    {
+      "id": "optic_component_added",
+      "status": "passed",
+      "expectation": "A native attachment component is added to the same gun while its ammo is retained.",
+      "evidence": {
+        "primary_slot_restored.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "primary_slot_restored.ammo": 31,
+        "primary_slot_restored.attachments": [],
+        "optic_attached.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "optic_attached.ammo": 31,
+        "optic_attached.attachments": [
+          "/Game/Blueprints/Items/Attachments/Scope_MicroT2_Raised.Scope_MicroT2_Raised_C"
+        ]
+      }
+    },
+    {
+      "id": "optic_ads",
+      "status": "passed",
+      "expectation": "The configured optic remains on the same weapon during ADS with a narrower FOV.",
+      "evidence": {
+        "optic_attached.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "optic_attached.attachments": [
+          "/Game/Blueprints/Items/Attachments/Scope_MicroT2_Raised.Scope_MicroT2_Raised_C"
+        ],
+        "optic_attached.camera_fov": 90,
+        "optic_ads.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "optic_ads.attachments": [
+          "/Game/Blueprints/Items/Attachments/Scope_MicroT2_Raised.Scope_MicroT2_Raised_C",
+          "/Game/Blueprints/Items/Attachments/BP_Flashlight_M600V.BP_Flashlight_M600V_C"
+        ],
+        "optic_ads.ads": true,
+        "optic_ads.camera_fov": 74.43455505371094
+      }
+    },
+    {
+      "id": "native_target_damage",
+      "status": "passed",
+      "expectation": "Live native fire consumes ammo, emits fire events and reduces health on the recorded native target.",
+      "evidence": {
+        "native_target_before.target": "/Game/Blueprints/Characters/AI/CyberneticsSuspect_V2.CyberneticsSuspect_V2_C",
+        "native_target_before.target_health": 320,
+        "native_target_before.ammo": 31,
+        "native_target_before.server_fire_events": 6,
+        "native_target_after_live_fire.target": "/Game/Blueprints/Characters/AI/CyberneticsSuspect_V2.CyberneticsSuspect_V2_C",
+        "native_target_after_live_fire.target_health": 75,
+        "native_target_after_live_fire.ammo": 25,
+        "native_target_after_live_fire.server_fire_events": 12
+      }
+    },
+    {
+      "id": "standing_movement",
+      "status": "passed",
+      "expectation": "Forward input moves the standing player.",
+      "evidence": {
+        "standing_movement.speed": 240,
+        "standing_movement.crouched": false
+      }
+    },
+    {
+      "id": "shift_native_slow_walk",
+      "status": "passed",
+      "expectation": "With the same gun, Shift activates bHoldingFastWalk but this snapshot scales speed to approximately 40% of ordinary standing movement, without sprint.",
+      "evidence": {
+        "standing_movement.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "standing_movement.speed": 240,
+        "fast_walk_movement.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "fast_walk_movement.speed": 96,
+        "fast_walk_movement.holding_fast_walk": true,
+        "fast_walk_movement.sprinting": false
+      }
+    },
+    {
+      "id": "crouched_movement",
+      "status": "passed",
+      "expectation": "The player moves while crouched, at a lower speed than standing under the same loadout.",
+      "evidence": {
+        "standing_movement.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "standing_movement.speed": 240,
+        "crouched_movement.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "crouched_movement.speed": 120,
+        "crouched_movement.crouched": true
+      }
+    },
+    {
+      "id": "free_lean_axis",
+      "status": "passed",
+      "expectation": "Free lean is active and its native X/Z offset changes.",
+      "evidence": {
+        "free_lean_axis.freelean_active": true,
+        "free_lean_axis.freelean_x": 40,
+        "free_lean_axis.freelean_z": 0
+      }
+    },
+    {
+      "id": "mp5a2_single_held_fire",
+      "status": "passed",
+      "expectation": "MP5A2 FM_Single emits 1 shots during the held-input sample, with matching ammo/event deltas.",
+      "evidence": {
+        "single_before_hold.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP5A2.Primary_MP5A2_C",
+        "single_before_hold.fire_mode": "FM_Single",
+        "single_before_hold.ammo": 30,
+        "single_before_hold.server_fire_events": 12,
+        "single_before_hold.authored_burst_bullet_count": 3,
+        "single_after_hold.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP5A2.Primary_MP5A2_C",
+        "single_after_hold.fire_mode": "FM_Single",
+        "single_after_hold.ammo": 29,
+        "single_after_hold.server_fire_events": 13
+      }
+    },
+    {
+      "id": "mp5a2_burst_held_fire",
+      "status": "passed",
+      "expectation": "MP5A2 FM_Burst emits 3 shots during the held-input sample, with matching ammo/event deltas.",
+      "evidence": {
+        "burst_before_hold.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP5A2.Primary_MP5A2_C",
+        "burst_before_hold.fire_mode": "FM_Burst",
+        "burst_before_hold.ammo": 29,
+        "burst_before_hold.server_fire_events": 13,
+        "burst_before_hold.authored_burst_bullet_count": 3,
+        "burst_after_hold.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP5A2.Primary_MP5A2_C",
+        "burst_after_hold.fire_mode": "FM_Burst",
+        "burst_after_hold.ammo": 26,
+        "burst_after_hold.server_fire_events": 16
+      }
+    },
+    {
+      "id": "mp5a2_auto_held_fire",
+      "status": "passed",
+      "expectation": "MP5A2 FM_Auto emits more than 3 shots during the held-input sample, with matching ammo/event deltas.",
+      "evidence": {
+        "auto_before_hold.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP5A2.Primary_MP5A2_C",
+        "auto_before_hold.fire_mode": "FM_Auto",
+        "auto_before_hold.ammo": 26,
+        "auto_before_hold.server_fire_events": 16,
+        "auto_before_hold.authored_burst_bullet_count": 3,
+        "auto_after_hold.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP5A2.Primary_MP5A2_C",
+        "auto_after_hold.fire_mode": "FM_Auto",
+        "auto_after_hold.ammo": 13,
+        "auto_after_hold.server_fire_events": 29
+      }
+    },
+    {
+      "id": "empty_reload",
+      "status": "passed",
+      "expectation": "An actually empty MP5A2 reloads through native input; ammunition rises and one magazine is consumed.",
+      "evidence": {
+        "before_empty_reload.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP5A2.Primary_MP5A2_C",
+        "before_empty_reload.ammo": 0,
+        "before_empty_reload.magazines": 4,
+        "after_empty_reload.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP5A2.Primary_MP5A2_C",
+        "after_empty_reload.ammo": 30,
+        "after_empty_reload.magazines": 3,
+        "after_empty_reload.weapon_reloading": false
+      }
+    },
+    {
+      "id": "speed_reload",
+      "status": "passed",
+      "expectation": "The double-click reload branch replenishes the same partially loaded MP5A2 and consumes one reserve magazine.",
+      "evidence": {
+        "before_speed_reload.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP5A2.Primary_MP5A2_C",
+        "before_speed_reload.ammo": 25,
+        "before_speed_reload.magazines": 3,
+        "after_speed_reload.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_MP5A2.Primary_MP5A2_C",
+        "after_speed_reload.ammo": 31,
+        "after_speed_reload.magazines": 2,
+        "after_speed_reload.weapon_reloading": false,
+        "after_speed_reload.weapon_tactical_reload": false
+      }
+    },
+    {
+      "id": "native_crosshair_present",
+      "status": "passed",
+      "expectation": "The native reticle widget exists in the live viewport; this does not certify layout/size/usability.",
+      "evidence": {
+        "baseline.native_crosshair_overlay_present": true
+      }
+    },
+    {
+      "id": "light_toggle",
+      "status": "passed",
+      "expectation": "The installed native light changes from off to on on the same weapon after the input action.",
+      "evidence": {
+        "light_before_toggle.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "light_before_toggle.light_on": false,
+        "attachment_toggle.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "attachment_toggle.light_on": true
+      }
+    },
+    {
+      "id": "native_sr16_camera_oscillation",
+      "status": "passed",
+      "expectation": "The SR16 authored oscillator shake becomes active while firing; this weapon does not reference a CameraAnim track.",
+      "evidence": {
+        "fire_and_recoil.max_active_shakes": 1,
+        "fire_and_recoil.max_camera_oscillation_time_remaining": 0.23000000417232513
+      }
+    },
+    {
+      "id": "camera_recovery_fire_input",
+      "status": "passed",
+      "expectation": "The authored-camera test fires the native M16A4 and consumes ammunition.",
+      "evidence": {
+        "m16a4_equipped.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_M16A4.Primary_M16A4_C",
+        "m16a4_equipped.ammo": 30,
+        "m16a4_equipped.server_fire_events": 47,
+        "recovered_camera_fire.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_M16A4.Primary_M16A4_C",
+        "recovered_camera_fire.ammo": 29,
+        "recovered_camera_fire.server_fire_events": 48
+      }
+    },
+    {
+      "id": "camera_recovery_playback",
+      "status": "passed",
+      "expectation": "The M16A4 authored camera sequence is evaluated after firing and produces a nonzero sampled transform.",
+      "evidence": {
+        "recovered_camera_fire.camera_recovery_track_count": 63,
+        "recovered_camera_fire.camera_recovery_max_active_sequences": 1,
+        "recovered_camera_fire.camera_recovery_max_playback_seconds": 2.975468866030375,
+        "recovered_camera_fire.camera_recovery_max_translation_cm": 0,
+        "recovered_camera_fire.camera_recovery_max_rotation_deg": 1.744122161396413
+      }
+    },
+    {
+      "id": "native_training_success",
+      "status": "passed",
+      "expectation": "Live native fire consumes ammunition and causes the original training-target success delegate to fire.",
+      "evidence": {
+        "training_target_before.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "training_target_before.training_success_events": 0,
+        "training_target_before.ammo": 30,
+        "training_target_before.server_fire_events": 48,
+        "training_target_after_live_fire.weapon": "/Game/Blueprints/Items/WeaponsRevised/Primary_SR16.Primary_SR16_C",
+        "training_target_after_live_fire.training_success_events": 4,
+        "training_target_after_live_fire.ammo": 24,
+        "training_target_after_live_fire.server_fire_events": 54
+      }
+    },
+    {
+      "id": "native_glass_hit_forwarding",
+      "status": "passed",
+      "expectation": "A live weapon shot reaches the same native glass actor and increases its native hit-event count.",
+      "evidence": {
+        "native_glass_before.glass_actor_id": "BP_GunLab_ProceduralGlass_C_1",
+        "native_glass_before.glass_native_hit_events": 0,
+        "native_glass_before.ammo": 24,
+        "native_glass_before.server_fire_events": 54,
+        "native_glass_after_live_fire.glass_actor_id": "BP_GunLab_ProceduralGlass_C_1",
+        "native_glass_after_live_fire.glass_native_hit_events": 1,
+        "native_glass_after_live_fire.ammo": 18,
+        "native_glass_after_live_fire.server_fire_events": 60
+      }
+    },
+    {
+      "id": "native_glass_fracture",
+      "status": "passed",
+      "expectation": "After a native hit, procedural fragment components increase on the same glass fixture; forwarding alone is not fracture.",
+      "evidence": {
+        "native_glass_before.glass_actor_id": "BP_GunLab_ProceduralGlass_C_1",
+        "native_glass_before.glass_procedural_components": 1,
+        "native_glass_after_live_fire.glass_actor_id": "BP_GunLab_ProceduralGlass_C_1",
+        "native_glass_after_live_fire.glass_procedural_components": 3
+      }
+    }
+  ],
+  "not_certified": [
+    "Subjective gunfeel or parity with a retail release.",
+    "Audio heard correctly; audio_disabled_by_command_line=false only means the command-line flag was absent.",
+    "Crosshair presentation quality from widget presence alone.",
+    "Native loadout UI interaction: opening and rendering were exercised, but choosing items and normal Back/save navigation were not.",
+    "Every weapon/attachment/ammunition combination, multiplayer, all door/material/armor or less-lethal behavior."
+  ],
+  "audio_disabled_by_command_line": false,
+  "native_loadout_ui_opened_by_probe": true,
+  "receipt_sha256": "88a06c42f576d8163cb807a63c2a1026f4cd81a991452a0ffc5da2eb41992fe4",
+  "verified_at_utc": "2026-10-08T04:18:41.508Z",
+  "source_receipt_sha256": "574BEEACA758A7E0ABB862BBCAF0DF6F10347FB17B976E3B3218425D50D85F12",
+  "tested_binary_sha256": "6DCA3FA54BFCE51E67E619B154798FE6A29DA46F300F5519B5967145A1B13ED6",
+  "tested_host_game_binary_sha256": "0CC3B7CE1703CEEC062B1EE5869B13FB39BBEAD7E1B18FC5951A85213D7CBF1C",
+  "tested_map_sha256": "36BBE5DF4B518C017ABC94A4A301276923E19BE2B2E77AF0E9FAF4FD5C72322A",
+  "tested_camera_mapping_sha256": "B44CD72D8E8529350B71BB616752292489A40FF55D36F0140E3FDFBEA0D18166",
+  "build_receipt": "build_receipt.json",
+  "collected_at_utc": "2026-10-08T04:18:41.508Z"
+}

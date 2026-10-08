@@ -38,6 +38,8 @@ Không cần hiểu hết 349 nghìn dòng trước khi bắt đầu. Chọn m�
 
 <KnowledgeMap />
 
-**Phạm vi nguồn:** snapshot cục bộ dùng custom Unreal Engine **5.3.2**, quan sát ngày **07/10/2026**. Không có release tag đủ để đồng nhất với bản game bán lẻ mới nhất. [Cách đọc bằng chứng](/gioi-thieu) · [Mục lục đầy đủ](/00-MucLuc)
+**Gun Lab nâng cấp:** [phím điều khiển, hệ thống native và 26 bài thử](/05-Gun-Lab/native-systems-and-test-guide) · [camera, animation và các lỗi migration](/05-Gun-Lab/native-presentation-audit).
+
+**Phạm vi nguồn:** snapshot cục bộ dùng custom Unreal Engine **5.3.2**, cập nhật kiểm kê ngày **08/10/2026**. Không có release tag đủ để đồng nhất với bản game bán lẻ mới nhất. [Cách đọc bằng chứng](/gioi-thieu) · [Mục lục đầy đủ](/00-MucLuc)
 
 </div>

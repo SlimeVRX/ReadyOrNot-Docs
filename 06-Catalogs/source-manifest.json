@@ -190,9 +190,9 @@
   },
   {
     "path": "Ready Or Not/Source/ReadyOrNot/Actors/BaseMagazineWeapon.cpp",
-    "bytes": 131772,
+    "bytes": 131869,
     "lines": 3711,
-    "sha256": "7eec862ce070bc38e732a50e81fbe6b2a250e404399b0fa76a2714f559223ee6",
+    "sha256": "2196317b8b6075e00ada3d048a2ac72cc7c7eb6adda70bfbe0f5f016a2fa7dbb",
     "group": "ReadyOrNot/Actors"
   },
   {
@@ -2318,16 +2318,16 @@
   },
   {
     "path": "Ready Or Not/Source/ReadyOrNot/Actors/TrainingTarget.cpp",
-    "bytes": 3231,
+    "bytes": 3234,
     "lines": 91,
-    "sha256": "6131682edb29d2cbb420e47b591012d432e46684d924914593f308fcd9f3b646",
+    "sha256": "498dfe96b047a810618a618ef4c7fe191e916e700e029e80f002bc04712b655c",
     "group": "ReadyOrNot/Actors"
   },
   {
     "path": "Ready Or Not/Source/ReadyOrNot/Actors/TrainingTarget.h",
-    "bytes": 1665,
+    "bytes": 1672,
     "lines": 53,
-    "sha256": "6b164356e955f8ad8fde6ff5bf5c7cd410f08bedd9a8f1b5499a5c6e577a9ad2",
+    "sha256": "0578711c87805beb07cb656bdb4195165e7d184fb1c7372f682e3b137d1e7415",
     "group": "ReadyOrNot/Actors"
   },
   {
@@ -6763,9 +6763,9 @@
   },
   {
     "path": "Ready Or Not/Source/ReadyOrNot/HUD/Widgets/Loadout/V2/Loadout_V2.cpp",
-    "bytes": 64778,
-    "lines": 1788,
-    "sha256": "da967dbd2cc152526bfb3f72d4b6d14163308fe7dafe39fa731b1f9408763071",
+    "bytes": 65013,
+    "lines": 1795,
+    "sha256": "3c082b0bb73832d02fcc0d0bc79005b0f844d2dd8618c1d84ef26245f6e7857b",
     "group": "ReadyOrNot/HUD"
   },
   {

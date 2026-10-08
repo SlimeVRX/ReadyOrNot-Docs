@@ -1,0 +1,21 @@
+{
+  "schema": 4,
+  "generated_utc": "2026-10-08T03:31:51.596395+00:00",
+  "converter_fingerprint": "970a3ba17f19f7d64019362883829d22ca5e422a3a886bdd8589f685579fe995",
+  "numeric_runtime": "Node v24.19.0",
+  "validated_transform_semantics": true,
+  "conversion_failure_count": 0,
+  "source_camera_count": 71,
+  "source_parse_rejections": 1,
+  "converted_sequence_count": 71,
+  "reused_sequence_count": 71,
+  "shake_mapping_count": 63,
+  "native_evaluator_sample_count": 509900,
+  "max_native_position_error_cm": 3.93974398438246e-7,
+  "max_native_rotation_error_degrees": 0.0019883586236288846,
+  "max_key_time_error_seconds": 2.9802322387695312e-8,
+  "position_tolerance_cm": 0.001,
+  "rotation_tolerance_degrees": 0.005,
+  "method": "UE4 initial-relative transform, exact position basis conversion, adaptive authored Euler-to-quaternion migration; native bulk channel/readback/evaluator JSON with numeric validation in an isolated Node process.",
+  "limitations": "Measured 960Hz and independent intermediate samples, not bit-exact or all-time bound; malformed original camera excluded. Gameplay camera stack needs separate runtime verification."
+}

@@ -17,6 +17,7 @@ Copy-Item -Path (Join-Path $source '*') -Destination $destination -Recurse -Forc
 & (Join-Path $Workspace 'Engine\Build\BatchFiles\Build.bat') ReadyOrNotEditor Win64 Development "-Project=$project" -WaitMutex -NoHotReloadFromIDE "-WindowsSDKVersion=$SdkVersion" "-CompilerVersion=$CompilerVersion"
 if ($LASTEXITCODE -ne 0) { throw "Build failed: $LASTEXITCODE" }
 $pluginDll = Join-Path $destination 'Binaries\Win64\UnrealEditor-ReadyOrNotGunLab.dll'
+$gameDll = Join-Path $projectDir 'Binaries\Win64\UnrealEditor-ReadyOrNot.dll'
 if (-not (Test-Path -LiteralPath $pluginDll)) { throw "Build returned success but plugin DLL is missing: $pluginDll" }
 $engineVersion = Get-Content -LiteralPath (Join-Path $Workspace 'Engine\Build\Build.version') -Raw | ConvertFrom-Json
 $manifestDir = Join-Path $PSScriptRoot '..\manifests'
@@ -30,6 +31,7 @@ $buildReceipt = [ordered]@{
     build_exit_code = 0
     plugin_dll_sha256 = (Get-FileHash -LiteralPath $pluginDll -Algorithm SHA256).Hash
     plugin_dll_last_write_utc = (Get-Item -LiteralPath $pluginDll).LastWriteTimeUtc.ToString('o')
+    host_game_dll_sha256 = if (Test-Path -LiteralPath $gameDll) { (Get-FileHash -LiteralPath $gameDll -Algorithm SHA256).Hash } else { $null }
     scope = 'Successful Build.bat completion and resulting DLL fingerprint. Requested toolchain flags are not a parsed compiler-version report. Rerun runtime checks after a changed binary.'
 }
 $buildReceipt | ConvertTo-Json -Depth 4 | Set-Content -LiteralPath (Join-Path $manifestDir 'build_receipt.json') -Encoding utf8

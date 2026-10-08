@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "started_at_utc": "2026-10-08T04:00:00.1476743Z",
+  "finished_at_utc": "2026-10-08T04:04:16.3029259Z",
+  "status": "restored",
+  "before_exists": true,
+  "restored_exists": true,
+  "exact_bytes_restored": true,
+  "process_changed_profile_bytes": false,
+  "scope": "Optional native UI inspection only. Profile contents, identifying hashes and backup paths stay local; this does not describe earlier unbacked runs."
+}

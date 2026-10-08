@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "generated_utc": "2026-10-08T03:31:51.596395+00:00",
+  "converter_fingerprint": "970a3ba17f19f7d64019362883829d22ca5e422a3a886bdd8589f685579fe995",
+  "conversion_failure_count": 0,
+  "validated_transform_semantics": true,
+  "accepted_sequences": 71,
+  "enabled_shake_mappings": 63,
+  "rejected_entries": [
+    {
+      "path": "Blueprints/Camera/Hit_Camera/Revised/CamAnim_Leg_R.uasset",
+      "reason": "non-monotonic keys"
+    },
+    {
+      "shake_class": "/Game/Blueprints/Camera/Hit_Camera/Revised/Camera_Hit_Leg_R.Camera_Hit_Leg_R_C",
+      "reason": "Camera curve was not converted"
+    }
+  ],
+  "mapping_manifest_sha256": "B44CD72D8E8529350B71BB616752292489A40FF55D36F0140E3FDFBEA0D18166",
+  "scope": "Metadata only. Authored curves, generated assets and full sequence measurements remain local. Runtime playback is tested separately in experience_receipt.json."
+}

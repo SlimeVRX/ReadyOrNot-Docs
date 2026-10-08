@@ -5,6 +5,9 @@ param(
     [string]$Workspace = (Resolve-Path (Join-Path $PSScriptRoot '..\..\..')).Path
 )
 $ErrorActionPreference = 'Stop'
+if (Get-Process -Name UnrealEditor,UnrealEditor-Cmd -ErrorAction SilentlyContinue) {
+    throw 'An Unreal editor or commandlet is already running. Close it before starting a separate lab session.'
+}
 
 function Assert-GunLabReceipt {
     param(
@@ -66,7 +69,9 @@ $map = '/Game/ReadyOrNot/Level/Study/ReadyOrNot_GunLab'
 $arguments = @(('"' + $project + '"'), '-nop4', '-nosplash')
 $requestedProbeIndices = @()
 if ($Mode -eq 'Editor') {
-    $arguments += $map
+    # UnrealEdMisc reads only the first command-line token as the initial map.
+    # Put the map immediately after the project, before optional switches.
+    $arguments = @(('"' + $project + '"'), $map, '-nop4', '-nosplash')
     # The interactive editor is intentionally visible for the user.
     Start-Process -FilePath (Join-Path $binaryDir 'UnrealEditor.exe') -ArgumentList $arguments -WorkingDirectory $binaryDir
 } else {

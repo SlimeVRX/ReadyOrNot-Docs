@@ -1,27 +1,59 @@
 {
-  "schema": 1,
-  "run_id_utc": "20261007-115320",
+  "schema": 2,
+  "run_id_utc": "20261008-040132",
   "map": "/Game/ReadyOrNot/Level/Study/ReadyOrNot_GunLab",
-  "map_sha256": "BC800A87D00F5A37F68924BDFE706EC3DA6A99B26E9011CA4187B48C76EC9507",
-  "tested_binary_sha256": "6D5CB38C2F38020BD1F55A2976243BBE23D9EC57474B04A08EB2FD013AF287CC",
-  "local_image_relative_to_project": "Saved/GunLab/Range.png",
-  "image_in_public_repository": false,
-  "image_sha256": "383BEB01C794E41FAE77E925861154220BE0B372FA68129ADEF3F6F77872F5B7",
-  "image_bytes": 1992858,
-  "image_width": 1680,
-  "image_height": 1050,
-  "capture_file_modified_utc": "2026-10-07T11:54:49Z",
-  "pixels_reviewed": true,
-  "observations": [
-    "SR16 is visibly held in first-person view; weapon, gloves and sleeves render.",
-    "Range floor and targets are visible; visible distance labels face the firing line and are upright.",
-    "No Preparing Shaders overlay is visible; harness waits for shader and asset compilation before requesting capture.",
-    "Native development debug text remains visible, including missing AI-area information in this geometry-only range."
+  "map_sha256": "36BBE5DF4B518C017ABC94A4A301276923E19BE2B2E77AF0E9FAF4FD5C72322A",
+  "tested_binary_sha256": "6DCA3FA54BFCE51E67E619B154798FE6A29DA46F300F5519B5967145A1B13ED6",
+  "local_experience_receipt_relative_to_project": "Saved/GunLab/experience_receipt.json",
+  "experience_receipt_sha256": "9BC25D4FCF434FA147EF88E1A49F592E8038DE416BBEF8CC63459A65EAFF811F",
+  "images_in_public_repository": false,
+  "review_method": "Direct pixel inspection of both private rendered images by the coordinating agent and a second reviewing agent; image files remain local.",
+  "images": [
+    {
+      "local_image_relative_to_project": "Saved/GunLab/Experience.png",
+      "image_sha256": "AE505EF04E365E5F31F8FAA8FDE1E8E7C3356FD11AB3ADDA184291B470E2BE2E",
+      "image_bytes": 1840900,
+      "image_width": 1680,
+      "image_height": 1050,
+      "capture_file_modified_utc": "2026-10-08T04:03:52Z",
+      "pixels_reviewed": true,
+      "observations": [
+        "The native SR-16, first-person arms, gloves and sleeves render in a lit firing lane with visible targets.",
+        "The expanded Vietnamese F1 guide is readable and its text fits within the panel and viewport.",
+        "The status panel shows SR-16, current mode Auto and available modes Single / Auto.",
+        "A small white reticle is visible at the image center (840, 525), matching the lab's 8-pixel reticle presentation.",
+        "No gameplay debug warning text or shader-preparation overlay is visible. The normal development-build watermark remains visible."
+      ]
+    },
+    {
+      "local_image_relative_to_project": "Saved/GunLab/NativeLoadout.png",
+      "image_sha256": "3253BEAEC75E7FAE5DAACB0959E9B87CC38DB110B3D14C96B76BACDF48B65E8B",
+      "image_bytes": 1254653,
+      "image_width": 1680,
+      "image_height": 1050,
+      "capture_file_modified_utc": "2026-10-08T04:04:08Z",
+      "pixels_reviewed": true,
+      "observations": [
+        "The native LOADOUT screen renders its character preview, weapon and gear sections, menu labels and Back button.",
+        "The Gun Lab guide/status panel and crosshair are hidden while the native loadout screen is displayed.",
+        "The visible Back button and preset-save text establish presentation only; this capture does not demonstrate activating them or changing a selection."
+      ]
+    }
   ],
-  "action_receipt": "action_probe_receipt.json",
-  "audio_tested": false,
-  "impact_tested": false,
+  "profile_preservation": {
+    "local_receipt_relative_to_project": "Saved/GunLab/profile_preservation.json",
+    "status": "restored",
+    "before_exists": true,
+    "restored_exists": true,
+    "before_and_restored_sha256_match": true,
+    "exact_pre_run_bytes_restored": true,
+    "scope": "The optional UI audit runner restored the pre-run MetaGameProfile.sav bytes. This does not test menu Back/save interactions or certify earlier unbacked runs."
+  },
+  "audio_listening_tested": false,
+  "impact_tested_by_these_images": false,
   "subjective_gunfeel_tested": false,
-  "temporal_animation_tested": false,
-  "scope": "One rendered image plus the separately recorded native state probe. Not a certification of every weapon's appearance, mission/AI integration, audiovisual parity or retail gunfeel."
+  "temporal_animation_tested_by_these_images": false,
+  "native_loadout_selection_back_save_tested": false,
+  "scope": "Two rendered images establish visible presentation only. The input/state verifier is separate evidence; these images do not certify temporal animation, heard audio, all weapons and attachments, native menu interactions or retail gunfeel parity.",
+  "historical_visual_receipt": "history/20261007/visual_receipt.json"
 }

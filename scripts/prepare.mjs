@@ -101,6 +101,6 @@ const index = ['# Mục lục toàn bộ', '', 'Đọc tuyến tính khi mới b
 fs.writeFileSync(path.join(out, '00-MucLuc.md'), index.join('\n'))
 fs.writeFileSync(path.join(root, '00-MucLuc.md'), index.join('\n').replaceAll('](/', '](').replace(/\)\n/g, '.md)\n'))
 fs.writeFileSync(path.join(out, 'public/.nojekyll'), '')
-const report = {date: '2026-10-07', pages: pages.length + 1, chapters: chapters.length, localSourceLinks: sourceRefs.size, downloads: [...downloads].sort(), scope: 'Authored docs and original lab scripts only; no proprietary binary assets or source contents.'}
+const report = {date: new Date().toISOString().slice(0, 10), pages: pages.length + 1, chapters: chapters.length, localSourceLinks: sourceRefs.size, downloads: [...downloads].sort(), scope: 'Authored docs and original lab scripts only; no proprietary binary assets or source contents.'}
 fs.writeFileSync(path.join(out, 'manifest.json'), JSON.stringify(report,null,2) + '\n')
 console.log(JSON.stringify(report))

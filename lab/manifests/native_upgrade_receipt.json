@@ -1,0 +1,457 @@
+{
+  "schema": 2,
+  "utc": "2026-10-08T03:31:51.315946+00:00",
+  "map": "/Game/ReadyOrNot/Level/Study/ReadyOrNot_GunLab",
+  "backup": "ReadyOrNot_GunLab-before-native-upgrade-20261008-033150.umap",
+  "fixtures": [
+    {
+      "label": "UNARMOURED",
+      "spawner": "AISpawn_3",
+      "data_table": "/Game/Blueprints/DataTables/AI/AIDataTable_Training.AIDataTable_Training",
+      "row": "Suspect_02_Shotgun",
+      "armour_override": "None",
+      "archetype": "/Game/Blueprints/AI/Archetypes/Debug/Debug_Suspect_Static.Debug_Suspect_Static",
+      "force_no_weapon": true,
+      "deactivated": false,
+      "location_cm": [
+        -4700,
+        -1600,
+        100
+      ]
+    },
+    {
+      "label": "ARMOURED",
+      "spawner": "AISpawn_4",
+      "data_table": "/Game/Blueprints/DataTables/AI/AIDataTable_Training.AIDataTable_Training",
+      "row": "Suspect_02_Shotgun",
+      "armour_override": "Armour_4",
+      "archetype": "/Game/Blueprints/AI/Archetypes/Debug/Debug_Suspect_Static.Debug_Suspect_Static",
+      "force_no_weapon": true,
+      "deactivated": false,
+      "location_cm": [
+        -4700,
+        -850,
+        100
+      ]
+    },
+    {
+      "label": "LESS LETHAL / STUN",
+      "spawner": "AISpawn_5",
+      "data_table": "/Game/Blueprints/DataTables/AI/AIDataTable_Training.AIDataTable_Training",
+      "row": "Suspect_02_Shotgun",
+      "armour_override": "None",
+      "archetype": "/Game/Blueprints/AI/Archetypes/Debug/Debug_Suspect_Static.Debug_Suspect_Static",
+      "force_no_weapon": true,
+      "deactivated": false,
+      "location_cm": [
+        -4700,
+        -100,
+        100
+      ]
+    }
+  ],
+  "materials": [
+    {
+      "name": "Drywall",
+      "thickness_cm": 2,
+      "physical_material": "/Game/ReadyOrNot/Data/Phys-Materials/RON_Drywall_PM.RON_Drywall_PM",
+      "surface_type": "<PhysicalSurface.SURFACE_TYPE10: 10>",
+      "material_instance": "/Game/ReadyOrNot/Level/Study/GunLabMaterials/MI_GunLab_Drywall.MI_GunLab_Drywall"
+    },
+    {
+      "name": "Plywood",
+      "thickness_cm": 5,
+      "physical_material": "/Game/ReadyOrNot/Data/Phys-Materials/RON_Plywood_PM.RON_Plywood_PM",
+      "surface_type": "<PhysicalSurface.SURFACE_TYPE36: 36>",
+      "material_instance": "/Game/ReadyOrNot/Level/Study/GunLabMaterials/MI_GunLab_Plywood.MI_GunLab_Plywood"
+    },
+    {
+      "name": "Steel",
+      "thickness_cm": 2,
+      "physical_material": "/Game/ReadyOrNot/Data/Phys-Materials/RON_Steel_PM.RON_Steel_PM",
+      "surface_type": "<PhysicalSurface.SURFACE_TYPE44: 44>",
+      "material_instance": "/Game/ReadyOrNot/Level/Study/GunLabMaterials/MI_GunLab_Steel.MI_GunLab_Steel"
+    },
+    {
+      "name": "Concrete_Strong",
+      "thickness_cm": 20,
+      "physical_material": "/Game/ReadyOrNot/Data/Phys-Materials/RON_Concrete_Strong_PM.RON_Concrete_Strong_PM",
+      "surface_type": "<PhysicalSurface.SURFACE_TYPE8: 8>",
+      "material_instance": "/Game/ReadyOrNot/Level/Study/GunLabMaterials/MI_GunLab_Concrete_Strong.MI_GunLab_Concrete_Strong"
+    },
+    {
+      "name": "Glass_Plate",
+      "thickness_cm": 2,
+      "physical_material": "/Game/ReadyOrNot/Data/Phys-Materials/RON_Glass_Plate_PM.RON_Glass_Plate_PM",
+      "surface_type": "<PhysicalSurface.SURFACE_TYPE18: 18>",
+      "material_instance": "/Game/ReadyOrNot/Level/Study/GunLabMaterials/MI_GunLab_Glass_Plate.MI_GunLab_Glass_Plate"
+    },
+    {
+      "name": "Aluminium",
+      "thickness_cm": 2,
+      "physical_material": "/Game/ReadyOrNot/Data/Phys-Materials/RON_Aluminium_PM.RON_Aluminium_PM",
+      "surface_type": "<PhysicalSurface.SURFACE_TYPE1: 1>",
+      "material_instance": "/Game/ReadyOrNot/Level/Study/GunLabMaterials/MI_GunLab_Aluminium.MI_GunLab_Aluminium"
+    }
+  ],
+  "doors": [
+    {
+      "row": "Default_Wood",
+      "class": "/Game/Blueprints/Environment/BP_Door_New.BP_Door_New_C",
+      "location": [
+        -4500,
+        800,
+        0
+      ],
+      "lock_chance": 1
+    },
+    {
+      "row": "Hotel_Steel_01",
+      "class": "/Game/Blueprints/Environment/BP_Door_New.BP_Door_New_C",
+      "location": [
+        -3300,
+        2000,
+        0
+      ],
+      "lock_chance": 1
+    }
+  ],
+  "volumes": [
+    {
+      "label": "Range sound room",
+      "class": "/Script/ReadyOrNot.RoomVolume",
+      "location": [
+        5450,
+        0,
+        280
+      ],
+      "full_size_cm": [
+        12900,
+        3100,
+        560
+      ]
+    },
+    {
+      "label": "Annex sound room",
+      "class": "/Script/ReadyOrNot.RoomVolume",
+      "location": [
+        -2500,
+        0,
+        280
+      ],
+      "full_size_cm": [
+        3000,
+        5500,
+        560
+      ]
+    },
+    {
+      "label": "Damage bay sound room",
+      "class": "/Script/ReadyOrNot.RoomVolume",
+      "location": [
+        -4800,
+        -1000,
+        280
+      ],
+      "full_size_cm": [
+        1600,
+        3500,
+        560
+      ]
+    },
+    {
+      "label": "CQB sound room",
+      "class": "/Script/ReadyOrNot.RoomVolume",
+      "location": [
+        -4750,
+        1600,
+        145
+      ],
+      "full_size_cm": [
+        1480,
+        1580,
+        290
+      ]
+    },
+    {
+      "label": "Door sound portal",
+      "class": "/Script/ReadyOrNot.PortalVolume",
+      "location": [
+        -4560,
+        800,
+        130
+      ],
+      "full_size_cm": [
+        160,
+        110,
+        260
+      ]
+    },
+    {
+      "label": "Range outside sound portal",
+      "class": "/Script/ReadyOrNot.PortalVolume",
+      "location": [
+        -1000,
+        0,
+        250
+      ],
+      "full_size_cm": [
+        110,
+        3000,
+        500
+      ]
+    },
+    {
+      "label": "CQB native reverb",
+      "class": "/Script/ReadyOrNot.ReadyOrNotAudioVolume",
+      "location": [
+        -4750,
+        1600,
+        145
+      ],
+      "full_size_cm": [
+        1480,
+        1580,
+        290
+      ]
+    },
+    {
+      "label": "Outdoor native reverb",
+      "class": "/Script/ReadyOrNot.ReadyOrNotAudioVolume",
+      "location": [
+        5200,
+        0,
+        260
+      ],
+      "full_size_cm": [
+        13300,
+        5500,
+        520
+      ]
+    },
+    {
+      "label": "Native navigation bounds",
+      "class": "/Script/NavigationSystem.NavMeshBoundsVolume",
+      "location": [
+        3100,
+        0,
+        150
+      ],
+      "full_size_cm": [
+        18100,
+        5500,
+        500
+      ]
+    }
+  ],
+  "warnings": [],
+  "inspected_ai_rows": [
+    {
+      "row": "Suspect_02_Shotgun",
+      "CharacterClass": "/Script/Engine.BlueprintGeneratedClass'/Game/Blueprints/Characters/AI/CyberneticsSuspect_V2.CyberneticsSuspect_V2_C'",
+      "SpawningTeamType": "TT_SUSPECT",
+      "AIBodyArmourSelection": "",
+      "AIHelmetSelection": "",
+      "AIBodyArmourOverride": "None"
+    },
+    {
+      "row": "Suspect_01_Pistol",
+      "CharacterClass": "/Script/Engine.BlueprintGeneratedClass'/Game/Blueprints/Characters/AI/CyberneticsSuspect_V2.CyberneticsSuspect_V2_C'",
+      "SpawningTeamType": "TT_SUSPECT",
+      "AIBodyArmourSelection": "",
+      "AIHelmetSelection": "",
+      "AIBodyArmourOverride": "None"
+    },
+    {
+      "row": "Civilian_Gas_Woman_01",
+      "CharacterClass": "/Script/Engine.BlueprintGeneratedClass'/Game/Blueprints/Characters/AI/Cybernetics_Civilian_V2.Cybernetics_Civilian_V2_C'",
+      "SpawningTeamType": "TT_CIVILIAN",
+      "AIBodyArmourSelection": "(\"Armour_L2\")",
+      "AIHelmetSelection": "",
+      "AIBodyArmourOverride": "None"
+    },
+    {
+      "row": "Civilian_Gas_Man_01",
+      "CharacterClass": "/Script/Engine.BlueprintGeneratedClass'/Game/Blueprints/Characters/AI/Cybernetics_Civilian_V2.Cybernetics_Civilian_V2_C'",
+      "SpawningTeamType": "TT_CIVILIAN",
+      "AIBodyArmourSelection": "(\"Armour_L2\")",
+      "AIHelmetSelection": "",
+      "AIBodyArmourOverride": "None"
+    },
+    {
+      "row": "Civilian_Gas_Man_02",
+      "CharacterClass": "/Script/Engine.BlueprintGeneratedClass'/Game/Blueprints/Characters/AI/Cybernetics_Civilian_V2.Cybernetics_Civilian_V2_C'",
+      "SpawningTeamType": "TT_CIVILIAN",
+      "AIBodyArmourSelection": "(\"Armour_L2\")",
+      "AIHelmetSelection": "",
+      "AIBodyArmourOverride": "None"
+    },
+    {
+      "row": "Civilian_Gas_Woman_02",
+      "CharacterClass": "/Script/Engine.BlueprintGeneratedClass'/Game/Blueprints/Characters/AI/Cybernetics_Civilian_V2.Cybernetics_Civilian_V2_C'",
+      "SpawningTeamType": "TT_CIVILIAN",
+      "AIBodyArmourSelection": "(\"Armour_L2\")",
+      "AIHelmetSelection": "",
+      "AIBodyArmourOverride": "None"
+    },
+    {
+      "row": "Civilian_Prisoner_Man_01",
+      "CharacterClass": "/Script/Engine.BlueprintGeneratedClass'/Game/Blueprints/Characters/AI/Cybernetics_Civilian_V2.Cybernetics_Civilian_V2_C'",
+      "SpawningTeamType": "TT_CIVILIAN",
+      "AIBodyArmourSelection": "",
+      "AIHelmetSelection": "",
+      "AIBodyArmourOverride": "None"
+    }
+  ],
+  "inspected_armour_rows": [
+    {
+      "row": "ExampleArmour",
+      "bIsHelmet": "False",
+      "ArmourLevel": "3",
+      "ArmourMaterial": ""
+    },
+    {
+      "row": "ExampleHelmet",
+      "bIsHelmet": "True",
+      "ArmourLevel": "5",
+      "ArmourMaterial": ""
+    },
+    {
+      "row": "ExplosiveVest",
+      "bIsHelmet": "False",
+      "ArmourLevel": "0",
+      "ArmourMaterial": ""
+    },
+    {
+      "row": "CivExplosiveVest",
+      "bIsHelmet": "False",
+      "ArmourLevel": "0",
+      "ArmourMaterial": ""
+    },
+    {
+      "row": "Armour_L2",
+      "bIsHelmet": "False",
+      "ArmourLevel": "2",
+      "ArmourMaterial": ""
+    },
+    {
+      "row": "Armour_L2NoMesh",
+      "bIsHelmet": "False",
+      "ArmourLevel": "2",
+      "ArmourMaterial": ""
+    },
+    {
+      "row": "Armour_3A",
+      "bIsHelmet": "False",
+      "ArmourLevel": "3",
+      "ArmourMaterial": ""
+    },
+    {
+      "row": "Armour_3AMesh",
+      "bIsHelmet": "False",
+      "ArmourLevel": "3",
+      "ArmourMaterial": ""
+    },
+    {
+      "row": "Armour_4",
+      "bIsHelmet": "False",
+      "ArmourLevel": "4",
+      "ArmourMaterial": ""
+    },
+    {
+      "row": "Helmet_L3",
+      "bIsHelmet": "True",
+      "ArmourLevel": "3",
+      "ArmourMaterial": ""
+    }
+  ],
+  "breakable_glass": {
+    "class": "/Game/ReadyOrNot/Level/RoN_Valley/Valley_Arch/BP_BreakableGlass.BP_BreakableGlass_C",
+    "location_cm": [
+      -3100,
+      1100,
+      135
+    ],
+    "native_parent": "/Script/ReadyOrNot.BreakableGlass",
+    "bounds_extent_cm": [
+      333.3335000000002,
+      333.3335000000002,
+      333.33349999999996
+    ]
+  },
+  "procedural_glass_restore": {
+    "success": true,
+    "compiler_errors": 0,
+    "compiler_warnings": 0,
+    "wires": [
+      {
+        "from": "K2Node_CustomEvent_0.then",
+        "to": "K2Node_VariableSet_2.execute",
+        "output_pin_guid": "6BA0F219477C46F8C3E39290B315F4CC",
+        "input_pin_guid": "EEDDC0E5491FDF9E7C2B1ABA9BBAB1CF",
+        "before_output_links": 1,
+        "before_input_links": 1,
+        "after_output_links": 1,
+        "after_input_links": 1
+      },
+      {
+        "from": "K2Node_ComponentBoundEvent_0.then",
+        "to": "K2Node_CallFunction_7.execute",
+        "output_pin_guid": "C3792A4D4389B10EDEA9FA847E07D290",
+        "input_pin_guid": "7086B1DF4424AD3C9873C3810A68412D",
+        "before_output_links": 1,
+        "before_input_links": 1,
+        "after_output_links": 1,
+        "after_input_links": 1
+      },
+      {
+        "from": "K2Node_Event_1.then",
+        "to": "K2Node_CallFunction_5.execute",
+        "output_pin_guid": "A47E041E4FD43248A545A78EEB5E2396",
+        "input_pin_guid": "7086B1DF4424AD3C9873C3810A68412D",
+        "before_output_links": 1,
+        "before_input_links": 1,
+        "after_output_links": 1,
+        "after_input_links": 1
+      }
+    ],
+    "source_asset": "/Game/ThirdParty/ProceduralGlass/Blueprints/BP_ProceduralDestructibleGlass",
+    "local_copy": "/Game/ReadyOrNot/Level/Study/GlassRecovery/BP_GunLab_ProceduralGlass",
+    "source_sha256": "92DEE71348F50FBE75DB3138915C8F9F542CDE55671697FDF0B6B07EF8605156",
+    "scope": "Restore three disconnected original event entry wires only; original slicing, forces, timers and sound remain unchanged"
+  },
+  "procedural_glass": {
+    "class": "/Game/ReadyOrNot/Level/Study/GlassRecovery/BP_GunLab_ProceduralGlass.BP_GunLab_ProceduralGlass_C",
+    "location_cm": [
+      -3150,
+      400,
+      135
+    ],
+    "point_damage_adapter": "OnTakePointDamage -> original OnGlassHit(HitResult, DamageCauser)",
+    "physics_and_fracture": "Existing project Blueprint slicing; three original event entries restored in a lab-only copy",
+    "validation": "Requires runtime fragmentation observation"
+  },
+  "actor_count": 101,
+  "native_systems": [
+    "LoadoutPortal",
+    "AmmoRefillBox",
+    "AISpawn",
+    "CharacterHealthComponent",
+    "SuspectArmour",
+    "Door",
+    "BreakableGlass",
+    "TrainingTarget",
+    "CustomPhysicalMaterial",
+    "RoomVolume",
+    "PortalVolume",
+    "ReadyOrNotAudioVolume"
+  ],
+  "limitations": [
+    "Static unarmed debug-archetype AI fixtures isolate native damage/stun response; this is not a full combat encounter.",
+    "Paper mesh is a visual impact witness; no replacement health or scoring component is added.",
+    "Material geometry and thickness are lab fixtures; native ammo/surface rules determine penetration/ricochet.",
+    "Authored FMOD event references are attached; audible mix and propagation still require runtime listening.",
+    "Native Valley breakable-glass Blueprint references missing ApexDestruction components and missing old textures; native hit/material path is present but full fragment fracture is not claimed."
+  ],
+  "map_sha256": "36BBE5DF4B518C017ABC94A4A301276923E19BE2B2E77AF0E9FAF4FD5C72322A"
+}

@@ -1,13 +1,12 @@
 {
-  "date_local": "2026-10-07",
-  "timezone": "Asia/Bangkok",
+  "build_verified_utc": "2026-10-08T02:54:13.7164837Z",
   "engine": "custom UE 5.3.2",
   "target": "ReadyOrNotEditor Win64 Development",
-  "compiler_toolchain_directory_version": "14.36.32532",
-  "compiler_reported_version": "14.36.32548",
-  "windows_sdk": "10.0.22621.0",
+  "requested_compiler_directory_version": "14.36.32532",
+  "requested_windows_sdk": "10.0.22621.0",
   "build_exit_code": 0,
-  "plugin_dll_sha256": "6D5CB38C2F38020BD1F55A2976243BBE23D9EC57474B04A08EB2FD013AF287CC",
-  "scope": "Compilation and linking only. Runtime and presentation require separate receipts.",
-  "build_verified_utc": "2026-10-07T01:22:39.9408723Z"
+  "plugin_dll_sha256": "6DCA3FA54BFCE51E67E619B154798FE6A29DA46F300F5519B5967145A1B13ED6",
+  "plugin_dll_last_write_utc": "2026-10-08T02:54:13.2957525Z",
+  "host_game_dll_sha256": "0CC3B7CE1703CEEC062B1EE5869B13FB39BBEAD7E1B18FC5951A85213D7CBF1C",
+  "scope": "Successful Build.bat completion and resulting DLL fingerprint. Requested toolchain flags are not a parsed compiler-version report. Rerun runtime checks after a changed binary."
 }

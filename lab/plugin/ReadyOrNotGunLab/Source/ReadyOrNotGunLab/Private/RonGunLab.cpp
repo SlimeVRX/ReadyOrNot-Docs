@@ -1,4 +1,5 @@
 #include "RonGunLab.h"
+#include "RonGunLabCameraRecovery.h"
 #include "ReadyOrNot.h"
 #include "Characters/PlayerCharacter.h"
 #include "Actors/BaseMagazineWeapon.h"
@@ -30,6 +31,7 @@ ARonGunLab::ARonGunLab()
 void ARonGunLab::BeginPlay()
 {
     Super::BeginPlay();
+    ApplyRonGunLabCameraRecovery(GetWorld());
     bSmoke = FParse::Param(FCommandLine::Get(), TEXT("GunLabSmoke"));
     bExitAfterSmoke = bSmoke && FParse::Param(FCommandLine::Get(), TEXT("GunLabExit"));
     bProbeOnEquip = !bSmoke && FParse::Param(FCommandLine::Get(), TEXT("GunLabProbe"));
@@ -59,6 +61,12 @@ void ARonGunLab::BeginPlay()
     }
 }
 
+void ARonGunLab::EndPlay(const EEndPlayReason::Type EndPlayReason)
+{
+    RestoreRonGunLabCameraRecovery(GetWorld());
+    Super::EndPlay(EndPlayReason);
+}
+
 APlayerCharacter* ARonGunLab::GetNativePlayer() const
 {
     APlayerController* PC = GetWorld() ? GetWorld()->GetFirstPlayerController() : nullptr;
@@ -68,7 +76,7 @@ APlayerCharacter* ARonGunLab::GetNativePlayer() const
 bool ARonGunLab::SelectWeapon(int32 Index)
 {
     APlayerCharacter* Player = GetNativePlayer();
-    if (!Player || !Player->HasAuthority() || !WeaponClasses.IsValidIndex(Index) || bPendingEquip || ProbeStage)
+    if (!Player || !Player->HasAuthority() || !WeaponClasses.IsValidIndex(Index) || bPendingEquip || ProbeStage || Player->IsAnimationBlocking())
         return false;
     Player->EndPrimaryUse();
     UClass* Class = WeaponClasses[Index].LoadSynchronous();
@@ -86,6 +94,11 @@ bool ARonGunLab::SelectWeapon(int32 Index)
         WriteReceipt(TEXT("incomplete_asset"), TEXT("Native animation data or skeletal mesh missing; selection retained in catalog"));
         return false;
     }
+    // Playable primary/secondary guns use the complete native workbench pipeline.
+    // Hidden/suspect/test assets remain a clearly identified catalog inspection path.
+    if (ShouldUseNativeLoadout(Class))
+        return ApplyNativeLoadoutSelection(Class, Player);
+    bLastNativeLoadout = false;
     FActorSpawnParameters Params;
     Params.SpawnCollisionHandlingOverride = ESpawnActorCollisionHandlingMethod::AlwaysSpawn;
     ABaseMagazineWeapon* Weapon = GetWorld()->SpawnActor<ABaseMagazineWeapon>(Class, FTransform::Identity, Params);
@@ -110,7 +123,9 @@ bool ARonGunLab::SelectWeapon(int32 Index)
         WriteReceipt(TEXT("equip_rejected"), TEXT("Native inventory declined the request"));
         return false;
     }
-    PreviousWeapon = CurrentWeapon;
+    // Never discard the player's real primary/secondary because a catalog-only
+    // suspect/tactical asset was temporarily inspected.
+    PreviousWeapon = IsValid(CurrentWeapon) && !IsNativeLoadoutWeapon(CurrentWeapon) ? CurrentWeapon : nullptr;
     CurrentWeapon = Weapon;
     bPendingEquip = true;
     PendingSeconds = 0;
@@ -129,14 +144,21 @@ void ARonGunLab::Refill()
 {
     if (APlayerCharacter* Player = GetNativePlayer())
     {
-        if (ProbeStage || bSmoke) return;
-        if (CurrentWeapon && Player->GetEquippedItem() != CurrentWeapon) { StatusText = TEXT("The native inventory changed weapons. Select a lab gun before supplying ammunition."); return; }
+        if (ProbeStage || bSmoke || bPendingEquip) return;
         if (Player->IsAnimationBlocking()) { StatusText = TEXT("Wait for the native action to finish before supplying ammunition"); return; }
-        if (CurrentWeapon)
-            CurrentWeapon->SetMagazineCount(FMath::Max(1, SuppliedMagazines), TArray<FName>());
+        ABaseMagazineWeapon* Held = Cast<ABaseMagazineWeapon>(Player->GetEquippedItem());
+        if (Held)
+        {
+            const FSavedLoadout Loadout = Player->GetInventoryComponent()->GetLastEquippedLoadout();
+            const FSpawnedGear& Gear = Player->GetInventoryComponent()->GetSpawnedGear();
+            const bool bPrimary = Held == Gear.Primary;
+            const bool bSecondary = Held == Gear.Secondary;
+            Held->SetMagazineCount(FMath::Max(1, bPrimary ? Loadout.PrimaryAmmoSlotsCount : bSecondary ? Loadout.SecondaryAmmoSlotsCount : SuppliedMagazines),
+                bPrimary ? Loadout.PrimaryAmmoSlots : bSecondary ? Loadout.SecondaryAmmoSlots : TArray<FName>());
+        }
         else
             Player->ReplenishAllMagazineAmmo();
-        StatusText = TEXT("Native ammunition supply requested (manual; subclass magazine/hopper semantics)");
+        StatusText = TEXT("Native ammunition supply requested; selected loadout ammo type preserved");
     }
 }
 
@@ -217,12 +239,13 @@ void ARonGunLab::WriteReceipt(const FString& Status, const FString& Detail)
         Row->SetBoolField(TEXT("native_can_reload_before_request"), bProbeCanReload);
         Row->SetBoolField(TEXT("native_reload_replenished"), bProbeReloadRequested && CurrentWeapon && CurrentWeapon->GetAmmo() > ProbeAmmoAfterFire);
     }
-    if (CurrentWeapon && CurrentWeapon->GetClass()->GetPathName() == Row->GetStringField(TEXT("class_path")))
+    if (IsValid(CurrentWeapon) && CurrentWeapon->GetClass()->GetPathName() == Row->GetStringField(TEXT("class_path")))
     {
         Row->SetNumberField(TEXT("ammo"), CurrentWeapon->GetAmmo());
         Row->SetNumberField(TEXT("magazines"), CurrentWeapon->GetMagazineCount());
         Row->SetBoolField(TEXT("native_owner"), CurrentWeapon->GetOwner() == GetNativePlayer());
     }
+    AppendNativeReadiness(Row);
     Receipts.Add(MakeShared<FJsonValueObject>(Row));
     UE_LOG(LogRonGunLab, Display, TEXT("GUNLAB_RESULT index=%d status=%s class=%s detail=%s"), CurrentIndex, *Status, *Row->GetStringField(TEXT("class_path")), *Detail);
     SaveReceipts();
@@ -260,11 +283,14 @@ void ARonGunLab::Tick(float DeltaSeconds)
     AliveSeconds += DeltaSeconds;
     APlayerCharacter* Player = GetNativePlayer();
     APlayerController* PC = GetWorld()->GetFirstPlayerController();
-    if (Player && !bInitialized && AliveSeconds > 3)
+    if (Player && !bInitialized && AliveSeconds > 3 && !Player->IsAnimationBlocking())
     {
         bInitialized = true;
+        EnsureNativeCrosshair();
         UE_LOG(LogRonGunLab, Display, TEXT("GUNLAB_NATIVE_PAWN %s"), *Player->GetClass()->GetPathName());
         int32 InitialIndex = 1;
+        for (int32 Index = 0; Index < WeaponClasses.Num(); ++Index)
+            if (WeaponClasses[Index].ToString().EndsWith(TEXT("Primary_SR16.Primary_SR16_C"))) { InitialIndex = Index + 1; break; }
         FParse::Value(FCommandLine::Get(), TEXT("GunLabIndex="), InitialIndex);
         if (!ProbeIndices.IsEmpty()) InitialIndex = ProbeIndices[0] + 1;
         if (!bSmoke && !WeaponClasses.IsEmpty())
@@ -276,11 +302,13 @@ void ARonGunLab::Tick(float DeltaSeconds)
     if (Player && bPendingEquip)
     {
         PendingSeconds += DeltaSeconds;
-        if (Player->GetEquippedItem() == CurrentWeapon && !Player->IsAnimationBlocking())
+        if (IsValid(CurrentWeapon) && CurrentWeapon->GetOwner() == Player
+            && Player->GetEquippedItem() == CurrentWeapon && !Player->IsAnimationBlocking()
+            && (!bLastNativeLoadout || IsNativeLoadoutWeapon(CurrentWeapon)))
         {
             bPendingEquip = false;
             ActiveWeaponIndex = CurrentIndex;
-            if (PreviousWeapon && PreviousWeapon != CurrentWeapon)
+            if (IsValid(PreviousWeapon) && PreviousWeapon != CurrentWeapon && !IsNativeLoadoutWeapon(PreviousWeapon))
                 Player->GetInventoryComponent()->DestroyInventoryItem(PreviousWeapon);
             PreviousWeapon = nullptr;
             StatusText = FString::Printf(TEXT("%d/%d  %s"), CurrentIndex + 1, WeaponClasses.Num(), *CurrentWeapon->ItemName.ToString());
@@ -299,8 +327,8 @@ void ARonGunLab::Tick(float DeltaSeconds)
             ABaseMagazineWeapon* Held = Cast<ABaseMagazineWeapon>(Player->GetEquippedItem());
             const bool bHoldingNew = Held == CurrentWeapon;
             const bool bHoldingPrevious = Held == PreviousWeapon;
-            if (CurrentWeapon && !bHoldingNew) Player->GetInventoryComponent()->DestroyInventoryItem(CurrentWeapon);
-            if (PreviousWeapon && !bHoldingPrevious) Player->GetInventoryComponent()->DestroyInventoryItem(PreviousWeapon);
+            if (IsValid(CurrentWeapon) && !bHoldingNew && !IsNativeLoadoutWeapon(CurrentWeapon)) Player->GetInventoryComponent()->DestroyInventoryItem(CurrentWeapon);
+            if (IsValid(PreviousWeapon) && !bHoldingPrevious && !IsNativeLoadoutWeapon(PreviousWeapon)) Player->GetInventoryComponent()->DestroyInventoryItem(PreviousWeapon);
             CurrentWeapon = (bHoldingNew || bHoldingPrevious) ? Held : nullptr;
             PreviousWeapon = nullptr;
             ActiveWeaponIndex = bHoldingNew ? CurrentIndex : bHoldingPrevious ? ActiveWeaponIndex : INDEX_NONE;
@@ -308,7 +336,7 @@ void ARonGunLab::Tick(float DeltaSeconds)
             if (bExitAfterProbe) FPlatformMisc::RequestExit(false);
         }
     }
-    if (Player && CurrentWeapon && ProbeStage)
+    if (Player && IsValid(CurrentWeapon) && ProbeStage)
     {
         if (Player->GetEquippedItem() != CurrentWeapon)
         {
@@ -337,6 +365,7 @@ void ARonGunLab::Tick(float DeltaSeconds)
             ContinueProbeBatch();
         }
     }
+    ReconcileNativeSelection();
     if (bSmoke && bInitialized && !bPendingEquip && AliveSeconds >= NextSmokeTime)
     {
         if (SmokeNextIndex >= WeaponClasses.Num()) FinishSmoke();
@@ -396,13 +425,22 @@ void ARonGunLab::Tick(float DeltaSeconds)
     }
     if (GEngine && bShowOverlay)
     {
-        FString Text = TEXT("NATIVE GUN LAB | F5/F6 weapon | F7 refill | F8 firing line | F9 equip audit | F10 overlay\n") + StatusText;
+        FString Text = TEXT("NATIVE GUN LAB | F5/F6 new loadout | 1/2 native slots | F7 refill | F8 firing line | F10 overlay\n") + StatusText;
         if (Player)
         {
             if (ABaseMagazineWeapon* Held = Cast<ABaseMagazineWeapon>(Player->GetEquippedItem()))
             {
                 if (Held != CurrentWeapon) Text += TEXT(" | Native inventory selected: ") + Held->ItemName.ToString();
                 Text += FString::Printf(TEXT(" | Ammo %.0f | Magazines %d"), Held->GetAmmo(), Held->GetMagazineCount());
+                const UEnum* Modes = StaticEnum<EFireMode>();
+                if (Modes)
+                {
+                    Text += TEXT(" | X fire mode: ") + Modes->GetNameStringByValue(static_cast<int64>(Held->CurrentFireMode));
+                    Text += TEXT(" [");
+                    for (EFireMode Mode : Held->AvailableFireModes) Text += Modes->GetNameStringByValue(static_cast<int64>(Mode)) + TEXT(" ");
+                    Text += TEXT("]");
+                }
+                Text += IsNativeLoadoutWeapon(Held) ? TEXT(" | Native loadout slot") : TEXT(" | Catalog-only asset");
             }
         }
         GEngine->AddOnScreenDebugMessage(uint64(GetUniqueID()), 0.1f, FColor::Cyan, Text);
@@ -414,6 +452,7 @@ void ARonGunLab::Command(const TArray<FString>& Args)
     if (Args.IsEmpty()) return;
     if (bSmoke) { UE_LOG(LogRonGunLab, Warning, TEXT("Wait for the current equip audit to finish")); return; }
     if (ProbeStage) { UE_LOG(LogRonGunLab, Warning, TEXT("Wait for the current action probe to finish")); return; }
+    if (HandleLoadoutCommand(Args)) return;
     if (Args[0] == TEXT("next")) CycleWeapon(1);
     else if (Args[0] == TEXT("prev")) CycleWeapon(-1);
     else if (Args[0] == TEXT("refill")) Refill();

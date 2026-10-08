@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "map": "/Game/ReadyOrNot/Level/Study/ReadyOrNot_GunLab",
+  "actor_count": 46,
+  "native_game_mode": "/Game/Blueprints/Games/GM_FreeMode.GM_FreeMode_C",
+  "weapon_class_count": 102,
+  "target_distances_m": [
+    5,
+    10,
+    25,
+    50,
+    100
+  ],
+  "generated": true,
+  "playtest": "Not implied by successful map generation",
+  "visual_correction_utc": "2026-10-07T01:24:01.487866+00:00",
+  "text_actors_corrected": 14,
+  "visual_correction": "Named Python Rotator and Color arguments; labels face firing line, original light pitch/yaw intent restored",
+  "map_sha256": "BC800A87D00F5A37F68924BDFE706EC3DA6A99B26E9011CA4187B48C76EC9507"
+}

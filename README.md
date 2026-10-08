@@ -6,7 +6,7 @@ Bộ sách tiếng Việt để học cách một dự án gameplay lớn hoạt
 
 ## Nguồn nào đang được nghiên cứu?
 
-Snapshot tại workspace ReadyOrNot, dùng **custom Unreal Engine 5.3.2**, quan sát **07/10/2026**. Engine ghi Changelist 0 và BranchName Unknown; bộ source không có commit/release tag đủ để gán một phiên bản bán lẻ. Những mô tả trong sách chỉ áp dụng cho snapshot được kiểm kê.
+Snapshot tại workspace ReadyOrNot, dùng **custom Unreal Engine 5.3.2**, cập nhật kiểm kê **08/10/2026**. Engine ghi Changelist 0 và BranchName Unknown; bộ source không có commit/release tag đủ để gán một phiên bản bán lẻ. Những mô tả trong sách chỉ áp dụng cho snapshot được kiểm kê.
 
 Kiểm kê filesystem ban đầu có **1.512 file C++/header/build rules, 349.488 dòng văn bản**, **135.184 file .uasset**, **1.343 file .umap** và **23 descriptor plugin của project**. Dòng văn bản gồm cả comment và dòng trống; file map bao gồm bản đồ nội bộ/sublevel/thử nghiệm. Những con số này không chứng minh số màn chơi thương mại hoặc mức hoàn thiện. Xem [catalog snapshot](06-Catalogs/README.md) để biết phương pháp và dữ liệu cập nhật sau khi tạo lab.
 

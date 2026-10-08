@@ -6,6 +6,7 @@
 
 class ABaseMagazineWeapon;
 class APlayerCharacter;
+class UReadyOrNotLoadoutManager;
 
 /** Selection/instrumentation only. Firing, recoil, ADS and reloading belong to the host game. */
 UCLASS()
@@ -15,6 +16,7 @@ class READYORNOTGUNLAB_API ARonGunLab : public AActor
 public:
     ARonGunLab();
     virtual void BeginPlay() override;
+    virtual void EndPlay(const EEndPlayReason::Type EndPlayReason) override;
     virtual void Tick(float DeltaSeconds) override;
 
     UPROPERTY(EditAnywhere, Category="Gun Lab")
@@ -39,9 +41,19 @@ public:
     UFUNCTION(BlueprintCallable, Category="Gun Lab")
     void StartActionProbe();
     void Command(const TArray<FString>& Args);
+    void AppendNativeReadiness(const TSharedPtr<class FJsonObject>& Row) const;
 
 private:
     APlayerCharacter* GetNativePlayer() const;
+    bool ShouldUseNativeLoadout(UClass* WeaponClass);
+    bool ApplyNativeLoadoutSelection(UClass* WeaponClass, APlayerCharacter* Player);
+    bool IsNativeLoadoutWeapon(const ABaseMagazineWeapon* Weapon) const;
+    bool HandleLoadoutCommand(const TArray<FString>& Args);
+    void ReconcileNativeSelection();
+    void EnsureNativeCrosshair();
+    UReadyOrNotLoadoutManager* GetSessionLoadoutManager();
+    UPROPERTY(Transient)
+    UReadyOrNotLoadoutManager* SessionLoadoutManager = nullptr;
     void WriteReceipt(const FString& Status, const FString& Detail);
     void SaveReceipts();
     void FinishSmoke();
@@ -57,6 +69,7 @@ private:
     bool bInitialized = false;
     bool bPendingEquip = false;
     bool bLastInstantFallback = false;
+    bool bLastNativeLoadout = false;
     float PendingSeconds = 0;
     float NextSmokeTime = 0;
     float AliveSeconds = 0;
@@ -75,6 +88,7 @@ private:
     bool bCaptureRequested = false;
     float CaptureTime = 0;
     FString StatusText;
+    FString SelectionRouteReason;
     FString ReceiptMode;
     FString RunId;
     TArray<TSharedPtr<class FJsonValue>> Receipts;

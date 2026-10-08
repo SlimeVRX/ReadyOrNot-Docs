@@ -67,7 +67,7 @@ const maps = assetFiles.filter(f => f.endsWith('.umap')).map(file => ({
 const engine = JSON.parse(fs.readFileSync(path.join(workspace, 'Engine/Build/Build.version'), 'utf8'))
 const configFiles = walk(path.join(project, 'Config')).filter(f => /\.(ini|eos)$/.test(f))
 const metadata = {
-  schema: 'ReadyOrNotDocs.SourceSnapshot.v1', observedDate: '2026-10-07',
+  schema: 'ReadyOrNotDocs.SourceSnapshot.v1', observedDate: new Date().toISOString().slice(0, 10),
   sourceRoot: 'Ready Or Not/Source', engineVersion: [engine.MajorVersion, engine.MinorVersion, engine.PatchVersion].join('.'),
   engineChangelist: engine.Changelist, engineBranch: engine.BranchName,
   sourceGitCommit: null, retailVersion: null,
