@@ -16,6 +16,10 @@ hero:
       text: Tra catalog nguồn
       link: /06-Catalogs/README
 features:
+  - title: Technical Design Document tiếng Việt
+    details: Đọc toàn bộ hệ thống qua 19 mục TDD, từ vòng chơi và AI đến âm thanh, Commander và pipeline; có lộ trình tái tạo và bài thực hành.
+    link: /07-TDD-Tieng-Viet/README
+    linkText: Đọc phần TDD riêng
   - title: Đọc một dự án lớn có phương pháp
     details: Đi từ vòng nhiệm vụ đến owner, state và dependency. Biết cần học gì trước khi chạm vào một class dài hàng nghìn dòng.
     link: /01-Ban-Do-Kien-Thuc/01-ban-do
@@ -37,6 +41,8 @@ features:
 Không cần hiểu hết 349 nghìn dòng trước khi bắt đầu. Chọn một hành động nhỏ, lần qua các tầng, rồi quay lại bức tranh tổng.
 
 <KnowledgeMap />
+
+**Mới ngày 12/10/2026:** [Ready Or Not — Technical Design Document tiếng Việt](/07-TDD-Tieng-Viet/README), biên soạn từ PDF R&D người dùng cung cấp. [Lộ trình tự tái tạo các hệ thống](/07-TDD-Tieng-Viet/19-lo-trinh-tai-tao) · [Phân biệt TDD và bằng chứng source](/07-TDD-Tieng-Viet/21-nguon-va-doi-chieu).
 
 **Gun Lab nâng cấp:** [phím điều khiển, hệ thống native và 26 bài thử](/05-Gun-Lab/native-systems-and-test-guide) · [camera, animation và các lỗi migration](/05-Gun-Lab/native-presentation-audit).
 

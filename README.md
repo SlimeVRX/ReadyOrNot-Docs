@@ -38,6 +38,7 @@ Trạng thái thực nghiệm nằm ở [Gun Lab](05-Gun-Lab/README.md); các re
 4. [Kiến trúc và quy trình dự án](04-Kien-Truc-Va-Quy-Trinh/README.md)
 5. [Native Gun Lab](05-Gun-Lab/README.md)
 6. [Catalog và bằng chứng](06-Catalogs/README.md)
+7. [Ready Or Not — Technical Design Document bằng tiếng Việt](07-TDD-Tieng-Viet/README.md): biên soạn từ PDF R&D 116 trang, đủ 19 mục gốc, kèm lộ trình tái tạo và phiếu thực hành. Nội dung PDF và bằng chứng source/runtime của bộ sách được ghi riêng.
 
 ## Liên hệ với ba bộ Docs trước
 

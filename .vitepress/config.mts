@@ -11,13 +11,14 @@ const labels: Record<string, string> = {
   '04': '04 · Kiến trúc & quy trình dự án',
   '05': '05 · Native Gun Lab',
   '06': '06 · Catalog & bằng chứng',
+  '07': '07 · Technical Design Document tiếng Việt',
 }
 function title(file: string) {
   return (readFileSync(file, 'utf8').match(/^#\s+(.+)$/m)?.[1] || file)
     .replace(/[*`]/g, '').trim()
 }
 const sections: DefaultTheme.SidebarItem[] = readdirSync(root, {withFileTypes: true})
-  .filter(d => d.isDirectory() && /^0[1-6]-/.test(d.name))
+  .filter(d => d.isDirectory() && /^0[1-7]-/.test(d.name))
   .sort((a, b) => a.name.localeCompare(b.name))
   .map(d => ({
     text: labels[d.name.slice(0, 2)] || d.name,
@@ -52,6 +53,7 @@ export default withMermaid(defineConfig({
       {text: 'Bản đồ', link: '/01-Ban-Do-Kien-Thuc/01-ban-do'},
       {text: 'Gun Gameplay', link: '/03-Gun-Gameplay/README'},
       {text: 'Gun Lab', link: '/05-Gun-Lab/README'},
+      {text: 'TDD tiếng Việt', link: '/07-TDD-Tieng-Viet/README'},
       {text: 'Tra cứu', link: '/06-Catalogs/README'},
     ],
     sidebar: [

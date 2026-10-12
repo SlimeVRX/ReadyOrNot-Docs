@@ -12,6 +12,8 @@ Bạn không cần đọc hết source trước khi làm một thứ chơi đư�
 
 ## Chọn lối vào theo nền tảng
 
+Nếu muốn đọc một bức tranh thiết kế xuyên toàn game trước khi đi sâu source, bắt đầu ở [Technical Design Document tiếng Việt](07-TDD-Tieng-Viet/README.md). Phần này bao quát 19 mục của PDF R&D và có [lộ trình từ mission hai phòng tới nhiều hệ thống](07-TDD-Tieng-Viet/19-lo-trinh-tai-tao.md); dùng các chương source dưới đây để đối chiếu implementation của snapshot bạn đang giữ.
+
 | Bạn hiện ở đâu? | Đọc trước | Bài làm đầu tiên |
 |---|---|---|
 | Mới với Unreal/C++ | [Tám tầng](01-Ban-Do-Kien-Thuc/01-ban-do.md) và [thuật ngữ](01-Ban-Do-Kien-Thuc/06-thuat-ngu.md) | Phân biệt Class, CDO, Blueprint và instance bằng một khẩu súng |

@@ -18,7 +18,7 @@ function collect(folder) {
 for (const name of ['index.md', 'README.md', 'BAT-DAU-TU-DAY.md', '00-MucLuc.md', 'WEBSITE.md']) {
   if (fs.existsSync(path.join(root, name))) pages.push(name)
 }
-for (const e of fs.readdirSync(root, {withFileTypes: true})) if (e.isDirectory() && /^0[1-6]-/.test(e.name)) collect(path.join(root, e.name))
+for (const e of fs.readdirSync(root, {withFileTypes: true})) if (e.isDirectory() && /^0[1-7]-/.test(e.name)) collect(path.join(root, e.name))
 const pageSet = new Set(pages)
 const pageName = n => n === 'README.md' ? 'gioi-thieu.md' : n
 // Prune only generated Markdown whose source page was removed or renamed.
@@ -95,7 +95,7 @@ for (const rel of downloads) {
   fs.mkdirSync(path.dirname(target), {recursive: true})
   fs.copyFileSync(path.join(root, rel), target)
 }
-const chapters = pages.filter(p => /^0[1-6]-/.test(p)).sort()
+const chapters = pages.filter(p => /^0[1-7]-/.test(p)).sort()
 const title = p => (fs.readFileSync(path.join(root,p), 'utf8').match(/^#\s+(.+)$/m)?.[1] || p).replace(/[*`]/g,'')
 const index = ['# Mục lục toàn bộ', '', 'Đọc tuyến tính khi mới bắt đầu; dùng tìm kiếm theo class, hành động hoặc lỗi khi đang thực hành.', '', ...chapters.map(p => '- [' + title(p) + '](/' + p.replace(/\.md$/, '') + ')'), '']
 fs.writeFileSync(path.join(out, '00-MucLuc.md'), index.join('\n'))

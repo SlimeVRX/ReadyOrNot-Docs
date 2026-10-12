@@ -1,0 +1,192 @@
+{
+  "schema": "ReadyOrNotDocs.TDDVietnamese.v1",
+  "adaptationDate": "2026-10-12",
+  "source": {
+    "filename": "RoN_TDD_en.pdf",
+    "title": "Ready Or Not — Technical Design Document",
+    "printedDate": "2026-09-27",
+    "pages": 116,
+    "sha256": "4e408cc4d1589125cab426f4a1c02c297b1e8dbab9bd70463b521f653a2d9650",
+    "nature": "Independent reverse-engineered R&D document supplied by the user; not authenticated as official VOID documentation",
+    "distributed": false
+  },
+  "adaptation": "Vietnamese study rewrite covering all source sections, not a line-by-line certified translation. File:line locators are attributed to the PDF unless independently checked elsewhere.",
+  "frontMatter": [
+    {
+      "page": 1,
+      "role": "cover"
+    },
+    {
+      "page": 2,
+      "role": "contents"
+    }
+  ],
+  "sections": [
+    {
+      "section": 0,
+      "firstPage": 3,
+      "lastPage": 4,
+      "file": "00-tom-tat.md",
+      "sourceTitle": "Executive Summary",
+      "evidence": "TDD"
+    },
+    {
+      "section": 1,
+      "firstPage": 5,
+      "lastPage": 7,
+      "file": "01-tong-quan-vong-choi.md",
+      "sourceTitle": "Game Overview, Pillars & Core Loop",
+      "evidence": "TDD"
+    },
+    {
+      "section": 2,
+      "firstPage": 8,
+      "lastPage": 14,
+      "file": "02-kien-truc-codebase.md",
+      "sourceTitle": "Codebase Architecture",
+      "evidence": "TDD"
+    },
+    {
+      "section": 3,
+      "firstPage": 15,
+      "lastPage": 21,
+      "file": "03-player-movement-interaction.md",
+      "sourceTitle": "Player Character",
+      "evidence": "TDD"
+    },
+    {
+      "section": 4,
+      "firstPage": 22,
+      "lastPage": 27,
+      "file": "04-weapons-ballistics-hitreg.md",
+      "sourceTitle": "Weapons, Ballistics, Penetration, Recoil & Hit Registration",
+      "evidence": "TDD"
+    },
+    {
+      "section": 5,
+      "firstPage": 28,
+      "lastPage": 34,
+      "file": "05-damage-health-arrest.md",
+      "sourceTitle": "Damage, Health, Armor, Bleeding, Stun & Surrender/Arrest",
+      "evidence": "TDD"
+    },
+    {
+      "section": 6,
+      "firstPage": 35,
+      "lastPage": 41,
+      "file": "06-equipment-inventory.md",
+      "sourceTitle": "Tactical Equipment, Inventory, Grenades & Deployables",
+      "evidence": "TDD"
+    },
+    {
+      "section": 7,
+      "firstPage": 42,
+      "lastPage": 48,
+      "file": "07-doors-breaching.md",
+      "sourceTitle": "Doors, Locks, Traps & Breaching",
+      "evidence": "TDD"
+    },
+    {
+      "section": 8,
+      "firstPage": 49,
+      "lastPage": 55,
+      "file": "08-squad-command-ux.md",
+      "sourceTitle": "Squad Command UX",
+      "evidence": "TDD"
+    },
+    {
+      "section": 9,
+      "firstPage": 56,
+      "lastPage": 61,
+      "file": "09-ai.md",
+      "sourceTitle": "Artificial Intelligence",
+      "evidence": "TDD"
+    },
+    {
+      "section": 10,
+      "firstPage": 62,
+      "lastPage": 68,
+      "file": "10-mission-roe-scoring.md",
+      "sourceTitle": "Game Modes, Mission Flow, Rules of Engagement, Scoring & Objectives",
+      "evidence": "TDD"
+    },
+    {
+      "section": 11,
+      "firstPage": 69,
+      "lastPage": 75,
+      "file": "11-commander-meta-planning.md",
+      "sourceTitle": "Meta-game",
+      "evidence": "TDD"
+    },
+    {
+      "section": 12,
+      "firstPage": 76,
+      "lastPage": 78,
+      "file": "12-level-design-pipeline.md",
+      "sourceTitle": "Level Design Pipeline",
+      "evidence": "TDD"
+    },
+    {
+      "section": 13,
+      "firstPage": 79,
+      "lastPage": 82,
+      "file": "13-audio.md",
+      "sourceTitle": "Audio",
+      "evidence": "TDD"
+    },
+    {
+      "section": 14,
+      "firstPage": 83,
+      "lastPage": 89,
+      "file": "14-presentation-feel.md",
+      "sourceTitle": "Presentation & Feel",
+      "evidence": "TDD"
+    },
+    {
+      "section": 15,
+      "firstPage": 90,
+      "lastPage": 96,
+      "file": "15-network-platform-mods.md",
+      "sourceTitle": "Networking, Sessions, Host Migration, Platforms, Services & Mods",
+      "evidence": "TDD"
+    },
+    {
+      "section": 16,
+      "firstPage": 97,
+      "lastPage": 103,
+      "file": "16-tooling-build-tests.md",
+      "sourceTitle": "Tooling, Build/CI, Tests, Debug & Cheat Tools",
+      "evidence": "TDD"
+    },
+    {
+      "section": 17,
+      "firstPage": 104,
+      "lastPage": 113,
+      "file": "17-known-issues.md",
+      "sourceTitle": "Consolidated Known Issues",
+      "evidence": "TDD"
+    },
+    {
+      "section": 18,
+      "firstPage": 114,
+      "lastPage": 116,
+      "file": "18-reuse-playbook.md",
+      "sourceTitle": "Reuse Playbook for Other Games",
+      "evidence": "TDD"
+    }
+  ],
+  "supplements": [
+    "README.md",
+    "19-lo-trinh-tai-tao.md",
+    "20-phieu-trien-khai.md",
+    "21-nguon-va-doi-chieu.md"
+  ],
+  "sourceIssueInventory": {
+    "total": 118,
+    "high": 12,
+    "medium": 38,
+    "low": 68,
+    "status": "Reported in PDF, not newly runtime-verified"
+  },
+  "newGameplayImplemented": false
+}
